@@ -1,13 +1,20 @@
 #pragma once
-
 #include "raylib.h"
 #include "scene.hpp"
+#include "player.hpp"
 
 class GameScene : public Scene
 {
 private:
-public:
-    void Update() override;
+    Vector2 _playerStart{};
+    Color _playerColor{};
+    Player _player;
+
+private:
     void GetInput() override;
+
+public:
+    GameScene();
+    void Update(float &dt) override;
     void Render() override;
 };

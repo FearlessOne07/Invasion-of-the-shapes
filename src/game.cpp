@@ -2,6 +2,8 @@
 
 void Game::Init()
 {
+    // Initialize Window
+    SetConfigFlags(FLAG_MSAA_4X_HINT);
     InitWindow(SIZE.x, SIZE.y, "Invasion of the Shapes");
     SetTargetFPS(FPS);
     SetExitKey(0);
@@ -17,11 +19,13 @@ void Game::Init()
 
 void Game::Run()
 {
+    float dt = GetFrameTime();
+
     while (!WindowShouldClose())
     {
         BeginDrawing();
         ClearBackground(BLACK);
-        _currentScene->Update();
+        _currentScene->Update(dt);
         _currentScene->Render();
         EndDrawing();
     }

@@ -10,7 +10,7 @@
 class Game : public Observer
 {
 private:
-    const Vector2 SIZE{1280, 720};
+    const Vector2 SIZE{1600, 900};
     const int FPS{60};
     std::shared_ptr<Scene> _gameScene{};
     std::shared_ptr<Scene> _titleScene{};

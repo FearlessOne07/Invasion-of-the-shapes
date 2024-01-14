@@ -1,8 +1,6 @@
 #pragma once
 #include "raylib.h"
-#include <string.h>
-#include <cmath>
-#include <iostream>
+
 typedef enum Event
 {
     TO_TITLE = 0,

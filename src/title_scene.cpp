@@ -15,7 +15,7 @@ TitleScene::TitleScene()
     _playButton.SetText("Play");
 }
 
-void TitleScene::Update()
+void TitleScene::Update(float& dt)
 {
     GetInput();
 }

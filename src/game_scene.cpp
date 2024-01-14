@@ -1,6 +1,10 @@
 #include "game_scene.hpp"
 
-void GameScene::Update()
+GameScene::GameScene() : _playerStart({(float)(GetScreenWidth() / 2), (float)(GetScreenHeight() / 2)}), _playerColor(BEIGE), _player(_playerStart, _playerColor)
+{
+}
+
+void GameScene::Update(float &dt)
 {
     GetInput();
 }
@@ -15,5 +19,5 @@ void GameScene::GetInput()
 
 void GameScene::Render()
 {
-    DrawText("GameScreen!", 100, 100, 64, GREEN);
+    _player.Render();
 }
