@@ -4,13 +4,17 @@
 class TitleScene : public Scene
 {
 private:
-    Vector2 _buttonSize{};
-    Color _color{};
+    // Buttons
     Color _hoverColor{};
     Color _offColor{};
+    Button _playButton{};
+
+private:
+    void GetInput() override;
+    void DrawButtons();
 
 public:
+    TitleScene();
     void Update() override;
-    void GetInput() override;
     void Render() override;
 };

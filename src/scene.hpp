@@ -1,9 +1,8 @@
 #pragma once
 #include "obsever.hpp"
 #include <vector>
-#include "event.hpp"
+#include "utils.hpp"
 #include "raylib.h"
-
 class Scene
 {
 protected:
