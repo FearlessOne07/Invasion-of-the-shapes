@@ -8,6 +8,7 @@ void GameScene::Update(float &dt)
 {
     GetInput();
     _player.Update(dt);
+    _enemMan.Update(dt, _player.GetPos());
 }
 
 void GameScene::GetInput()

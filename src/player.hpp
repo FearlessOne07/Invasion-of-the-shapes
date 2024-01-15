@@ -25,4 +25,5 @@ public:
     Player(Vector2 position, Color color);
     void Update(float &dt);
     void Render();
+    Vector2 const GetPos() const;
 };

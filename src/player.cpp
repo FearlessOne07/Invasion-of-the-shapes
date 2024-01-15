@@ -55,3 +55,8 @@ void Player::Render()
 {
     DrawPolyLinesEx(_position, _sides, _radius, _rotation, 7, _color);
 }
+
+Vector2 const Player::GetPos() const
+{
+    return _position;
+}
