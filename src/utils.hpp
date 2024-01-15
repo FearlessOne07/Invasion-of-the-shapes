@@ -1,7 +1,7 @@
 #pragma once
 #include "raylib.h"
 
-typedef enum Event
+typedef enum Event : unsigned int
 {
     TO_TITLE = 0,
     TO_GAME,

@@ -7,6 +7,7 @@ GameScene::GameScene() : _playerStart({(float)(GetScreenWidth() / 2), (float)(Ge
 void GameScene::Update(float &dt)
 {
     GetInput();
+    _player.Update(dt);
 }
 
 void GameScene::GetInput()

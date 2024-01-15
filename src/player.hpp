@@ -1,6 +1,7 @@
 #pragma once
 #include "raylib.h"
-
+#include "raymath.h"
+#include <iostream>
 class Player
 {
 private:
@@ -17,6 +18,8 @@ private:
 
 private:
     void GetInput();
+    void UpdatePositions(float &dt);
+    void UpdateRotaion(float &dt);
 
 public:
     Player(Vector2 position, Color color);

@@ -19,10 +19,10 @@ void Game::Init()
 
 void Game::Run()
 {
-    float dt = GetFrameTime();
 
     while (!WindowShouldClose())
     {
+        float dt = GetFrameTime();
         BeginDrawing();
         ClearBackground(BLACK);
         _currentScene->Update(dt);
