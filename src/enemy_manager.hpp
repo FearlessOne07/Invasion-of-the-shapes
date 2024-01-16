@@ -2,6 +2,8 @@
 #include "player.hpp"
 #include <vector>
 #include <random>
+#include <algorithm>
+
 class EnemyManager
 {
 private:
@@ -16,7 +18,8 @@ private:
 
 private:
     void SpawnEnemy();
-    void SpawnEnemies(float& dt);
+    void SpawnEnemies(float &dt);
+    void RemoveDeadEnemies();
 
 public:
     EnemyManager();

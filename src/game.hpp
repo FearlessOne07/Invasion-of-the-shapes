@@ -7,6 +7,8 @@
 #include "scene.hpp"
 #include "title_scene.hpp"
 #include "game_scene.hpp"
+#include "puase_scene.hpp"
+
 class Game : public Observer
 {
 private:
@@ -14,7 +16,9 @@ private:
     const int FPS{60};
     std::shared_ptr<Scene> _gameScene{};
     std::shared_ptr<Scene> _titleScene{};
+    std::shared_ptr<Scene> _pauseScene{};
     std::shared_ptr<Scene> _currentScene{};
+
 private:
     void SetScene(std::shared_ptr<Scene> newScene);
 

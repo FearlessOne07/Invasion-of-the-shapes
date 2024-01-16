@@ -7,6 +7,7 @@ class Scene
 {
 protected:
     std::vector<Observer *> _observers{};
+    Color _clearColor{};
 
 protected:
     virtual void GetInput() = 0;

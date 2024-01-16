@@ -17,6 +17,10 @@ void EnemyManager::SpawnEnemy()
     std::uniform_int_distribution<int> sidesDist(3, 8);
     int sides = sidesDist(gen);
 
+    // Speed
+    std::uniform_int_distribution<int> speedDist(100, 300);
+    int speed = speedDist(gen);
+
     // Position
     std::uniform_int_distribution<int> sideDist(0, 3);
     std::uniform_real_distribution<float> distX(-100, GetScreenWidth() + 100);
@@ -43,8 +47,9 @@ void EnemyManager::SpawnEnemy()
         position = {0, 0};
         break;
     }
-    _enemies.push_back(Enemy(color, sides, position, _enemyRadius));
+    _enemies.push_back(Enemy(color, sides, position, _enemyRadius, speed));
 }
+
 void EnemyManager::SpawnEnemies(float &dt)
 {
     _spawnTimer += dt;
@@ -54,6 +59,17 @@ void EnemyManager::SpawnEnemies(float &dt)
         SpawnEnemy();
     }
 }
+
+void EnemyManager::RemoveDeadEnemies()
+{
+    auto it = std::remove_if(
+        _enemies.begin(),
+        _enemies.end(),
+        [](Enemy &e) -> bool
+        { return e.GetAlive(); });
+    _enemies.erase(it, _enemies.end());
+}
+
 void EnemyManager::Update(float &dt, const Vector2 &playerPos)
 {
     SpawnEnemies(dt);
@@ -62,4 +78,5 @@ void EnemyManager::Update(float &dt, const Vector2 &playerPos)
         enemy.Update(playerPos, dt);
         enemy.Render();
     }
+    RemoveDeadEnemies();
 }

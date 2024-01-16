@@ -20,10 +20,12 @@ private:
     void GetInput();
     void UpdatePositions(float &dt);
     void UpdateRotaion(float &dt);
+    void CheckBounds();
 
 public:
     Player(Vector2 position, Color color);
     void Update(float &dt);
     void Render();
     Vector2 const GetPos() const;
+
 };

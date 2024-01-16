@@ -5,7 +5,8 @@ typedef enum Event : unsigned int
 {
     TO_TITLE = 0,
     TO_GAME,
-    TO_EXIT
+    TO_EXIT,
+    TO_PAUSE
 } Event;
 
 typedef struct Button
@@ -14,16 +15,21 @@ typedef struct Button
     Color color{};
     Vector2 pos{};
     Rectangle rect{};
+
+    // Text
     const char *text{};
-    int fontSize = 48;
+    int fontSize;
+    int textWidth;
 
     void SetText(const char *text)
     {
         this->text = text;
+        textWidth = MeasureText(this->text, fontSize);
     }
 
-    void DrawBtnText() const
+    void Draw() const
     {
-        DrawText(text, (pos.x + (size.x / 2 - 50)), (pos.y + (size.y / 2 - 48 / 2)), 48, color);
+        DrawRectangleRoundedLines(rect, .2, 1, 4, color);
+        DrawText(text, (pos.x + (size.x / 2) - (textWidth / 2)), (pos.y + ((size.y / 2) - (fontSize / 2))), fontSize, color);
     }
 } Button;

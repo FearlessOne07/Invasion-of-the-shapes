@@ -2,10 +2,12 @@
 
 TitleScene::TitleScene()
 {
+    _clearColor = BLACK;
     _playButton.size = {300, 100};
     _playButton.pos.x = GetScreenWidth() / 2 - _playButton.size.x / 2;
     _playButton.pos.y = GetScreenHeight() / 2 - _playButton.size.y / 2;
     _playButton.color = WHITE;
+    _playButton.fontSize = 48;
     _playButton.rect = {
         _playButton.pos.x,
         _playButton.pos.y,
@@ -15,7 +17,7 @@ TitleScene::TitleScene()
     _playButton.SetText("Play");
 }
 
-void TitleScene::Update(float& dt)
+void TitleScene::Update(float &dt)
 {
     GetInput();
 }
@@ -39,11 +41,12 @@ void TitleScene::GetInput()
 
 void TitleScene::Render()
 {
+    ClearBackground(_clearColor);
     DrawButtons();
 }
 
 void TitleScene::DrawButtons()
 {
-    _playButton.DrawBtnText();
+    _playButton.Draw();
     DrawRectangleRoundedLines(_playButton.rect, .2, 1, 4, _playButton.color);
 }

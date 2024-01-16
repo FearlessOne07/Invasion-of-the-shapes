@@ -44,10 +44,31 @@ void Player::UpdateRotaion(float &dt)
     _rotation += _rotationSpeed * dt;
 }
 
+void Player::CheckBounds()
+{
+    if (_position.x <= _radius)
+    {
+        _position.x = _radius;
+    }
+    if (_position.y <= _radius)
+    {
+        _position.y = _radius;
+    }
+    if (_position.y >= GetScreenHeight() - _radius)
+    {
+        _position.y = GetScreenHeight() - _radius;
+    }
+    if (_position.x >= GetScreenWidth() - _radius)
+    {
+        _position.x = GetScreenWidth() - _radius;
+    }
+}
+
 void Player::Update(float &dt)
 {
     GetInput();
     UpdatePositions(dt);
+    CheckBounds();
     UpdateRotaion(dt);
 }
 

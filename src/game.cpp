@@ -11,8 +11,10 @@ void Game::Init()
     // Initialize Scenes
     _titleScene = std::make_shared<TitleScene>();
     _gameScene = std::make_shared<GameScene>();
+    _pauseScene = std::make_shared<PauseScene>();
     _titleScene->AddObserver(this);
     _gameScene->AddObserver(this);
+    _pauseScene->AddObserver(this);
 
     SetScene(_titleScene);
 }
@@ -24,7 +26,6 @@ void Game::Run()
     {
         float dt = GetFrameTime();
         BeginDrawing();
-        ClearBackground(BLACK);
         _currentScene->Update(dt);
         _currentScene->Render();
         EndDrawing();
@@ -44,12 +45,16 @@ void Game::End()
 void Game::OnNofity(const Event &event)
 {
     if (event == Event::TO_GAME)
-    {
+    {   
         SetScene(_gameScene);
     }
     else if (event == Event::TO_TITLE)
     {
         SetScene(_titleScene);
+    }
+    else if (event == Event::TO_PAUSE)
+    {
+        SetScene(_pauseScene);
     }
 }
 
