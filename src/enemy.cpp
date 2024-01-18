@@ -5,7 +5,8 @@ Enemy::Enemy(Color &color, int &sides, Vector2 &position, int &radius, int &spee
 }
 
 void Enemy::FollowPlayer(float &dt, const Vector2 &playePos)
-{
+{   
+    // Update enemy velocity based on player's location
     _velocity = Vector2Subtract(playePos, _position);
     _velocity = Vector2Normalize(_velocity);
     _velocity = Vector2Scale(_velocity, _speed * dt);
@@ -28,7 +29,17 @@ void Enemy::Render()
     DrawPolyLinesEx(_position, _sides, _radius, _rotaion, 4, WHITE);
 }
 
-bool Enemy::GetAlive()
+void Enemy::SetDead(bool input)
+{
+    _isDead = true;
+}
+
+Vector2 Enemy::GetPos() const
+{
+    return _position;
+}
+
+bool Enemy::GetDead() const
 {
     return _isDead;
 }

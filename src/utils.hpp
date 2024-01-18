@@ -5,8 +5,10 @@ typedef enum Event : unsigned int
 {
     TO_TITLE = 0,
     TO_GAME,
+    TO_GAME_NEW,
     TO_EXIT,
-    TO_PAUSE
+    TO_PAUSE,
+    TO_GAME_OVER
 } Event;
 
 typedef struct Button

@@ -3,7 +3,7 @@
 #include <vector>
 #include <random>
 #include <algorithm>
-
+#include "bullet.hpp"
 class EnemyManager
 {
 private:
@@ -14,14 +14,18 @@ private:
 
     // Enemy Spawning
     float _spawnTimer{};
-    int _spawnInterval{};
+    float _spawnInterval{};
 
 private:
     void SpawnEnemy();
     void SpawnEnemies(float &dt);
     void RemoveDeadEnemies();
+    void CheckPlayerCols(Player &player, Enemy &enemy);
+    void CheckBulletCol(std::vector<Bullet> &bullets);
 
 public:
     EnemyManager();
-    void Update(float &dt, const Vector2 &playerPos);
+    void Update(float &dt, Player &player, std::vector<Bullet>& bullets);
+    void Reset();
+    void SetInterval(float interval);
 };

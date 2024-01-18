@@ -8,6 +8,7 @@
 #include "title_scene.hpp"
 #include "game_scene.hpp"
 #include "puase_scene.hpp"
+#include "game_over_scene.hpp"
 
 class Game : public Observer
 {
@@ -17,6 +18,7 @@ private:
     std::shared_ptr<Scene> _gameScene{};
     std::shared_ptr<Scene> _titleScene{};
     std::shared_ptr<Scene> _pauseScene{};
+    std::shared_ptr<Scene> _gameOverScene{};
     std::shared_ptr<Scene> _currentScene{};
 
 private:

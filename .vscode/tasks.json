@@ -12,8 +12,7 @@
                 "-o",
                 "bin/main",
                 "-lraylib",
-                "-g",
-                "-std=c++17"
+                "-std=c++23"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"

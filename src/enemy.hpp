@@ -26,5 +26,7 @@ public:
     friend class EnemyManager;
     void Update(const Vector2 &playerPos, float &dt);
     void Render();
-    bool GetAlive();
+    bool GetDead() const;
+    void SetDead(bool input);
+    Vector2 GetPos() const;
 };

@@ -2,10 +2,11 @@
 
 Player::Player(Vector2 position, Color color) : _position(position), _color(color)
 {
-    _radius = 50;
+    radius = 50;
     _sides = 6;
     _speed = 500;
     _rotationSpeed = -200;
+    _isDead = false;
 }
 
 void Player::GetInput()
@@ -46,21 +47,21 @@ void Player::UpdateRotaion(float &dt)
 
 void Player::CheckBounds()
 {
-    if (_position.x <= _radius)
+    if (_position.x <= radius)
     {
-        _position.x = _radius;
+        _position.x = radius;
     }
-    if (_position.y <= _radius)
+    if (_position.y <= radius)
     {
-        _position.y = _radius;
+        _position.y = radius;
     }
-    if (_position.y >= GetScreenHeight() - _radius)
+    if (_position.y >= GetScreenHeight() - radius)
     {
-        _position.y = GetScreenHeight() - _radius;
+        _position.y = GetScreenHeight() - radius;
     }
-    if (_position.x >= GetScreenWidth() - _radius)
+    if (_position.x >= GetScreenWidth() - radius)
     {
-        _position.x = GetScreenWidth() - _radius;
+        _position.x = GetScreenWidth() - radius;
     }
 }
 
@@ -74,10 +75,25 @@ void Player::Update(float &dt)
 
 void Player::Render()
 {
-    DrawPolyLinesEx(_position, _sides, _radius, _rotation, 7, _color);
+    DrawPolyLinesEx(_position, _sides, radius, _rotation, 7, _color);
 }
 
 Vector2 const Player::GetPos() const
 {
     return _position;
+}
+
+const bool Player::GetDead() const
+{
+    return _isDead;
+}
+
+void Player::SetDead(const bool &input)
+{
+    _isDead = input;
+}
+
+void Player::SetPos(const Vector2 &pos)
+{
+    _position = pos;
 }
