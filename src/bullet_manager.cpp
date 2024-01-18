@@ -5,6 +5,10 @@ BulletManager::BulletManager()
     // Initialize Bullet cooldown
     _cooldownTimer = 0;
     _cooldown = .5;
+
+    Wave bulletShoot = LoadWave("assets/player_shoot.wav");
+    _bulletShoot = LoadSoundFromWave(bulletShoot);
+    UnloadWave(bulletShoot);
 }
 void BulletManager::CheckBullets()
 {
@@ -28,6 +32,7 @@ void BulletManager::SpawnBullet(const Vector2 &playerPos, const Vector2 &mousePo
         Vector2 direction = Vector2Subtract(mousePos, playerPos);
         direction = Vector2Normalize(direction);
         _bullets.emplace_back(Bullet(playerPos, direction));
+        PlaySound(_bulletShoot);
     }
 }
 
@@ -58,4 +63,9 @@ std::vector<Bullet> &BulletManager::GetBullets()
 {
     // Return a reference to the bullet vector
     return _bullets;
+}
+
+BulletManager::~BulletManager()
+{
+    UnloadSound(_bulletShoot);
 }

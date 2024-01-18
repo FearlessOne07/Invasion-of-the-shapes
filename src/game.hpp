@@ -21,6 +21,10 @@ private:
     std::shared_ptr<Scene> _gameOverScene{};
     std::shared_ptr<Scene> _currentScene{};
 
+    bool _running;
+
+    Music _gameMusic;
+
 private:
     void SetScene(std::shared_ptr<Scene> newScene);
 

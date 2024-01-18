@@ -5,7 +5,7 @@ TitleScene::TitleScene()
     _clearColor = BLACK;
     _playButton.size = {300, 100};
     _playButton.pos.x = GetScreenWidth() / 2 - _playButton.size.x / 2;
-    _playButton.pos.y = GetScreenHeight() / 2 - _playButton.size.y / 2;
+    _playButton.pos.y = (GetScreenHeight() / 2 - _playButton.size.y / 2);
     _playButton.color = WHITE;
     _playButton.fontSize = 48;
     _playButton.rect = {
@@ -36,6 +36,12 @@ void TitleScene::GetInput()
     else
     {
         _playButton.color = WHITE;
+    }
+
+    // Check if Window Should be closed
+    if (IsKeyPressed(KEY_ESCAPE))
+    {
+        Notify(TO_EXIT);
     }
 }
 

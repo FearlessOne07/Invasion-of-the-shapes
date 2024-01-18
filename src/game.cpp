@@ -3,10 +3,12 @@
 void Game::Init()
 {
     // Initialize Window
-    SetConfigFlags(FLAG_MSAA_4X_HINT);
     InitWindow(SIZE.x, SIZE.y, "Invasion of the Shapes");
+    InitAudioDevice();
+    SetConfigFlags(FLAG_MSAA_4X_HINT);
     SetTargetFPS(FPS);
     SetExitKey(0);
+    _running = true;
 
     // Initialize Scenes
     _titleScene = std::make_shared<TitleScene>();
@@ -17,15 +19,21 @@ void Game::Init()
     _gameScene->AddObserver(this);
     _pauseScene->AddObserver(this);
     _gameOverScene->AddObserver(this);
-
     SetScene(_titleScene);
+
+    // Game Music
+    _gameMusic = LoadMusicStream("assets/game_scene.mp3");
+    _gameMusic.looping = true;
+    PlayMusicStream(_gameMusic);
 }
 
 void Game::Run()
 {
-
-    while (!WindowShouldClose())
+    // Game Loop
+    while (_running && !WindowShouldClose())
     {
+        // Update Music Stream
+        UpdateMusicStream(_gameMusic);
         float dt = GetFrameTime();
         BeginDrawing();
         _currentScene->Update(dt);
@@ -40,6 +48,8 @@ void Game::End()
 {
     if (!WindowShouldClose())
     {
+        UnloadMusicStream(_gameMusic);
+        CloseAudioDevice();
         CloseWindow();
     }
 }
@@ -67,6 +77,10 @@ void Game::OnNofity(const Event &event)
     else if (event == TO_GAME_OVER)
     {
         SetScene(_gameOverScene);
+    }
+    else if (event == TO_EXIT)
+    {
+        _running = false;
     }
 }
 

@@ -3,6 +3,7 @@
 PauseScene::PauseScene()
 {
 
+    // Initialize Buttons
     _clearColor = {0, 0, 0, 10};
     _continueButton.size = {300, 100};
     _continueButton.pos.x = GetScreenWidth() / 2 - _continueButton.size.x / 2;

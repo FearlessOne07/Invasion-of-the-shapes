@@ -2,6 +2,7 @@
 
 Player::Player(Vector2 position, Color color) : _position(position), _color(color)
 {
+    // Initialize Player
     radius = 50;
     _sides = 6;
     _speed = 500;
@@ -11,6 +12,7 @@ Player::Player(Vector2 position, Color color) : _position(position), _color(colo
 
 void Player::GetInput()
 {
+    // Get Player Input
     if (IsKeyDown(KEY_D))
     {
         _velocity.x += 1;
@@ -31,6 +33,7 @@ void Player::GetInput()
 
 void Player::UpdatePositions(float &dt)
 {
+    // Update Player Positions
     if (_velocity.x || _velocity.y)
     {
         _velocity = Vector2Normalize(_velocity);
@@ -47,6 +50,7 @@ void Player::UpdateRotaion(float &dt)
 
 void Player::CheckBounds()
 {
+    // Check Player Collisions With Window
     if (_position.x <= radius)
     {
         _position.x = radius;

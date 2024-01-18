@@ -16,6 +16,9 @@ private:
     float _spawnTimer{};
     float _spawnInterval{};
 
+    // Sounds
+    Sound _enemyDieSound;
+
 private:
     void SpawnEnemy();
     void SpawnEnemies(float &dt);
@@ -25,6 +28,7 @@ private:
 
 public:
     EnemyManager();
+    ~EnemyManager();
     void Update(float &dt, Player &player, std::vector<Bullet>& bullets);
     void Reset();
     void SetInterval(float interval);

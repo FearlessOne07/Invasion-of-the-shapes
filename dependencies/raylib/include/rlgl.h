@@ -1,6 +1,6 @@
 /**********************************************************************************************
 *
-*   rlgl v5.0 - A multi-OpenGL abstraction layer with an immediate-mode style API
+*   rlgl v4.5 - A multi-OpenGL abstraction layer with an immediate-mode style API
 *
 *   DESCRIPTION:
 *       An abstraction layer for multiple OpenGL versions (1.1, 2.1, 3.3 Core, 4.3 Core, ES 2.0)
@@ -772,11 +772,6 @@ RLAPI void rlLoadDrawQuad(void);     // Load and draw a quad
 ************************************************************************************/
 
 #if defined(RLGL_IMPLEMENTATION)
-
-// Expose OpenGL functions from glad in raylib
-#if defined(BUILD_SHARED_LIBS)
-    #define GLAD_API_CALL_EXPORT_BUILD
-#endif
 
 #if defined(GRAPHICS_API_OPENGL_11)
     #if defined(__APPLE__)
