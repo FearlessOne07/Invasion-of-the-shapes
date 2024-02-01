@@ -30,7 +30,6 @@ public:
     void Update(float &dt);
     void Render();
 
-
     Vector2 const GetPos() const;
     void SetPos(const Vector2 &pos);
 

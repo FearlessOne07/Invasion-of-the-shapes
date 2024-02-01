@@ -54,6 +54,7 @@ void Player::CheckBounds()
     if (_position.x <= radius)
     {
         _position.x = radius;
+        
     }
     if (_position.y <= radius)
     {
