@@ -7,8 +7,8 @@ GameOverScene::GameOverScene()
     _playText = "PRESS SPACE TO PLAY AGAIN OR ESC TO QUIT";
 
     _textSize = 64;
-    _deathTextX = GetScreenWidth() / 2 - MeasureText(_deathText, _textSize) / 2;
-    _playTextX = GetScreenWidth() / 2 - MeasureText(_playText, 48) / 2;
+    _deathTextX = (float)GetScreenWidth() / 2 - (float)MeasureText(_deathText, _textSize) / 2;
+    _playTextX = (float)GetScreenWidth() / 2 - (float)MeasureText(_playText, 48) / 2;
 
     _opacity = 255;
     _opacityPulse = -3;

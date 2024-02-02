@@ -1,9 +1,10 @@
+#pragma once
 #include "enemy.hpp"
-#include "player.hpp"
+#include "../player/player.hpp"
 #include <vector>
 #include <random>
 #include <algorithm>
-#include "bullet.hpp"
+#include "../bullet_manager/bullet_manager.hpp"
 class EnemyManager
 {
 private:

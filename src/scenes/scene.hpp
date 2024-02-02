@@ -1,7 +1,7 @@
 #pragma once
-#include "obsever.hpp"
+#include "../utils/obsever.hpp"
 #include <vector>
-#include "utils.hpp"
+#include "../utils/utils.hpp"
 #include "raylib.h"
 class Scene
 {

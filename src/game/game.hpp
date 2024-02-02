@@ -1,14 +1,13 @@
 #pragma once
-
 #include "raylib.h"
 #include <string>
 #include <memory>
-#include "obsever.hpp"
-#include "scene.hpp"
-#include "title_scene.hpp"
-#include "game_scene.hpp"
-#include "puase_scene.hpp"
-#include "game_over_scene.hpp"
+#include "../utils/obsever.hpp"
+#include "../scenes/scene.hpp"
+#include "../scenes/title_scene.hpp"
+#include "../scenes/game_scene.hpp"
+#include "../scenes/puase_scene.hpp"
+#include "../scenes/game_over_scene.hpp"
 
 class Game : public Observer
 {
@@ -21,9 +20,9 @@ private:
     std::shared_ptr<Scene> _gameOverScene{};
     std::shared_ptr<Scene> _currentScene{};
 
-    bool _running;
+    bool _running{};
 
-    Music _gameMusic;
+    Music _gameMusic{};
 
 private:
     void SetScene(std::shared_ptr<Scene> newScene);

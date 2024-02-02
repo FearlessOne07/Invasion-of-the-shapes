@@ -24,43 +24,43 @@
     <ClInclude Include="dependencies\raylib\include\rlgl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\bullet.hpp">
+    <ClInclude Include="src\bullet_manager\bullet.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\bullet_manager.hpp">
+    <ClInclude Include="src\bullet_manager\bullet_manager.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\enemy.hpp">
+    <ClInclude Include="src\enemy_manager\enemy.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\enemy_manager.hpp">
+    <ClInclude Include="src\enemy_manager\enemy_manager.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\game.hpp">
+    <ClInclude Include="src\game\game.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\game_over_scene.hpp">
+    <ClInclude Include="src\scenes\game_over_scene.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\game_scene.hpp">
+    <ClInclude Include="src\scenes\game_scene.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\obsever.hpp">
+    <ClInclude Include="src\utils\obsever.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\player.hpp">
+    <ClInclude Include="src\player\player.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\puase_scene.hpp">
+    <ClInclude Include="src\scenes\puase_scene.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\scene.hpp">
+    <ClInclude Include="src\scenes\scene.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\title_scene.hpp">
+    <ClInclude Include="src\scenes\title_scene.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\utils.hpp">
+    <ClInclude Include="src\utils\utils.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -74,37 +74,37 @@
     </Media>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\bullet.cpp">
+    <ClCompile Include="src\bullet_manager\bullet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\bullet_manager.cpp">
+    <ClCompile Include="src\bullet_manager\bullet_manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\enemy.cpp">
+    <ClCompile Include="src\enemy_manager\enemy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\enemy_manager.cpp">
+    <ClCompile Include="src\enemy_manager\enemy_manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\game.cpp">
+    <ClCompile Include="src\game\game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\game_over_scene.cpp">
+    <ClCompile Include="src\scenes\game_over_scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\game_scene.cpp">
+    <ClCompile Include="src\scenes\game_scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\player.cpp">
+    <ClCompile Include="src\player\player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\puase_scene.cpp">
+    <ClCompile Include="src\scenes\puase_scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\title_scene.cpp">
+    <ClCompile Include="src\scenes\title_scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

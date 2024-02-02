@@ -1,9 +1,9 @@
 #pragma once
 #include "raylib.h"
-#include "scene.hpp"
-#include "player.hpp"
-#include "enemy_manager.hpp"
-#include "bullet_manager.hpp"
+#include "../scenes/scene.hpp"
+#include "../player/player.hpp"
+#include "../enemy_manager/enemy_manager.hpp"
+#include "../bullet_manager/bullet_manager.hpp"
 
 class GameScene : public Scene
 {

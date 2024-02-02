@@ -31,7 +31,7 @@ typedef struct Button
 
     void Draw() const
     {
-        DrawRectangleRoundedLines(rect, .2, 1, 4, color);
+        DrawRectangleRoundedLines(rect, 0.2f, 1, 4, color);
         DrawText(text, (pos.x + (size.x / 2) - (textWidth / 2)), (pos.y + ((size.y / 2) - (fontSize / 2))), fontSize, color);
     }
 } Button;
