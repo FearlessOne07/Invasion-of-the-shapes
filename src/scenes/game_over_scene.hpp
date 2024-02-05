@@ -19,8 +19,10 @@ private:
     unsigned char _opacity;
     unsigned char _opacityPulse;
 
+    Font _font;
+
 public:
-    GameOverScene();
+    GameOverScene(AssetManager& assets);
     void Update(float &dt) override;
     void Render() override;
     void GetInput() override;

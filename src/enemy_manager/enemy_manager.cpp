@@ -6,7 +6,7 @@ EnemyManager::EnemyManager()
 	_spawnInterval = 5;
 
 	// Sounds
-	Wave enemyDieSound = LoadWave("assets/enemy_die.wav");
+	Wave enemyDieSound = LoadWave("assets/audio/enemy_die.wav");
 	_enemyDieSound = LoadSoundFromWave(enemyDieSound);
 	UnloadWave(enemyDieSound);
 }

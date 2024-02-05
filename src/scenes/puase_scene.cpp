@@ -1,7 +1,11 @@
 #include "puase_scene.hpp"
+#include "../asset_manager/asset_manager.h"
 
-PauseScene::PauseScene()
+PauseScene::PauseScene(AssetManager& assets) : Scene(assets)
 {
+    //Assets
+    Font font = _assets.GameFont();
+
 
     // Initialize Buttons
     _clearColor = {0, 0, 0, 10};
@@ -10,6 +14,7 @@ PauseScene::PauseScene()
     _continueButton.pos.y = (GetScreenHeight() / 2 - _continueButton.size.y);
     _continueButton.fontSize = 48;
     _continueButton.color = WHITE;
+    _continueButton.font = font;
 
     _continueButton.rect = {
         _continueButton.pos.x,
@@ -22,6 +27,7 @@ PauseScene::PauseScene()
     _titleButton.pos.y = (GetScreenHeight() / 2 + _titleButton.size.y);
     _titleButton.fontSize = 36;
     _titleButton.color = WHITE;
+    _titleButton.font = font;
 
     _titleButton.rect = {
         _titleButton.pos.x,

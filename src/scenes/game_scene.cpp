@@ -1,12 +1,14 @@
 #include "game_scene.hpp"
+#include "../asset_manager/asset_manager.h"
 
-GameScene::GameScene() : _playerStart({(float)(GetScreenWidth() / 2), (float)(GetScreenHeight() / 2)}), _playerColor(BEIGE), _player(_playerStart, _playerColor)
+GameScene::GameScene(AssetManager& assets) :Scene(assets), _playerStart({(float)(GetScreenWidth() / 2), (float)(GetScreenHeight() / 2)}), _playerColor(BEIGE), _player(_playerStart, _playerColor)
 {
     _clearColor = BLACK;
 }
 
 void GameScene::Update(float &dt)
 {
+
     GetInput();
     UpdateGameClock(dt);
     _player.Update(dt);

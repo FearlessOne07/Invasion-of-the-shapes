@@ -133,6 +133,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\asset_manager\asset_manager.h" />
     <ClInclude Include="dependencies\raylib\include\raylib.h" />
     <ClInclude Include="dependencies\raylib\include\raymath.h" />
     <ClInclude Include="dependencies\raylib\include\rlgl.h" />
@@ -151,11 +152,15 @@
     <ClInclude Include="src\utils\utils.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <Media Include="assets\audio\enemy_die.wav" />
+    <Media Include="assets\audio\game_scene.mp3" />
+    <Media Include="assets\audio\player_shoot.wav" />
     <Media Include="assets\enemy_die.wav" />
     <Media Include="assets\game_scene.mp3" />
     <Media Include="assets\player_shoot.wav" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\asset_manager\asset_manager.cpp" />
     <ClCompile Include="src\bullet_manager\bullet.cpp" />
     <ClCompile Include="src\bullet_manager\bullet_manager.cpp" />
     <ClCompile Include="src\enemy_manager\enemy.cpp" />
@@ -173,6 +178,9 @@
   </ItemGroup>
   <ItemGroup>
     <Library Include="dependencies\raylib\lib\raylib.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="assets\fonts\font1.otf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

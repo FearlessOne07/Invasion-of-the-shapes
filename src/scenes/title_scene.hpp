@@ -14,7 +14,7 @@ private:
     void DrawButtons();
 
 public:
-    TitleScene();
+    TitleScene(AssetManager& assets);
     void Update(float& dt) override;
     void Render() override;
 };

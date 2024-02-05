@@ -20,7 +20,7 @@ private:
     void GetInput() override;
 
 public:
-    PauseScene();
+    PauseScene(AssetManager& assets);
     void Update(float &dt) override;
     void Render() override;
     void SetFillTexture(Texture2D &texture);

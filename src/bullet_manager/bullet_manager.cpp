@@ -6,7 +6,7 @@ BulletManager::BulletManager()
     _cooldownTimer = 0;
     _cooldown = .5;
 
-    Wave bulletShoot = LoadWave("assets/player_shoot.wav");
+    Wave bulletShoot = LoadWave("assets/audio/player_shoot.wav");
     _bulletShoot = LoadSoundFromWave(bulletShoot);
     UnloadWave(bulletShoot);
 }

@@ -8,6 +8,7 @@
 #include "../scenes/game_scene.hpp"
 #include "../scenes/puase_scene.hpp"
 #include "../scenes/game_over_scene.hpp"
+#include "../asset_manager/asset_manager.h"
 
 class Game : public Observer
 {
@@ -21,8 +22,10 @@ private:
     std::shared_ptr<Scene> _currentScene{};
 
     bool _running{};
-
-    Music _gameMusic{};
+    
+    // Assets
+    AssetManager _assets;
+    Music _gameMusic;
 
 private:
     void SetScene(std::shared_ptr<Scene> newScene);

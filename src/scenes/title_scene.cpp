@@ -1,6 +1,7 @@
 #include "title_scene.hpp"
+#include "../asset_manager/asset_manager.h"
 
-TitleScene::TitleScene()
+TitleScene::TitleScene(AssetManager& assets) : Scene(assets)
 {
     _clearColor = BLACK;
     _playButton.size = {300, 100};
@@ -8,6 +9,7 @@ TitleScene::TitleScene()
     _playButton.pos.y = (GetScreenHeight() / 2 - _playButton.size.y / 2);
     _playButton.color = WHITE;
     _playButton.fontSize = 48;
+    _playButton.font = _assets.GameFont();
     _playButton.rect = {
         _playButton.pos.x,
         _playButton.pos.y,

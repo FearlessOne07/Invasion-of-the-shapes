@@ -21,7 +21,7 @@ private:
     void UpdateGameClock(float &dt);
 
 public:
-    GameScene();
+    GameScene(AssetManager& assets);
     void Update(float &dt) override;
     void Render() override;
     void Reset() override;
