@@ -16,7 +16,7 @@ TitleScene::TitleScene(AssetManager& assets) : Scene(assets)
         _playButton.size.x,
         _playButton.size.y //
     };
-    _playButton.SetText("Play");
+    _playButton.SetText("PLAY");
 }
 
 void TitleScene::Update(float &dt)

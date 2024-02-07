@@ -1,17 +1,23 @@
 #include "game.hpp"
+#include <fstream>
 
 void Game::Init()
 {
+
 	// Initialize Window
 	InitWindow(SIZE.x, SIZE.y, "Invasion of the Shapes");
 	InitAudioDevice();
-	SetConfigFlags(FLAG_MSAA_4X_HINT);
+	//SetConfigFlags(FLAG_MSAA_4X_HINT);
 	SetTargetFPS(FPS);
 	SetExitKey(0);
 	_running = true;
 
 	//Assets
 	_assets.Init();
+
+	// Config
+	_config = Config::GetInstance();
+	_config->LoadConfig();
 
 	// Initialize Scenes
 	_titleScene = std::make_shared<TitleScene>(_assets);
@@ -50,8 +56,9 @@ void Game::Run()
 
 void Game::End()
 {
-
+	
 	_assets.CleanUp();
+	delete _config;
 	CloseAudioDevice();
 	CloseWindow();
 

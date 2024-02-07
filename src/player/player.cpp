@@ -1,4 +1,5 @@
 #include "player.hpp"
+#include <iostream>
 
 Player::Player(Vector2 position, Color color) : _position(position), _color(color)
 {
@@ -8,6 +9,16 @@ Player::Player(Vector2 position, Color color) : _position(position), _color(colo
     _speed = 500;
     _rotationSpeed = -200;
     _isDead = false;
+
+    _config = Config::GetInstance();
+
+    if (_config)
+    {
+        _data = _config->GetData("player_data");
+    }
+    
+    _highscore = _data["highscore"].asInt();
+    std::cout << _highscore << "\n";
 }
 
 void Player::GetInput()
@@ -96,6 +107,26 @@ const bool Player::GetDead() const
 void Player::SetDead(const bool &input)
 {
     _isDead = input;
+}
+
+int Player::GetScore() const
+{
+    return _score;
+}
+
+void Player::SetScore(int score)
+{
+    _score = score;
+}
+
+int Player::GetHighScore() const
+{
+    return _highscore;
+}
+
+void Player::SetHighScore(int score)
+{
+    _highscore = score;
 }
 
 void Player::SetPos(const Vector2 &pos)

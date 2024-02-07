@@ -2,6 +2,9 @@
 #include "raylib.h"
 #include "raymath.h"
 #include <iostream>
+#include "../config/config.h"
+#include "json/json.h"
+
 class Player
 {
 private:
@@ -15,6 +18,13 @@ private:
     float _rotationSpeed{};
     float _rotation{};
     bool _isDead;
+
+    Config* _config;
+
+    int _score;
+    int _highscore;
+
+    Json::Value _data;
 
 private:
     void GetInput();
@@ -35,6 +45,10 @@ public:
 
     const bool GetDead() const;
     void SetDead(const bool &input);
+    
+    int GetScore() const;
+    void SetScore(int score);
 
-    void Reset();
+    int GetHighScore() const;
+    void SetHighScore(int score);
 };

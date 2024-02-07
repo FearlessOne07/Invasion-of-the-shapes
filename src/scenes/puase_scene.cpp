@@ -6,29 +6,27 @@ PauseScene::PauseScene(AssetManager& assets) : Scene(assets)
     //Assets
     Font font = _assets.GameFont();
 
-
     // Initialize Buttons
     _clearColor = {0, 0, 0, 10};
     _continueButton.size = {300, 100};
     _continueButton.pos.x = GetScreenWidth() / 2 - _continueButton.size.x / 2;
     _continueButton.pos.y = (GetScreenHeight() / 2 - _continueButton.size.y);
-    _continueButton.fontSize = 48;
+    _continueButton.fontSize = 24;
     _continueButton.color = WHITE;
     _continueButton.font = font;
-
     _continueButton.rect = {
         _continueButton.pos.x,
-        _continueButton.pos.y, _continueButton.size.x,
+        _continueButton.pos.y, 
+        _continueButton.size.x,
         _continueButton.size.y //
     };
 
     _titleButton.size = {300, 100};
     _titleButton.pos.x = GetScreenWidth() / 2 - _titleButton.size.x / 2;
     _titleButton.pos.y = (GetScreenHeight() / 2 + _titleButton.size.y);
-    _titleButton.fontSize = 36;
+    _titleButton.fontSize = 24;
     _titleButton.color = WHITE;
     _titleButton.font = font;
-
     _titleButton.rect = {
         _titleButton.pos.x,
         _titleButton.pos.y,
@@ -36,8 +34,8 @@ PauseScene::PauseScene(AssetManager& assets) : Scene(assets)
         _titleButton.size.y //
     };
 
-    _titleButton.SetText("Title Screen");
-    _continueButton.SetText("Continue");
+    _titleButton.SetText("TITLE SCREEN");
+    _continueButton.SetText("CONTINUE");
 }
 
 void PauseScene::Update(float &dt)

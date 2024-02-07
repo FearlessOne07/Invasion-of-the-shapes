@@ -104,13 +104,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)dependencies/raylib/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)dependencies/raylib/include;$(SolutionDir)dependencies/jsoncpp/include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)dependencies/raylib/lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>raylib.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)dependencies/raylib/lib;$(SolutionDir)dependencies/jsoncpp/lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>raylib-d.lib;winmm.lib;jsoncpp-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -121,18 +123,33 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)dependencies/raylib/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)dependencies/raylib/include;$(SolutionDir)dependencies/jsoncpp/include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)dependencies/raylib/lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>raylib.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)dependencies/raylib/lib;$(SolutionDir)dependencies/jsoncpp/lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>raylib.lib;winmm.lib;jsoncpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="dependencies\jsoncpp\include\json\allocator.h" />
+    <ClInclude Include="dependencies\jsoncpp\include\json\assertions.h" />
+    <ClInclude Include="dependencies\jsoncpp\include\json\config.h" />
+    <ClInclude Include="dependencies\jsoncpp\include\json\forwards.h" />
+    <ClInclude Include="dependencies\jsoncpp\include\json\json.h" />
+    <ClInclude Include="dependencies\jsoncpp\include\json\json_features.h" />
+    <ClInclude Include="dependencies\jsoncpp\include\json\reader.h" />
+    <ClInclude Include="dependencies\jsoncpp\include\json\value.h" />
+    <ClInclude Include="dependencies\jsoncpp\include\json\version.h" />
+    <ClInclude Include="dependencies\jsoncpp\include\json\writer.h" />
+    <ClInclude Include="src\config\config.h" />
+    <ClInclude Include="dependencies\nlohmann\json.hpp" />
+    <ClInclude Include="dependencies\nlohmann\json_fwd.hpp" />
     <ClInclude Include="src\asset_manager\asset_manager.h" />
     <ClInclude Include="dependencies\raylib\include\raylib.h" />
     <ClInclude Include="dependencies\raylib\include\raymath.h" />
@@ -160,6 +177,7 @@
     <Media Include="assets\player_shoot.wav" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\config\config.cpp" />
     <ClCompile Include="src\asset_manager\asset_manager.cpp" />
     <ClCompile Include="src\bullet_manager\bullet.cpp" />
     <ClCompile Include="src\bullet_manager\bullet_manager.cpp" />
@@ -175,8 +193,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
+    <None Include="src\game_files\config.json" />
   </ItemGroup>
   <ItemGroup>
+    <Library Include="dependencies\jsoncpp\lib\jsoncpp-d.lib" />
+    <Library Include="dependencies\jsoncpp\lib\jsoncpp.lib" />
     <Library Include="dependencies\raylib\lib\raylib.lib" />
   </ItemGroup>
   <ItemGroup>

@@ -14,12 +14,12 @@ void AssetManager::Init()
 	_gameMusic = LoadMusicStream("assets/audio/game_scene.mp3");
 
 	// Load Fonts
-	_gameFont = LoadFont("assets/fonts/font1.otf");
+	_gameFont = LoadFont("assets/fonts/font1.ttf");
 }
 
 void AssetManager::Update()
 {
-	UpdateMusicStream(_gameMusic);
+	//UpdateMusicStream(_gameMusic);
 }
 
 void AssetManager::CleanUp()

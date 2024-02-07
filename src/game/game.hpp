@@ -9,6 +9,7 @@
 #include "../scenes/puase_scene.hpp"
 #include "../scenes/game_over_scene.hpp"
 #include "../asset_manager/asset_manager.h"
+#include "../config/config.h"
 
 class Game : public Observer
 {
@@ -26,6 +27,10 @@ private:
     // Assets
     AssetManager _assets;
     Music _gameMusic;
+
+    // Config
+    Config* _config;
+
 
 private:
     void SetScene(std::shared_ptr<Scene> newScene);
