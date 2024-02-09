@@ -40,5 +40,11 @@ Config::~Config()
 	file.open("src/game_files/config.json", std::ios::out);
 	file << _config;
 	file.close();
+
+}
+
+void Config::SetData(Json::Value value, const char* key)
+{
+	_config[key] = value;
 }
 

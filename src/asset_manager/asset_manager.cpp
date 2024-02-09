@@ -4,48 +4,65 @@ void AssetManager::Init()
 {
 	// Load Sounds
 	Wave shoot = LoadWave("assets/audio/player_shoot.wav");
-	_playerShoot = LoadSoundFromWave(shoot);
+	Sound* playershoot = new Sound;
+
+	*playershoot = LoadSoundFromWave(shoot);
+	_sounds["player_shoot"] = playershoot;
 	UnloadWave(shoot);
 
 	Wave die = LoadWave("assets/audio/enemy_die.wav");
-	_enemyDeath = LoadSoundFromWave(die);
+	Sound* enemyDie = new Sound;
+	*enemyDie = LoadSoundFromWave(die);
+	_sounds["enemy_die"] = enemyDie;
 	UnloadWave(die);
 
-	_gameMusic = LoadMusicStream("assets/audio/game_scene.mp3");
+	// Load Music
+	Music* gameMusic = new Music;
+	*gameMusic = LoadMusicStream("assets/audio/game_scene.mp3");
+	_music["game_music"] = gameMusic;
 
 	// Load Fonts
-	_gameFont = LoadFont("assets/fonts/font1.ttf");
+	_gameFont = new Font;
+	*_gameFont = LoadFont("assets/fonts/font1.ttf");
 }
 
 void AssetManager::Update()
 {
-	//UpdateMusicStream(_gameMusic);
+	for (auto& p : _music)
+	{
+		UpdateMusicStream(*(p.second));
+	}
 }
 
 void AssetManager::CleanUp()
 {
-	UnloadSound(_playerShoot);
-	UnloadSound(_enemyDeath);
-	UnloadMusicStream(_gameMusic);
-	UnloadFont(_gameFont);
+	for (const std::pair<const char*, Sound*>& p : _sounds)
+	{
+		UnloadSound(*(p.second));
+		delete p.second;
+	}
+
+	for (const std::pair<const char*, Music*>& p : _music)
+	{
+		UnloadMusicStream(*(p.second));
+		delete p.second;
+	}
+	UnloadFont(*_gameFont);
+	delete _gameFont;
 }
 
-const Font& AssetManager::GameFont() const
+Font* AssetManager::GameFont() const
 {
 	return _gameFont;
 }
 
-const Music& AssetManager::GameMusic() const
+Sound* AssetManager::GetSound(const char* key)
 {
-	return _gameMusic;
+	return _sounds[key];
 }
 
-const Sound& AssetManager::Shoot() const
+Music* AssetManager::GetMusic(const char* key)
 {
-	return _playerShoot;
+	return _music[key];
 }
 
-const Sound& AssetManager::Death() const
-{
-	return _enemyDeath;
-}

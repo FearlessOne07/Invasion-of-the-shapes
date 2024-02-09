@@ -11,14 +11,14 @@ Player::Player(Vector2 position, Color color) : _position(position), _color(colo
     _isDead = false;
 
     _config = Config::GetInstance();
-
     if (_config)
     {
         _data = _config->GetData("player_data");
     }
-    
+
+    _score = 0;
     _highscore = _data["highscore"].asInt();
-    std::cout << _highscore << "\n";
+    
 }
 
 void Player::GetInput()
@@ -92,6 +92,19 @@ void Player::Update(float &dt)
 void Player::Render()
 {
     DrawPolyLinesEx(_position, _sides, radius, _rotation, 7, _color);
+}
+
+void Player::Reset()
+{
+    SetPos({ (float)(GetScreenWidth() / 2), (float)(GetScreenHeight() / 2) });
+    SetDead(false);
+    if (_score > _highscore)
+    {
+        _highscore = _score;
+    }
+    _data["highscore"] = _highscore;
+    _config->SetData(_data, "player_data");
+    _score = 0;
 }
 
 Vector2 const Player::GetPos() const

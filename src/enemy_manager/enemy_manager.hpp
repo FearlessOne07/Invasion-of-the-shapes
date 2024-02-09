@@ -17,19 +17,19 @@ private:
     float _spawnTimer{};
     float _spawnInterval{};
 
-    // Sounds
-    Sound _enemyDieSound;
+    // Assets
+    AssetManager& _assets;
+    Sound* _enemyDieSound;
 
 private:
     void SpawnEnemy();
     void SpawnEnemies(float &dt);
     void RemoveDeadEnemies();
     void CheckPlayerCols(Player &player, Enemy &enemy);
-    void CheckBulletCol(std::vector<Bullet> &bullets);
+    void CheckBulletCol(std::vector<Bullet> &bullets, Player& player);
 
 public:
-    EnemyManager();
-    ~EnemyManager();
+    EnemyManager(AssetManager& assets);
     void Update(float &dt, Player &player, std::vector<Bullet>& bullets);
     void Reset();
     void SetInterval(float interval);

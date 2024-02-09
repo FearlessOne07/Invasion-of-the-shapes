@@ -13,6 +13,7 @@ public:
 	static Config* GetInstance();
 	void LoadConfig();
 	Json::Value GetData(const char* name);
+	void SetData(Json::Value value, const char* key);
 	~Config();
 };
 

@@ -39,6 +39,7 @@ public:
     Player(Vector2 position, Color color);
     void Update(float &dt);
     void Render();
+    void Reset();
 
     Vector2 const GetPos() const;
     void SetPos(const Vector2 &pos);

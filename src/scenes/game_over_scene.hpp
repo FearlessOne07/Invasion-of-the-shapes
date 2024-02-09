@@ -19,7 +19,7 @@ private:
     unsigned char _opacity;
     unsigned char _opacityPulse;
 
-    Font _font;
+    Font* _font;
 
 public:
     GameOverScene(AssetManager& assets);

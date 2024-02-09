@@ -24,12 +24,13 @@ private:
 
     bool _running{};
     
-    // Assets
-    AssetManager _assets;
-    Music _gameMusic;
-
     // Config
     Config* _config;
+
+    // Assets
+    AssetManager _assets;
+    Music* _gameMusic;
+
 
 
 private:

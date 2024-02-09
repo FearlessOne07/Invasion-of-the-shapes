@@ -28,7 +28,6 @@ public:
     Scene(AssetManager& assets)  :
         _assets(assets)
     {
-        
     }
     virtual ~Scene(){};
     virtual void Update(float &dt) = 0;

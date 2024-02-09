@@ -16,8 +16,8 @@ GameOverScene::GameOverScene(AssetManager& assets) : Scene(assets)
 	_inputTimer = 0;
 
 
-	_deathTextX = (float)GetScreenWidth() / 2 - MeasureTextEx(_font, _deathText, _textSize, 1).x / 2;
-	_playTextX = (float)GetScreenWidth() / 2 - MeasureTextEx(_font, _playText, 24, 1).x / 2;
+	_deathTextX = (float)GetScreenWidth() / 2 - MeasureTextEx(*_font, _deathText, _textSize, 1).x / 2;
+	_playTextX = (float)GetScreenWidth() / 2 - MeasureTextEx(*_font, _playText, 24, 1).x / 2;
 }
 void GameOverScene::Reset()
 {
@@ -63,9 +63,9 @@ void GameOverScene::Render()
 {
 	
 	ClearBackground(_clearColor);
-	DrawTextEx(_font, _deathText, { _deathTextX, 400 }, _textSize, 1, RED);
+	DrawTextEx(*_font, _deathText, { _deathTextX, 400 }, _textSize, 1, RED);
 	if (_inputTimer >= _inputLimit)
 	{
-		DrawTextEx(_font, _playText, { _playTextX, 600 }, 24, 1, { 255, 0, 0, _opacity });
+		DrawTextEx(*_font, _playText, { _playTextX, 600 }, 24, 1, { 255, 0, 0, _opacity });
 	}
 }

@@ -31,7 +31,7 @@ void Game::Init()
 	SetScene(_titleScene);
 
 	// Game Music
-	_gameMusic = _assets.GameMusic();
+	_gameMusic = _assets.GetMusic("game_music");
 
 }
 
@@ -45,18 +45,16 @@ void Game::Run()
 		float dt = GetFrameTime();
 		BeginDrawing();
 		_assets.Update();
-		PlayMusicStream(_gameMusic);
+		PlayMusicStream(*_gameMusic);
 		_currentScene->Update(dt);
 		_currentScene->Render();
 		EndDrawing();
 	}
-
 	End();
 }
 
 void Game::End()
 {
-	
 	_assets.CleanUp();
 	delete _config;
 	CloseAudioDevice();

@@ -1,19 +1,10 @@
 #include "enemy_manager.hpp"
 
-EnemyManager::EnemyManager()
+EnemyManager::EnemyManager(AssetManager& assets): _assets(assets)
 {
 	_enemyRadius = 50;
 	_spawnInterval = 5;
-
-	// Sounds
-	Wave enemyDieSound = LoadWave("assets/audio/enemy_die.wav");
-	_enemyDieSound = LoadSoundFromWave(enemyDieSound);
-	UnloadWave(enemyDieSound);
-}
-
-EnemyManager::~EnemyManager()
-{
-	UnloadSound(_enemyDieSound);
+	_enemyDieSound = _assets.GetSound("enemy_die");
 }
 
 void EnemyManager::SpawnEnemy()
@@ -78,7 +69,8 @@ void EnemyManager::RemoveDeadEnemies()
 		_enemies.begin(),
 		_enemies.end(),
 		[](Enemy& e) -> bool
-		{ return e.GetDead(); });
+		{ return e.GetDead(); }
+	);
 	_enemies.erase(it, _enemies.end());
 }
 
@@ -95,7 +87,7 @@ void EnemyManager::Update(float& dt, Player& player, std::vector<Bullet>& bullet
 {
 
 	SpawnEnemies(dt);
-	CheckBulletCol(bullets);
+	CheckBulletCol(bullets, player);
 	for (Enemy& enemy : _enemies)
 	{
 		enemy.Update(player.GetPos(), dt);
@@ -116,7 +108,8 @@ void EnemyManager::SetInterval(float interval)
 	_spawnInterval = interval;
 }
 
-void EnemyManager::CheckBulletCol(std::vector<Bullet>& bullets)
+
+void EnemyManager::CheckBulletCol(std::vector<Bullet>& bullets, Player& player)
 {
 	// Check if a bullet has collided with an enemy
 	for (Bullet& b : bullets)
@@ -125,9 +118,10 @@ void EnemyManager::CheckBulletCol(std::vector<Bullet>& bullets)
 		{
 			if (CheckCollisionCircles(e.GetPos(), (float)_enemyRadius, b.GetPos(), (float)b.GetRad()))
 			{
-				PlaySound(_enemyDieSound);
+				PlaySound(*_enemyDieSound);
 				b.SetIsActive(false);
 				e.SetDead(false);
+				player.SetScore(player.GetScore() + 100);
 			}
 		}
 	}

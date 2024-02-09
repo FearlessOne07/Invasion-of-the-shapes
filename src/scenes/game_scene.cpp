@@ -1,9 +1,16 @@
 #include "game_scene.hpp"
 #include "../asset_manager/asset_manager.h"
 
-GameScene::GameScene(AssetManager& assets) :Scene(assets), _playerStart({(float)(GetScreenWidth() / 2), (float)(GetScreenHeight() / 2)}), _playerColor(BEIGE), _player(_playerStart, _playerColor)
+GameScene::GameScene(AssetManager& assets) 
+    : Scene(assets), 
+    _playerStart({(float)(GetScreenWidth() / 2), (float)(GetScreenHeight() / 2)}), 
+    _playerColor(BEIGE), 
+    _player(_playerStart, _playerColor), 
+    _enemMan(_assets), 
+    _bulMan(_assets)
 {
     _clearColor = BLACK;
+    _config = Config::GetInstance();
 }
 
 void GameScene::Update(float &dt)
@@ -33,7 +40,10 @@ void GameScene::GetInput()
 void GameScene::Render()
 {
     ClearBackground(_clearColor);
+    DrawTextEx(*(_assets.GameFont()), TextFormat("Score:%i", _player.GetScore()), { 10,10 }, 24, 1, WHITE);
     _player.Render();
+
+
 }
 
 void GameScene::UpdateGameClock(float &dt)
@@ -58,8 +68,7 @@ void GameScene::Reset()
     _gameClock = 0;
     _enemMan.Reset();
     _bulMan.Reset();
-    _player.SetPos({(float)(GetScreenWidth() / 2), (float)(GetScreenHeight() / 2)});
-    _player.SetDead(false);
+    _player.Reset();
 }
 
 void GameScene::CheckPlayer()

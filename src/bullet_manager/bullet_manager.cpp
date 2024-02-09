@@ -1,14 +1,13 @@
 #include "bullet_manager.hpp"
 
-BulletManager::BulletManager()
+BulletManager::BulletManager(AssetManager& assets): _assets(assets)
 {
+    
     // Initialize Bullet cooldown
     _cooldownTimer = 0;
     _cooldown = .5;
+    _bulletShoot = _assets.GetSound("player_shoot");
 
-    Wave bulletShoot = LoadWave("assets/audio/player_shoot.wav");
-    _bulletShoot = LoadSoundFromWave(bulletShoot);
-    UnloadWave(bulletShoot);
 }
 void BulletManager::CheckBullets()
 {
@@ -32,7 +31,7 @@ void BulletManager::SpawnBullet(const Vector2 &playerPos, const Vector2 &mousePo
         Vector2 direction = Vector2Subtract(mousePos, playerPos);
         direction = Vector2Normalize(direction);
         _bullets.emplace_back(Bullet(playerPos, direction));
-        PlaySound(_bulletShoot);
+        PlaySound(*_bulletShoot);
     }
 }
 
@@ -63,9 +62,4 @@ std::vector<Bullet> &BulletManager::GetBullets()
 {
     // Return a reference to the bullet vector
     return _bullets;
-}
-
-BulletManager::~BulletManager()
-{
-    UnloadSound(_bulletShoot);
 }
