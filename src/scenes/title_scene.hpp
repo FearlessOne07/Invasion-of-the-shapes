@@ -1,5 +1,6 @@
 #pragma once
 #include "scene.hpp"
+#include "../config/config.h"
 
 class TitleScene : public Scene
 {
@@ -8,6 +9,9 @@ private:
     Color _hoverColor{};
     Color _offColor{};
     Button _playButton{};
+
+    Config* _config;
+    int _highscore;
 
 private:
     void GetInput() override;

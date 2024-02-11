@@ -6,8 +6,8 @@ class Bullet
 {
 private:
     int _radius;
-    unsigned char _opacityChange;
-    unsigned char _opacity;
+    float _opacityChange;
+    float _opacity;
     bool _isActive;
 
     Vector2 _position;

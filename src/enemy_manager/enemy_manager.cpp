@@ -1,10 +1,13 @@
 #include "enemy_manager.hpp"
+#include "../particles/particle_spawners.h"
 
 EnemyManager::EnemyManager(AssetManager& assets): _assets(assets)
 {
 	_enemyRadius = 50;
 	_spawnInterval = 5;
 	_enemyDieSound = _assets.GetSound("enemy_die");
+
+	_particleSpawner = std::make_shared<EnemyChildSpawner>();
 }
 
 void EnemyManager::SpawnEnemy()
@@ -48,7 +51,7 @@ void EnemyManager::SpawnEnemy()
 		position = { 0, 0 };
 		break;
 	}
-	_enemies.emplace_back(Enemy(color, sides, position, _enemyRadius, speed));
+	_enemies.emplace_back(Enemy(color, sides, position, _enemyRadius, speed, _particleSpawner));
 }
 
 void EnemyManager::SpawnEnemies(float& dt)
@@ -71,6 +74,11 @@ void EnemyManager::RemoveDeadEnemies()
 		[](Enemy& e) -> bool
 		{ return e.GetDead(); }
 	);
+
+	for (std::vector<Enemy>::iterator iter = it; iter != _enemies.end(); iter++)
+	{
+		iter->Die();
+	}
 	_enemies.erase(it, _enemies.end());
 }
 
@@ -88,13 +96,21 @@ void EnemyManager::Update(float& dt, Player& player, std::vector<Bullet>& bullet
 
 	SpawnEnemies(dt);
 	CheckBulletCol(bullets, player);
+
 	for (Enemy& enemy : _enemies)
 	{
 		enemy.Update(player.GetPos(), dt);
 		CheckPlayerCols(player, enemy);
-		enemy.Render();
 	}
 	RemoveDeadEnemies();
+
+	_particleSpawner->Update();
+
+	_particleSpawner->Render();
+	for (Enemy& enemy : _enemies)
+	{
+		enemy.Render();
+	}
 }
 
 void EnemyManager::Reset()

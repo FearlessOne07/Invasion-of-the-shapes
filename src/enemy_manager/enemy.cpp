@@ -1,5 +1,7 @@
 #include "enemy.hpp"
-Enemy::Enemy(Color &color, int &sides, Vector2 &position, int &radius, int &speed) : _color(color), _sides(sides), _position(position), _radius(radius), _speed(speed)
+
+Enemy::Enemy(Color &color, int &sides, Vector2 &position, int &radius, int &speed, std::shared_ptr<EnemyChildSpawner> spawner) 
+    : _color(color), _sides(sides), _position(position), _radius(radius), _speed(speed), _particleSpawner(spawner)
 {
     _roationSpeed = -100;
 }
@@ -27,6 +29,11 @@ void Enemy::Render()
 {
     DrawPoly(_position, _sides, _radius, _rotaion, _color);
     DrawPolyLinesEx(_position, _sides, _radius, _rotaion, 4, WHITE);
+}
+
+void Enemy::Die()
+{
+    _particleSpawner->Spawn(_position, _color, _sides);
 }
 
 void Enemy::SetDead(bool input)

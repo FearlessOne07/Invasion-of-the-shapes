@@ -159,6 +159,8 @@
     <ClInclude Include="src\enemy_manager\enemy.hpp" />
     <ClInclude Include="src\enemy_manager\enemy_manager.hpp" />
     <ClInclude Include="src\game\game.hpp" />
+    <ClInclude Include="src\particles\particles.h" />
+    <ClInclude Include="src\particles\particle_spawners.h" />
     <ClInclude Include="src\scenes\game_over_scene.hpp" />
     <ClInclude Include="src\scenes\game_scene.hpp" />
     <ClInclude Include="src\utils\obsever.hpp" />

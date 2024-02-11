@@ -4,27 +4,27 @@
 class GameOverScene : public Scene
 {
 private:
-    int _textSize;
+	int _textSize;
 
-    float _deathTextX;
-    const char *_deathText;
+	float _deathTextX;
+	const char* _deathText;
 
 
-    float _playTextX;
-    const char *_playText;
+	float _playTextX;
+	const char* _playText;
 
-    float _inputTimer;
-    int _inputLimit;
+	float _inputTimer;
+	int _inputLimit;
 
-    unsigned char _opacity;
-    unsigned char _opacityPulse;
+	int _opacity;
+	int _opacityPulse;
 
-    Font* _font;
+	Font* _font;
 
 public:
-    GameOverScene(AssetManager& assets);
-    void Update(float &dt) override;
-    void Render() override;
-    void GetInput() override;
-    void Reset() override;
+	GameOverScene(AssetManager& assets);
+	void Update(float& dt) override;
+	void Render() override;
+	void GetInput() override;
+	void Reset() override;
 };

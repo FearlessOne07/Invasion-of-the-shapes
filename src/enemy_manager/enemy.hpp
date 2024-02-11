@@ -1,6 +1,9 @@
 #pragma once
+#include <memory>
 #include "raylib.h"
 #include "raymath.h"
+#include "../particles/particle_spawners.h"
+
 class EnemyManager;
 class Enemy
 {
@@ -17,8 +20,11 @@ private:
 
     bool _isDead{};
 
+    // Particles
+    std::shared_ptr<EnemyChildSpawner> _particleSpawner;
+
 private:
-    Enemy(Color &color, int &sides, Vector2 &position, int &radius, int &speed);
+    Enemy(Color &color, int &sides, Vector2 &position, int &radius, int &speed, std::shared_ptr<EnemyChildSpawner> spawner);
     void FollowPlayer(float &dt, const Vector2 &playePos);
     void UpdateRotation(float &dt);
 
@@ -26,6 +32,7 @@ public:
     friend class EnemyManager;
     void Update(const Vector2 &playerPos, float &dt);
     void Render();
+    void Die();
     bool GetDead() const;
     void SetDead(bool input);
     Vector2 GetPos() const;

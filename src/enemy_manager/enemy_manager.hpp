@@ -5,6 +5,8 @@
 #include <random>
 #include <algorithm>
 #include "../bullet_manager/bullet_manager.hpp"
+#include "../particles/particle_spawners.h"
+
 class EnemyManager
 {
 private:
@@ -20,6 +22,9 @@ private:
     // Assets
     AssetManager& _assets;
     Sound* _enemyDieSound;
+
+    // Particle Spawner
+    std::shared_ptr<EnemyChildSpawner> _particleSpawner;
 
 private:
     void SpawnEnemy();
