@@ -7,9 +7,11 @@ void Game::Init()
 	// Initialize Window
 	InitWindow(SIZE.x, SIZE.y, "Invasion of the Shapes");
 	InitAudioDevice();
-	//SetConfigFlags(FLAG_MSAA_4X_HINT);
+	SetConfigFlags(FLAG_MSAA_4X_HINT);
+	SetConfigFlags(FLAG_VSYNC_HINT);
 	SetTargetFPS(FPS);
 	SetExitKey(0);
+	ToggleFullscreen();
 	_running = true;
 
 	//Assets
@@ -45,7 +47,7 @@ void Game::Run()
 		float dt = GetFrameTime();
 		BeginDrawing();
 		_assets.Update();
-		//PlayMusicStream(*_gameMusic);
+		PlayMusicStream(*_gameMusic);
 		_currentScene->Update(dt);
 		_currentScene->Render();
 		EndDrawing();

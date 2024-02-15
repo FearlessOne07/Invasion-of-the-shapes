@@ -24,7 +24,7 @@ void Bullet::Render()
     DrawCircle(_position.x, _position.y, _radius, {255, 255, 255, static_cast<unsigned char>(_opacity)});
 }
 
-void Bullet::Update(float &dt)
+void Bullet::Update(float &dt) 
 {
     _opacity -= _opacityChange * dt;
     _opacity = std::max(_opacity, 0.f);

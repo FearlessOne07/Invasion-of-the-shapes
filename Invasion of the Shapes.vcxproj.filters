@@ -105,10 +105,10 @@
     <ClInclude Include="dependencies\jsoncpp\include\json\allocator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\particles\particles.h">
+    <ClInclude Include="src\particles\enemy_child.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\particles\particle_spawners.h">
+    <ClInclude Include="src\particles\enemy_child_spawner.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

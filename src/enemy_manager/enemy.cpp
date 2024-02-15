@@ -1,6 +1,6 @@
 #include "enemy.hpp"
 
-Enemy::Enemy(Color &color, int &sides, Vector2 &position, int &radius, int &speed, std::shared_ptr<EnemyChildSpawner> spawner) 
+Enemy::Enemy(Color &color, int &sides, Vector2 &position, int &radius, float &speed, std::shared_ptr<EnemyChildSpawner> spawner) noexcept
     : _color(color), _sides(sides), _position(position), _radius(radius), _speed(speed), _particleSpawner(spawner)
 {
     _roationSpeed = -100;
@@ -15,7 +15,7 @@ void Enemy::FollowPlayer(float &dt, const Vector2 &playePos)
     _position = Vector2Add(_position, _velocity);
 }
 
-void Enemy::UpdateRotation(float &dt)
+void Enemy::UpdateRotation(float &dt) noexcept
 {
     _rotaion += _roationSpeed * dt;
 }

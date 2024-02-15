@@ -5,7 +5,7 @@
 #include <random>
 #include <algorithm>
 #include "../bullet_manager/bullet_manager.hpp"
-#include "../particles/particle_spawners.h"
+#include "../particles/enemy_child_spawner.h"
 
 class EnemyManager
 {
@@ -30,7 +30,7 @@ private:
     void SpawnEnemy();
     void SpawnEnemies(float &dt);
     void RemoveDeadEnemies();
-    void CheckPlayerCols(Player &player, Enemy &enemy);
+    void CheckPlayerCols(Player &player, const Enemy &enemy);
     void CheckBulletCol(std::vector<Bullet> &bullets, Player& player);
 
 public:

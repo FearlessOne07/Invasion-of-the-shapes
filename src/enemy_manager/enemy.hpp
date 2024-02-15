@@ -2,7 +2,7 @@
 #include <memory>
 #include "raylib.h"
 #include "raymath.h"
-#include "../particles/particle_spawners.h"
+#include "../particles/enemy_child_spawner.h"
 
 class EnemyManager;
 class Enemy
@@ -24,9 +24,9 @@ private:
     std::shared_ptr<EnemyChildSpawner> _particleSpawner;
 
 private:
-    Enemy(Color &color, int &sides, Vector2 &position, int &radius, int &speed, std::shared_ptr<EnemyChildSpawner> spawner);
+    Enemy(Color &color, int &sides, Vector2 &position, int &radius, float &speed, std::shared_ptr<EnemyChildSpawner> spawner) noexcept;
     void FollowPlayer(float &dt, const Vector2 &playePos);
-    void UpdateRotation(float &dt);
+    void UpdateRotation(float &dt) noexcept;
 
 public:
     friend class EnemyManager;

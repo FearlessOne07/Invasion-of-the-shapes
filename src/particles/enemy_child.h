@@ -40,7 +40,7 @@ public:
 
 	void Update()
 	{
-		float dt = GetFrameTime();
+		const float dt = GetFrameTime();
 
 		// Opacity
 		_opacity -= _opacityChange * dt;
@@ -59,8 +59,8 @@ public:
 
 	void Render()
 	{
-		DrawPoly(_position, _sides, _radius, _rotation, {_color.r, _color.g, _color.b, (unsigned char)_opacity});
-		DrawPolyLines(_position, _sides, _radius, _rotation, {255,255,255,(unsigned char)_opacity});
+		DrawPoly(_position, _sides, _radius, _rotation, {_color.r, _color.g, _color.b, static_cast<unsigned char>(_opacity)});
+		DrawPolyLines(_position, _sides, _radius, _rotation, {255,255,255,static_cast<unsigned char>(_opacity)});
 	}
 
 	bool isAlive() const

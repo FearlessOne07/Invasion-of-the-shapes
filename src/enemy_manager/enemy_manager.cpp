@@ -1,7 +1,7 @@
 #include "enemy_manager.hpp"
-#include "../particles/particle_spawners.h"
+#include "../particles/enemy_child_spawner.h"
 
-EnemyManager::EnemyManager(AssetManager& assets): _assets(assets)
+EnemyManager::EnemyManager(AssetManager& assets) : _assets(assets)
 {
 	_enemyRadius = 50;
 	_spawnInterval = 5;
@@ -22,8 +22,8 @@ void EnemyManager::SpawnEnemy()
 	int sides = sidesDist(gen);
 
 	// Speed
-	std::uniform_int_distribution<int> speedDist(200, 300);
-	int speed = speedDist(gen);
+	std::uniform_real_distribution<float> speedDist(200, 300);
+	float speed = speedDist(gen);
 
 	// Position
 	std::uniform_int_distribution<int> sideDist(0, 3);
@@ -39,13 +39,13 @@ void EnemyManager::SpawnEnemy()
 		position = { distX(gen), _enemyRadius * -1.f };
 		break;
 	case 1: // DOWN
-		position = { distX(gen), (float)(GetScreenHeight()) + (float)_enemyRadius };
+		position = { distX(gen), static_cast<float>(GetScreenHeight()) + static_cast<float>(_enemyRadius) };
 		break;
 	case 2: // LEFT
 		position = { -1.f * _enemyRadius, distY(gen) };
 		break;
 	case 3: // RIGHT
-		position = { (float)(GetScreenWidth()) + _enemyRadius, distY(gen) };
+		position = { static_cast<float>(GetScreenWidth()) + _enemyRadius, distY(gen) };
 		break;
 	default:
 		position = { 0, 0 };
@@ -67,7 +67,17 @@ void EnemyManager::SpawnEnemies(float& dt)
 
 void EnemyManager::RemoveDeadEnemies()
 {
+
 	// Check for and remove Dead enemies
+
+	for (Enemy& e : _enemies)
+	{
+		if (e.GetDead())
+		{
+			e.Die();
+		}
+	}
+
 	auto it = std::remove_if(
 		_enemies.begin(),
 		_enemies.end(),
@@ -75,17 +85,14 @@ void EnemyManager::RemoveDeadEnemies()
 		{ return e.GetDead(); }
 	);
 
-	for (std::vector<Enemy>::iterator iter = it; iter != _enemies.end(); iter++)
-	{
-		iter->Die();
-	}
 	_enemies.erase(it, _enemies.end());
+
 }
 
-void EnemyManager::CheckPlayerCols(Player& player, Enemy& enemy)
+void EnemyManager::CheckPlayerCols(Player& player, const Enemy& enemy)
 {
 	// Check if an enemy has collided with the player
-	if (CheckCollisionCircles(player.GetPos(), (float)player.radius,enemy._position, (float)enemy._radius))
+	if (CheckCollisionCircles(player.GetPos(), static_cast<float>(player.radius), enemy._position, static_cast<float>(enemy._radius)))
 	{
 		player.SetDead(true);
 	}
@@ -95,16 +102,16 @@ void EnemyManager::Update(float& dt, Player& player, std::vector<Bullet>& bullet
 {
 
 	SpawnEnemies(dt);
-	CheckBulletCol(bullets, player);
 
 	for (Enemy& enemy : _enemies)
 	{
 		enemy.Update(player.GetPos(), dt);
 		CheckPlayerCols(player, enemy);
 	}
+	CheckBulletCol(bullets, player);
+	_particleSpawner->Update();
 	RemoveDeadEnemies();
 
-	_particleSpawner->Update();
 
 	_particleSpawner->Render();
 	for (Enemy& enemy : _enemies)
@@ -115,7 +122,9 @@ void EnemyManager::Update(float& dt, Player& player, std::vector<Bullet>& bullet
 
 void EnemyManager::Reset()
 {
+	_particleSpawner->Reset();
 	_enemies.clear();
+	_enemies.shrink_to_fit();
 	SetInterval(5);
 }
 
@@ -132,7 +141,7 @@ void EnemyManager::CheckBulletCol(std::vector<Bullet>& bullets, Player& player)
 	{
 		for (Enemy& e : _enemies)
 		{
-			if (CheckCollisionCircles(e.GetPos(), (float)_enemyRadius, b.GetPos(), (float)b.GetRad()))
+			if (CheckCollisionCircles(e.GetPos(), static_cast<float>(_enemyRadius), b.GetPos(), static_cast<float>(b.GetRad())))
 			{
 				PlaySound(*_enemyDieSound);
 				b.SetIsActive(false);
