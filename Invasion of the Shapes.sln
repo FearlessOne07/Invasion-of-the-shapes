@@ -7,16 +7,28 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Invasion of the Shapes", "I
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug.DLL|x64 = Debug.DLL|x64
+		Debug.DLL|x86 = Debug.DLL|x86
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
+		Release.DLL|x64 = Release.DLL|x64
+		Release.DLL|x86 = Release.DLL|x86
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04996FC0-3B2B-41AE-804E-F883413A2FCE}.Debug.DLL|x64.ActiveCfg = Debug|x64
+		{04996FC0-3B2B-41AE-804E-F883413A2FCE}.Debug.DLL|x64.Build.0 = Debug|x64
+		{04996FC0-3B2B-41AE-804E-F883413A2FCE}.Debug.DLL|x86.ActiveCfg = Debug|Win32
+		{04996FC0-3B2B-41AE-804E-F883413A2FCE}.Debug.DLL|x86.Build.0 = Debug|Win32
 		{04996FC0-3B2B-41AE-804E-F883413A2FCE}.Debug|x64.ActiveCfg = Debug|x64
 		{04996FC0-3B2B-41AE-804E-F883413A2FCE}.Debug|x64.Build.0 = Debug|x64
 		{04996FC0-3B2B-41AE-804E-F883413A2FCE}.Debug|x86.ActiveCfg = Debug|Win32
 		{04996FC0-3B2B-41AE-804E-F883413A2FCE}.Debug|x86.Build.0 = Debug|Win32
+		{04996FC0-3B2B-41AE-804E-F883413A2FCE}.Release.DLL|x64.ActiveCfg = Release|x64
+		{04996FC0-3B2B-41AE-804E-F883413A2FCE}.Release.DLL|x64.Build.0 = Release|x64
+		{04996FC0-3B2B-41AE-804E-F883413A2FCE}.Release.DLL|x86.ActiveCfg = Release|Win32
+		{04996FC0-3B2B-41AE-804E-F883413A2FCE}.Release.DLL|x86.Build.0 = Release|Win32
 		{04996FC0-3B2B-41AE-804E-F883413A2FCE}.Release|x64.ActiveCfg = Release|x64
 		{04996FC0-3B2B-41AE-804E-F883413A2FCE}.Release|x64.Build.0 = Release|x64
 		{04996FC0-3B2B-41AE-804E-F883413A2FCE}.Release|x86.ActiveCfg = Release|Win32

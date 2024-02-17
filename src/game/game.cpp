@@ -9,6 +9,7 @@ void Game::Init()
 	InitAudioDevice();
 	SetConfigFlags(FLAG_MSAA_4X_HINT);
 	SetConfigFlags(FLAG_VSYNC_HINT);
+	SetTraceLogLevel(LOG_NONE);
 	SetTargetFPS(FPS);
 	SetExitKey(0);
 	ToggleFullscreen();

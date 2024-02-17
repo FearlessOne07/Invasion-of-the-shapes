@@ -171,7 +171,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
-    <None Include="src\game_files\config.json" />
+    <None Include="config.json" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="dependencies\raylib\lib\raylib.lib" />

@@ -5,7 +5,6 @@ TitleScene::TitleScene(AssetManager& assets) : Scene(assets)
 {
 
     _config = Config::GetInstance();
-    _highscore = _config->GetData("player_data")["highscore"].asInt();
     _clearColor = BLACK;
     _playButton.size = {300, 100};
     _playButton.pos.x = GetScreenWidth() / 2 - _playButton.size.x / 2;
@@ -54,7 +53,7 @@ void TitleScene::Render()
 {
     ClearBackground(_clearColor);
     DrawButtons();
-    DrawText(TextFormat("HIGHSCORE:%i", _highscore), 10, 10, 30, WHITE);
+    DrawText(TextFormat("HIGHSCORE:%i", _config->GetData("player_data")["highscore"].asInt()), 10, 10, 30, WHITE);
 }
 
 void TitleScene::DrawButtons()

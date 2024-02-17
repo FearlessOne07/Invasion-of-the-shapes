@@ -11,8 +11,6 @@ private:
     Button _playButton{};
 
     Config* _config;
-    int _highscore;
-
 private:
     void GetInput() override;
     void DrawButtons();

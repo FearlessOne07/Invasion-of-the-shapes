@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <ios>
 
 Config* Config::_instance = nullptr;
 
@@ -24,7 +25,23 @@ void Config::LoadConfig()
 		std::cerr << "Config instance not valid, CONFIG FILE HASN'T BEEN LOADED!! First call Config::GetInstance()\n";
 		return;
 	}
-	std::ifstream file("src/game_files/config.json");
+
+	std::fstream file;
+	file.exceptions(std::ios::badbit | std::ios::failbit);
+	try
+	{
+		file.open("config.json", std::ios::in);
+	}
+	catch (const std::ios::failure& e)
+	{
+		std::string _baseData = R"({ "player_data" : { "color" : "beige", "highscore" : 0 }})";
+		file.clear();
+		file.open("config.json", std::ios::out | std::ios::app);
+		file << _baseData;
+		file.close();
+		file.open("config.json", std::ios::in);
+	}
+
 	file >> _config;
 	file.close();
 }
@@ -37,7 +54,7 @@ Json::Value Config::GetData(const char* name)
 Config::~Config()
 {
 	std::ofstream file;
-	file.open("src/game_files/config.json", std::ios::out);
+	file.open("config.json", std::ios::out);
 	file << _config;
 	file.close();
 
