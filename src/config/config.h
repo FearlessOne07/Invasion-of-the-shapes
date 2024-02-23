@@ -6,7 +6,6 @@ class Config
 private:
 	static Config* _instance;
 	Json::Value _config{};
-
 private:
 	Config() = default;
 public:
