@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Dev\Repositories\Invasion-of-the-shapes\bin\x64\Release\Invasion of the Shapes.exe</FullPath>
+      <FullPath>C:\Dev\Repositories\Invasion-of-the-shapes\Invasion of the Shapes.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
