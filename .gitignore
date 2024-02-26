@@ -16,8 +16,7 @@
 # Mono auto generated files
 mono_crash.*
 
-# Build results
-[Dd]ebug/
+# Build resultss
 [Dd]ebugPublic/
 x86/
 [Ww][Ii][Nn]32/
