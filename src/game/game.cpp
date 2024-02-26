@@ -1,4 +1,12 @@
 #include "game.hpp"
+
+#include "../scenes/scene.hpp"
+#include "../scenes/title_scene.hpp"
+#include "../scenes/game_scene.hpp"
+#include "../scenes/puase_scene.hpp"
+#include "../scenes/game_over_scene.hpp"
+#include "../asset_manager/asset_manager.h"
+#include "../config/config.h"
 #include <fstream>
 
 void Game::Init()
@@ -7,16 +15,16 @@ void Game::Init()
 	// Initialize Window
 	InitWindow(SIZE.x, SIZE.y, "Invasion of the Shapes");
 	InitAudioDevice();
-	SetConfigFlags(FLAG_MSAA_4X_HINT);
 	SetConfigFlags(FLAG_VSYNC_HINT);
 	SetTraceLogLevel(LOG_NONE);
 	SetTargetFPS(FPS);
 	SetExitKey(0);
-	ToggleFullscreen();
+	//ToggleFullscreen();
 	_running = true;
 
 	//Assets
-	_assets.Init();
+	_assets = std::make_shared<AssetManager>();
+	_assets->Init();
 
 	// Config
 	_config = Config::GetInstance();
@@ -34,7 +42,7 @@ void Game::Init()
 	SetScene(_titleScene);
 
 	// Game Music
-	_gameMusic = _assets.GetMusic("game_music");
+	_gameMusic = _assets->GetMusic("game_music");
 
 }
 
@@ -43,11 +51,9 @@ void Game::Run()
 	// Game Loop
 	while (_running && !WindowShouldClose())
 	{
-
-		// Update Assets
 		float dt = GetFrameTime();
 		BeginDrawing();
-		_assets.Update();
+		_assets->Update();
 		PlayMusicStream(*_gameMusic);
 		_currentScene->Update(dt);
 		_currentScene->Render();
@@ -58,7 +64,7 @@ void Game::Run()
 
 void Game::End()
 {
-	_assets.CleanUp();
+	_assets->CleanUp();
 	delete _config;
 	CloseAudioDevice();
 	CloseWindow();

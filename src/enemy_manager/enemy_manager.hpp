@@ -20,7 +20,7 @@ private:
     float _spawnInterval{};
 
     // Assets
-    AssetManager& _assets;
+    std::shared_ptr<AssetManager> _assets;
     Sound* _enemyDieSound;
 
     // Particle Spawner
@@ -34,7 +34,7 @@ private:
     void CheckBulletCol(std::vector<Bullet> &bullets, Player& player);
 
 public:
-    EnemyManager(AssetManager& assets);
+    EnemyManager(std::shared_ptr<AssetManager> assets);
     void Update(float &dt, Player &player, std::vector<Bullet>& bullets);
     void Reset();
     void SetInterval(float interval);

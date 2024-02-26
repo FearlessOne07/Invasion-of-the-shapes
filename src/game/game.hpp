@@ -3,13 +3,10 @@
 #include <string>
 #include <memory>
 #include "../utils/obsever.hpp"
-#include "../scenes/scene.hpp"
-#include "../scenes/title_scene.hpp"
-#include "../scenes/game_scene.hpp"
-#include "../scenes/puase_scene.hpp"
-#include "../scenes/game_over_scene.hpp"
-#include "../asset_manager/asset_manager.h"
-#include "../config/config.h"
+
+class AssetManager;
+class Scene;
+class Config;
 
 class Game : public Observer
 {
@@ -28,10 +25,8 @@ private:
     Config* _config;
 
     // Assets
-    AssetManager _assets;
+    std::shared_ptr<AssetManager> _assets;
     Music* _gameMusic;
-
-
 
 private:
     void SetScene(std::shared_ptr<Scene> newScene);

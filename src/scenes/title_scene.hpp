@@ -16,7 +16,7 @@ private:
     void DrawButtons();
 
 public:
-    TitleScene(AssetManager& assets);
+    TitleScene(std::shared_ptr<AssetManager> assets);
     void Update(float& dt) override;
     void Render() override;
 };

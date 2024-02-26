@@ -24,7 +24,7 @@ private:
     void UpdateGameClock(float &dt);
 
 public:
-    GameScene(AssetManager& assets);
+    GameScene(std::shared_ptr<AssetManager> assets);
     void Update(float &dt) override;
     void Render() override;
     void Reset() override;

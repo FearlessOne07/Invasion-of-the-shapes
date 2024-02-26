@@ -1,10 +1,10 @@
 #include "puase_scene.hpp"
 #include "../asset_manager/asset_manager.h"
 
-PauseScene::PauseScene(AssetManager& assets) : Scene(assets)
+PauseScene::PauseScene(std::shared_ptr<AssetManager> assets) : Scene(assets)
 {
     //Assets
-    Font* font = _assets.GameFont();
+    Font* font = _assets->GameFont();
 
     // Initialize Buttons
     _clearColor = {0, 0, 0, 10};

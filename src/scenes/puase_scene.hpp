@@ -20,7 +20,7 @@ private:
     void GetInput() override;
 
 public:
-    PauseScene(AssetManager& assets);
+    PauseScene(std::shared_ptr<AssetManager> assets);
     void Update(float &dt) override;
     void Render() override;
     void SetFillTexture(Texture2D &texture);

@@ -3,6 +3,7 @@
 #include <vector>
 #include "../utils/utils.hpp"
 #include "raylib.h"
+#include <memory>
 
 class AssetManager;
 class Scene
@@ -11,7 +12,7 @@ protected:
     std::vector<Observer *> _observers{};
     Color _clearColor{};
 
-    AssetManager& _assets;
+    std::shared_ptr<AssetManager>_assets;
  
 
 protected:
@@ -25,7 +26,7 @@ protected:
     }
 
 public:
-    Scene(AssetManager& assets)  :
+    Scene(std::shared_ptr<AssetManager> assets)  :
         _assets(assets)
     {
     }

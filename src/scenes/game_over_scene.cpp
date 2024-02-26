@@ -2,10 +2,10 @@
 #include "../asset_manager/asset_manager.h"
 #include <algorithm>
 
-GameOverScene::GameOverScene(AssetManager& assets) : Scene(assets)
+GameOverScene::GameOverScene(std::shared_ptr<AssetManager> assets) : Scene(assets)
 {
 
-	_font = _assets.GameFont();
+	_font = _assets->GameFont();
 	_clearColor = BLACK;
 	_deathText = "YOU DIED!";
 	_playText = "PRESS SPACE TO PLAY AGAIN OR ESC TO QUIT";

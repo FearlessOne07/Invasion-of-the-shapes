@@ -1,7 +1,7 @@
 #include "title_scene.hpp"
 #include "../asset_manager/asset_manager.h"
 
-TitleScene::TitleScene(AssetManager& assets) : Scene(assets)
+TitleScene::TitleScene(std::shared_ptr<AssetManager> assets) : Scene(assets)
 {
 
     _config = Config::GetInstance();
@@ -11,7 +11,7 @@ TitleScene::TitleScene(AssetManager& assets) : Scene(assets)
     _playButton.pos.y = (GetScreenHeight() / 2 - _playButton.size.y / 2);
     _playButton.color = WHITE;
     _playButton.fontSize = 45;
-    _playButton.font = _assets.GameFont();
+    _playButton.font = _assets->GameFont();
     _playButton.rect = {
         _playButton.pos.x,
         _playButton.pos.y,

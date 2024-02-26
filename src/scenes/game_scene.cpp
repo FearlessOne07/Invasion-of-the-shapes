@@ -1,15 +1,15 @@
 #include "game_scene.hpp"
 #include "../asset_manager/asset_manager.h"
 
-GameScene::GameScene(AssetManager& assets) 
-    : Scene(assets), 
-    _playerStart({(float)(GetScreenWidth() / 2), (float)(GetScreenHeight() / 2)}), 
-    _playerColor(BEIGE), 
-    _player(_playerStart, _playerColor), 
+GameScene::GameScene(std::shared_ptr<AssetManager> assets)
+    : Scene(assets),
+    _playerStart({ (float)(GetScreenWidth() / 2), (float)(GetScreenHeight() / 2) }),
+    _playerColor(BEIGE),
+    _player(_playerStart, _playerColor, _assets),
     _enemMan(_assets), 
     _bulMan(_assets)
 {
-    _clearColor = BLACK;
+    _clearColor = {14, 15, 25, 255};
     _config = Config::GetInstance();
 }
 
@@ -40,7 +40,7 @@ void GameScene::GetInput()
 void GameScene::Render()
 {
     ClearBackground(_clearColor);
-    DrawTextEx(*(_assets.GameFont()), TextFormat("Score:%i", _player.GetScore()), { 10,10 }, 24, 1, WHITE);
+    DrawTextEx(*(_assets->GameFont()), TextFormat("Score:%i", _player.GetScore()), { 10,10 }, 24, 1, WHITE);
     _player.Render();
 
 

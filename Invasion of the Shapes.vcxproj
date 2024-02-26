@@ -75,14 +75,14 @@
     <EnableClangTidyCodeAnalysis>true</EnableClangTidyCodeAnalysis>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <EnableMicrosoftCodeAnalysis>false</EnableMicrosoftCodeAnalysis>
-    <OutDir>$(SolutionDir)</OutDir>
+    <OutDir>$(SolutionDir)\$(Platform)\$(Configuration)</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <EnableClangTidyCodeAnalysis>true</EnableClangTidyCodeAnalysis>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <EnableMicrosoftCodeAnalysis>false</EnableMicrosoftCodeAnalysis>
-    <OutDir>$(SolutionDir)</OutDir>
+    <OutDir>$(SolutionDir)\$(Platform)\$(Configuration)</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -218,6 +218,14 @@
   </ItemGroup>
   <ItemGroup>
     <Font Include="assets\fonts\font1.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\textures\SpaceShooterAssetPack_BackGrounds.png" />
+    <Image Include="assets\textures\SpaceShooterAssetPack_Characters.png" />
+    <Image Include="assets\textures\SpaceShooterAssetPack_IU.png" />
+    <Image Include="assets\textures\SpaceShooterAssetPack_Miscellaneous.png" />
+    <Image Include="assets\textures\SpaceShooterAssetPack_Projectiles.png" />
+    <Image Include="assets\textures\entities.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

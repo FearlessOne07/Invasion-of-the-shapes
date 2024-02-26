@@ -4,6 +4,7 @@
 #include "bullet.hpp"
 #include <algorithm>
 #include "../asset_manager/asset_manager.h"
+#include <memory>
 
 class BulletManager
 {
@@ -12,14 +13,14 @@ private:
     float _cooldown;
     float _cooldownTimer;
 
-    AssetManager& _assets;
+    std::shared_ptr<AssetManager> _assets;
     Sound* _bulletShoot;
 
 private:
     void CheckBullets();
 
 public:
-    BulletManager(AssetManager& assets);
+    BulletManager(std::shared_ptr<AssetManager> assets);
     void SpawnBullet(const Vector2 &playerPos, const Vector2 &mousePos);
     void Update(float &dt);
     void Reset();

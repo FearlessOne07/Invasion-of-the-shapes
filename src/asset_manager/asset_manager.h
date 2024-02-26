@@ -1,26 +1,28 @@
 #pragma once
 #include "raylib.h"
 #include <unordered_map>
+#include <string>
 
 class AssetManager
 {
 private:
 
-// Audio
-	std::unordered_map<const char*, Sound*> _sounds;
-	std::unordered_map<const char*, Music*> _music;
+	// Audio
+	std::unordered_map<std::string, Sound*> _sounds;
+	std::unordered_map<std::string, Music*> _music;
+	std::unordered_map<std::string, Texture*> _textures;
 
-//Fonts
+	//Fonts
 	Font* _gameFont;
 public:
 	void Init();
 	void Update();
 	void CleanUp();
 
-//Getters
+	//Getters
 	Font* GameFont() const;
-	Sound* GetSound(const char* key);
-	Music* GetMusic(const char* key);
-
+	Sound* GetSound(const std::string& key);
+	Music* GetMusic(const std::string& key);
+	Texture* GetTexture(const std::string& key);
 };
 

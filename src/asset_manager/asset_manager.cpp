@@ -2,28 +2,23 @@
 
 void AssetManager::Init()
 {
-	// Load Sounds
-	Wave shoot = LoadWave("assets/audio/player_shoot.wav");
-	Sound* playershoot = new Sound;
+// Load Sounds
+	Wave playerShoot = LoadWave("assets/audio/player_shoot.wav");
+	_sounds["player_shoot"] = new Sound(LoadSoundFromWave(playerShoot));
+	UnloadWave(playerShoot);
 
-	*playershoot = LoadSoundFromWave(shoot);
-	_sounds["player_shoot"] = playershoot;
-	UnloadWave(shoot);
-
-	Wave die = LoadWave("assets/audio/enemy_die.wav");
-	Sound* enemyDie = new Sound;
-	*enemyDie = LoadSoundFromWave(die);
-	_sounds["enemy_die"] = enemyDie;
-	UnloadWave(die);
+	Wave enemyDie = LoadWave("assets/audio/enemy_die.wav");
+	_sounds["enemy_die"] = new Sound(LoadSoundFromWave(enemyDie));
+	UnloadWave(enemyDie);
 
 	// Load Music
-	Music* gameMusic = new Music;
-	*gameMusic = LoadMusicStream("assets/audio/game_scene.mp3");
-	_music["game_music"] = gameMusic;
+	_music["game_music"] = new Music(LoadMusicStream("assets/audio/game_scene.mp3"));
 
 	// Load Fonts
-	_gameFont = new Font;
-	*_gameFont = LoadFont("assets/fonts/font1.ttf");
+	_gameFont = new Font(LoadFont("assets/fonts/font1.ttf"));
+
+// Load Textures
+	_textures["entities"] = new Texture(LoadTexture("assets/textures/entities.png"));
 }
 
 void AssetManager::Update()
@@ -36,18 +31,30 @@ void AssetManager::Update()
 
 void AssetManager::CleanUp()
 {
-	for (const std::pair<const char*, Sound*>& p : _sounds)
+
+	// Cleanup Sounds
+	for (const std::pair<const std::string&, Sound*>& p : _sounds)
 	{
 		UnloadSound(*(p.second));
 		delete p.second;
 	}
 
-	for (const std::pair<const char*, Music*>& p : _music)
+	// Cleanup Music
+	for (const std::pair<const std::string&, Music*>& p : _music)
 	{
 		UnloadMusicStream(*(p.second));
 		delete p.second;
 	}
 	UnloadFont(*_gameFont);
+
+	// Cleanup Textures
+	for (const std::pair<const std::string&, Texture*>& p : _textures)
+	{
+		UnloadTexture(*p.second);
+		delete p.second;
+	}
+
+	// Delete Font
 	delete _gameFont;
 }
 
@@ -56,13 +63,18 @@ Font* AssetManager::GameFont() const
 	return _gameFont;
 }
 
-Sound* AssetManager::GetSound(const char* key)
+Sound* AssetManager::GetSound(const std::string& key)
 {
 	return _sounds[key];
 }
 
-Music* AssetManager::GetMusic(const char* key)
+Music* AssetManager::GetMusic(const std::string& key)
 {
 	return _music[key];
+}
+
+Texture* AssetManager::GetTexture(const std::string& key)
+{
+	return _textures[key];
 }
 

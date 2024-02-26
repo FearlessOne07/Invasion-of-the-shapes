@@ -1,12 +1,12 @@
 #include "bullet_manager.hpp"
 
-BulletManager::BulletManager(AssetManager& assets): _assets(assets)
+BulletManager::BulletManager(std::shared_ptr<AssetManager> assets): _assets(assets)
 {
     
     // Initialize Bullet cooldown
     _cooldownTimer = 0;
     _cooldown = .5;
-    _bulletShoot = _assets.GetSound("player_shoot");
+    _bulletShoot = _assets->GetSound("player_shoot");
 
 }
 void BulletManager::CheckBullets()

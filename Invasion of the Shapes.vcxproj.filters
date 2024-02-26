@@ -181,4 +181,24 @@
   <ItemGroup>
     <Font Include="assets\fonts\font1.otf" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\textures\SpaceShooterAssetPack_BackGrounds.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\textures\entities.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\textures\SpaceShooterAssetPack_Projectiles.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\textures\SpaceShooterAssetPack_Miscellaneous.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\textures\SpaceShooterAssetPack_IU.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\textures\SpaceShooterAssetPack_Characters.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

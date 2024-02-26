@@ -2,18 +2,31 @@
 #include "raylib.h"
 #include "raymath.h"
 #include <iostream>
+#include <memory>
 #include "../config/config.h"
 #include "json/json.h"
 
+class AssetManager;
 class Player
 {
 private:
+
+    // Assets
+    std::shared_ptr<AssetManager> _assets;
+
+    // Movement
     Vector2 _position{};
     Vector2 _velocity{};
     float _speed{};
 
-    int _sides{};
-    Color _color{};
+    // Texture
+    Texture* _texture;
+    Vector2 _textureCords;
+    float _textureSize;
+    float _scale;
+
+    // Fizix
+    float _radius;
 
     float _rotationSpeed{};
     float _rotation{};
@@ -36,7 +49,7 @@ public:
     int radius{};
 
 public:
-    Player(Vector2 position, Color color);
+    Player(Vector2 position, Color color, std::shared_ptr<AssetManager> assets);
     void Update(float &dt);
     void Render();
     void Reset();

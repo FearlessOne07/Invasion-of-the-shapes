@@ -22,7 +22,7 @@ private:
 	Font* _font;
 
 public:
-	GameOverScene(AssetManager& assets);
+	GameOverScene(std::shared_ptr<AssetManager> assets);
 	void Update(float& dt) override;
 	void Render() override;
 	void GetInput() override;

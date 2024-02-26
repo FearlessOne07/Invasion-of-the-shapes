@@ -1,11 +1,11 @@
 #include "enemy_manager.hpp"
 #include "../particles/enemy_child_spawner.h"
 
-EnemyManager::EnemyManager(AssetManager& assets) : _assets(assets)
+EnemyManager::EnemyManager(std::shared_ptr<AssetManager> assets) : _assets(assets)
 {
 	_enemyRadius = 50;
 	_spawnInterval = 5;
-	_enemyDieSound = _assets.GetSound("enemy_die");
+	_enemyDieSound = _assets->GetSound("enemy_die");
 
 	_particleSpawner = std::make_shared<EnemyChildSpawner>();
 }
@@ -101,7 +101,7 @@ void EnemyManager::CheckPlayerCols(Player& player, const Enemy& enemy)
 void EnemyManager::Update(float& dt, Player& player, std::vector<Bullet>& bullets)
 {
 
-	SpawnEnemies(dt);
+	//SpawnEnemies(dt);
 
 	for (Enemy& enemy : _enemies)
 	{
