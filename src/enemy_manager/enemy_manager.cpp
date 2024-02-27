@@ -92,7 +92,7 @@ void EnemyManager::RemoveDeadEnemies()
 void EnemyManager::CheckPlayerCols(Player& player, const Enemy& enemy)
 {
 	// Check if an enemy has collided with the player
-	if (CheckCollisionCircles(player.GetPos(), static_cast<float>(player.radius), enemy._position, static_cast<float>(enemy._radius)))
+	if (CheckCollisionCircles(player.GetPos(), static_cast<float>(player.GetRaduis()), enemy._position, static_cast<float>(enemy._radius)))
 	{
 		player.SetDead(true);
 	}

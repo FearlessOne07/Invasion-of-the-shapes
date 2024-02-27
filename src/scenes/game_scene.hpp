@@ -16,7 +16,7 @@ private:
     BulletManager _bulMan;
     float _gameClock{};
 
-    Config* _config;
+    std::shared_ptr<Config> _config;
 
 private:
     void GetInput() override;

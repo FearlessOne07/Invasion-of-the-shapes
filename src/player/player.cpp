@@ -72,22 +72,22 @@ void Player::UpdateRotaion(float& dt)
 void Player::CheckBounds()
 {
 	// Check Player Collisions With Window
-	if (_position.x <= radius)
+	if (_position.x <= _radius)
 	{
-		_position.x = radius;
+		_position.x = _radius;
 
 	}
-	if (_position.y <= radius)
+	if (_position.y <= _radius)
 	{
-		_position.y = radius;
+		_position.y = _radius;
 	}
-	if (_position.y >= GetScreenHeight() - radius)
+	if (_position.y >= GetScreenHeight() - _radius)
 	{
-		_position.y = GetScreenHeight() - radius;
+		_position.y = GetScreenHeight() - _radius;
 	}
-	if (_position.x >= GetScreenWidth() - radius)
+	if (_position.x >= GetScreenWidth() - _radius)
 	{
-		_position.x = GetScreenWidth() - radius;
+		_position.x = GetScreenWidth() - _radius;
 	}
 
 }
@@ -162,6 +162,11 @@ int Player::GetHighScore() const
 void Player::SetHighScore(int score)
 {
 	_highscore = score;
+}
+
+float Player::GetRaduis() const
+{
+	return _radius;
 }
 
 void Player::SetPos(const Vector2& pos)

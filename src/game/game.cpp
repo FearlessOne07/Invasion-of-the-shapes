@@ -65,7 +65,6 @@ void Game::Run()
 void Game::End()
 {
 	_assets->CleanUp();
-	delete _config;
 	CloseAudioDevice();
 	CloseWindow();
 

@@ -1,15 +1,16 @@
 #pragma once
 #include "json/json.h"
+#include <memory>
 
 class Config
 {
 private:
-	static Config* _instance;
+	static std::shared_ptr<Config> _instance;
 	Json::Value _config{};
 private:
 	Config() = default;
 public:
-	static Config* GetInstance();
+	static std::shared_ptr<Config> GetInstance();
 	void LoadConfig();
 	Json::Value GetData(const char* name);
 	void SetData(Json::Value value, const char* key);

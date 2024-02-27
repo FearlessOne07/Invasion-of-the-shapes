@@ -2,23 +2,23 @@
 
 void AssetManager::Init()
 {
-// Load Sounds
+	// Load Sounds
 	Wave playerShoot = LoadWave("assets/audio/player_shoot.wav");
-	_sounds["player_shoot"] = new Sound(LoadSoundFromWave(playerShoot));
+	_sounds["player_shoot"] = std::make_shared<Sound>(LoadSoundFromWave(playerShoot));
 	UnloadWave(playerShoot);
 
 	Wave enemyDie = LoadWave("assets/audio/enemy_die.wav");
-	_sounds["enemy_die"] = new Sound(LoadSoundFromWave(enemyDie));
+	_sounds["enemy_die"] = std::make_shared<Sound>(LoadSoundFromWave(enemyDie));
 	UnloadWave(enemyDie);
 
 	// Load Music
-	_music["game_music"] = new Music(LoadMusicStream("assets/audio/game_scene.mp3"));
+	_music["game_music"] = std::make_shared<Music>(LoadMusicStream("assets/audio/game_scene.mp3"));
 
 	// Load Fonts
-	_gameFont = new Font(LoadFont("assets/fonts/font1.ttf"));
+	_gameFont = std::make_shared<Font>(LoadFont("assets/fonts/font1.ttf"));
 
-// Load Textures
-	_textures["entities"] = new Texture(LoadTexture("assets/textures/entities.png"));
+	// Load Textures
+	_textures["entities"] = std::make_shared<Texture>(LoadTexture("assets/textures/entities.png"));
 }
 
 void AssetManager::Update()
@@ -33,47 +33,42 @@ void AssetManager::CleanUp()
 {
 
 	// Cleanup Sounds
-	for (const std::pair<const std::string&, Sound*>& p : _sounds)
+	for (const std::pair<const std::string&, std::shared_ptr<Sound>>& p : _sounds)
 	{
 		UnloadSound(*(p.second));
-		delete p.second;
 	}
 
 	// Cleanup Music
-	for (const std::pair<const std::string&, Music*>& p : _music)
+	for (const std::pair<const std::string&, std::shared_ptr<Music>>& p : _music)
 	{
 		UnloadMusicStream(*(p.second));
-		delete p.second;
 	}
-	UnloadFont(*_gameFont);
 
 	// Cleanup Textures
-	for (const std::pair<const std::string&, Texture*>& p : _textures)
+	for (const std::pair<const std::string&, std::shared_ptr<Texture>>& p : _textures)
 	{
 		UnloadTexture(*p.second);
-		delete p.second;
 	}
 
-	// Delete Font
-	delete _gameFont;
+	UnloadFont(*_gameFont);
 }
 
-Font* AssetManager::GameFont() const
+std::shared_ptr<Font> AssetManager::GameFont() const
 {
 	return _gameFont;
 }
 
-Sound* AssetManager::GetSound(const std::string& key)
+std::shared_ptr<Sound> AssetManager::GetSound(const std::string& key)
 {
 	return _sounds[key];
 }
 
-Music* AssetManager::GetMusic(const std::string& key)
+std::shared_ptr<Music> AssetManager::GetMusic(const std::string& key)
 {
 	return _music[key];
 }
 
-Texture* AssetManager::GetTexture(const std::string& key)
+std::shared_ptr<Texture> AssetManager::GetTexture(const std::string& key)
 {
 	return _textures[key];
 }

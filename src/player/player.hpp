@@ -20,7 +20,7 @@ private:
     float _speed{};
 
     // Texture
-    Texture* _texture;
+    std::shared_ptr<Texture> _texture;
     Vector2 _textureCords;
     float _textureSize;
     float _scale;
@@ -32,7 +32,7 @@ private:
     float _rotation{};
     bool _isDead;
 
-    Config* _config;
+    std::shared_ptr<Config> _config;
 
     int _score;
     int _highscore;
@@ -44,9 +44,6 @@ private:
     void UpdatePositions(float &dt);
     void UpdateRotaion(float &dt);
     void CheckBounds();
-
-public:
-    int radius{};
 
 public:
     Player(Vector2 position, Color color, std::shared_ptr<AssetManager> assets);
@@ -65,4 +62,6 @@ public:
 
     int GetHighScore() const;
     void SetHighScore(int score);
+
+    float GetRaduis() const;
 };

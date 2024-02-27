@@ -19,7 +19,7 @@ private:
 	int _opacity;
 	int _opacityPulse;
 
-	Font* _font;
+	std::shared_ptr<Font> _font;
 
 public:
 	GameOverScene(std::shared_ptr<AssetManager> assets);

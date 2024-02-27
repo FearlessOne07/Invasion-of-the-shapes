@@ -1,5 +1,6 @@
 #pragma once
 #include "raylib.h"
+#include <memory>
 
 typedef enum Event : unsigned int
 {
@@ -22,7 +23,7 @@ typedef struct Button
 	const char* text{};
 	int fontSize;
 	int textWidth;
-	Font* font;
+	std::shared_ptr<Font> font;
 
 	void SetText(const char* text)
 	{

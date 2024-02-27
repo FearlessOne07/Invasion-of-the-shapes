@@ -14,7 +14,7 @@ private:
     float _cooldownTimer;
 
     std::shared_ptr<AssetManager> _assets;
-    Sound* _bulletShoot;
+    std::shared_ptr<Sound> _bulletShoot;
 
 private:
     void CheckBullets();

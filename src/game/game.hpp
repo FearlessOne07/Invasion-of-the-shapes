@@ -22,11 +22,11 @@ private:
     bool _running{};
     
     // Config
-    Config* _config;
+    std::shared_ptr<Config> _config;
 
     // Assets
     std::shared_ptr<AssetManager> _assets;
-    Music* _gameMusic;
+    std::shared_ptr<Music> _gameMusic;
 
 private:
     void SetScene(std::shared_ptr<Scene> newScene);

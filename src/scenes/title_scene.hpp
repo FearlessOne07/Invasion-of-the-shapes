@@ -10,7 +10,7 @@ private:
     Color _offColor{};
     Button _playButton{};
 
-    Config* _config;
+    std::shared_ptr<Config> _config;
 private:
     void GetInput() override;
     void DrawButtons();

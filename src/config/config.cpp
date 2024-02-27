@@ -5,14 +5,15 @@
 #include <sstream>
 #include <ios>
 
-Config* Config::_instance = nullptr;
 
-Config* Config::GetInstance()
+std::shared_ptr<Config> Config::_instance = nullptr;
+
+std::shared_ptr<Config> Config::GetInstance()
 {
 
 	if (!Config::_instance)
 	{
-		Config::_instance = new Config;
+		Config::_instance = std::shared_ptr<Config>(new Config());
 	}
 	return Config::_instance;
 }

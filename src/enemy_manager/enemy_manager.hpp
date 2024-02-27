@@ -21,7 +21,7 @@ private:
 
     // Assets
     std::shared_ptr<AssetManager> _assets;
-    Sound* _enemyDieSound;
+    std::shared_ptr<Sound> _enemyDieSound;
 
     // Particle Spawner
     std::shared_ptr<EnemyChildSpawner> _particleSpawner;
