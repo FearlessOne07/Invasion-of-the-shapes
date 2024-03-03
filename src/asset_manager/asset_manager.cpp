@@ -17,8 +17,16 @@ void AssetManager::Init()
 	// Load Fonts
 	_gameFont = std::make_shared<Font>(LoadFont("assets/fonts/font1.ttf"));
 
-	// Load Textures
+	/* Load Textures*/
+	
+	// Entites
+	_textures["player"] = std::make_shared<Texture>(LoadTexture("assets/textures/player/player.png"));
+
+	// Projectiles
+	_textures["bullet"] = std::make_shared<Texture>(LoadTexture("assets/textures/projectiles/bullet/bullet.png"));
+
 	_textures["entities"] = std::make_shared<Texture>(LoadTexture("assets/textures/entities.png"));
+	_textures["projectiles"] = std::make_shared<Texture>(LoadTexture("assets/textures/projectiles.png"));
 }
 
 void AssetManager::Update()

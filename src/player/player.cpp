@@ -1,16 +1,17 @@
 #include "player.hpp"
 #include <iostream>
 #include "../asset_manager/asset_manager.h"
+#include <cmath>
 
 Player::Player(Vector2 position, Color color, std::shared_ptr<AssetManager> assets) :_assets(assets), _position(position)
 {
 	//--------Initialize Player--------
 
 	// Texture
-	_textureSize = 8.f;
-	_texture = _assets->GetTexture("entities");
+	_textureSize = 16.f;
+	_texture = _assets->GetTexture("player");
 	_textureCords = { 1,0 };
-	_scale = 7;
+	_scale = 6;
 
 	// Movement
 	_speed = 500;
@@ -20,6 +21,7 @@ Player::Player(Vector2 position, Color color, std::shared_ptr<AssetManager> asse
 	// Fizix
 	_radius = (_textureSize / 2 * _scale);
 
+	// Config
 	_config = Config::GetInstance();
 	if (_config)
 	{
@@ -66,7 +68,10 @@ void Player::UpdatePositions(float& dt)
 
 void Player::UpdateRotaion(float& dt)
 {
-	_rotation += _rotationSpeed * dt;
+	Vector2 mousePosition = GetMousePosition();
+	Vector2 direction = Vector2Subtract(mousePosition, _position);
+	direction = Vector2Normalize(direction);
+	_rotation = ((std::atan2(direction.y , direction.x)) * RAD2DEG) + 90.f;
 }
 
 void Player::CheckBounds()
@@ -97,22 +102,20 @@ void Player::Update(float& dt)
 	GetInput();
 	UpdatePositions(dt);
 	CheckBounds();
-	//UpdateRotaion(dt);
+	UpdateRotaion(dt);
 }
 
 void Player::Render()
 {
-
-
 	DrawTexturePro(
 		*_texture,
-		{ _textureCords.x * _textureSize, _textureCords.y * _textureSize, _textureSize, _textureSize },
+		{ 0, 0, _textureSize, _textureSize },
 		{ _position.x, _position.y,_textureSize * _scale, _textureSize * _scale },
 		{ (_textureSize * _scale) / 2, (_textureSize * _scale) / 2 },
 		_rotation,
 		WHITE
 	);
-	DrawCircleLines(_position.x , _position.y ,_radius, RED);
+
 }
 
 void Player::Reset()
@@ -173,5 +176,3 @@ void Player::SetPos(const Vector2& pos)
 {
 	_position = pos;
 }
-
-

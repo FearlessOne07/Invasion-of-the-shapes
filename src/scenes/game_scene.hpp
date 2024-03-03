@@ -2,7 +2,7 @@
 #include "raylib.h"
 #include "../scenes/scene.hpp"
 #include "../player/player.hpp"
-#include "../enemy_manager/enemy_manager.hpp"
+#include "../enemy_manager/enemy_manager.h"
 #include "../bullet_manager/bullet_manager.hpp"
 #include "../config/config.h"
 

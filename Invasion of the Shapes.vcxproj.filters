@@ -11,7 +11,8 @@
     </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+      <Extensions>
+        rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -28,12 +29,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\bullet_manager\bullet_manager.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\enemy_manager\enemy.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\enemy_manager\enemy_manager.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\game\game.hpp">
@@ -105,10 +100,31 @@
     <ClInclude Include="dependencies\jsoncpp\include\json\allocator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\particles\enemy_child.h">
+    <ClInclude Include="src\particles\particles\enemy_child.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\particles\enemy_child_spawner.h">
+    <ClInclude Include="src\particles\particle_spawners\enemy_child_spawner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\particles\particle_spawner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\particles\particle_spawners\player_trail_spawner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\enemy\enemy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\enemy\runner\runner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\enemy_manager\enemy_manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\spawners\spawner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\spawners\runner\runner_spawner.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -133,9 +149,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\bullet_manager\bullet_manager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\enemy_manager\enemy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\enemy_manager\enemy_manager.cpp">
@@ -168,6 +181,15 @@
     <ClCompile Include="src\config\config.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\particles\particle_spawners\player_trail_spawner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\enemy\runner\runner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\spawners\runner\runner_spawner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
@@ -198,6 +220,15 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="assets\textures\SpaceShooterAssetPack_Characters.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\textures\player\player.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\textures\projectiles.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\textures\projectiles\bullet\bullet.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

@@ -1,17 +1,25 @@
 #include "bullet.hpp"
 #include <algorithm>
+#include <cmath>
 
-Bullet::Bullet(Vector2 position, Vector2 direction) : _position(position), _direction(direction)
+Bullet::Bullet(Vector2 position, Vector2 direction, std::shared_ptr<Texture> textures) :_texture(textures), _position(position), _direction(direction)
 {
+    // Texture
+    //_texture = LoadTexture("")
+    _textureSize = 16;
+    _textureScale = 3;
+    _srcRect = { 0 * _textureSize, 0 * _textureSize, _textureSize, _textureSize };
+    _rotation = ((std::atan2(direction.y, direction.x)) * RAD2DEG) + 90.f;
     _opacity = 255;
     _opacityChange = 250;
     _radius = 20;
-    _speed = 1000;
+    _speed = 800;
     _isActive = true;
+
 }
 
 void Bullet::CheckActivty()
-{
+{ 
     // Check and set status of bullet
     if (_opacity <= 0)
     {
@@ -21,9 +29,17 @@ void Bullet::CheckActivty()
 
 void Bullet::Render()
 {
-    DrawCircle(_position.x, _position.y, _radius, {255, 255, 255, static_cast<unsigned char>(_opacity)});
-}
+    DrawTexturePro(
+        *_texture,
+        _srcRect,
+        { _position.x, _position.y, _textureSize * _textureScale, _textureSize * _textureScale },
+        { (_textureSize * _textureScale) / 2, (_textureSize * _textureScale) / 2 },
+        _rotation,
+        { 255,255,255, static_cast<unsigned char>(_opacity) }
+    );
+    //DrawRectanglePro({ _position.x, _position.y, 20,20 }, { 10,10 }, _rotation, WHITE);
 
+}
 void Bullet::Update(float &dt) 
 {
     _opacity -= _opacityChange * dt;

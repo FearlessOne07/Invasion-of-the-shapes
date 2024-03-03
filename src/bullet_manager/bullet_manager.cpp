@@ -30,7 +30,7 @@ void BulletManager::SpawnBullet(const Vector2 &playerPos, const Vector2 &mousePo
         _cooldownTimer = 0;
         Vector2 direction = Vector2Subtract(mousePos, playerPos);
         direction = Vector2Normalize(direction);
-        _bullets.emplace_back(Bullet(playerPos, direction));
+        _bullets.emplace_back(Bullet(playerPos, direction, _assets->GetTexture("bullet")));
         PlaySound(*_bulletShoot);
     }
 }

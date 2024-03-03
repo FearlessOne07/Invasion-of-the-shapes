@@ -13,13 +13,14 @@ void Game::Init()
 {
 
 	// Initialize Window
+	SetConfigFlags(FLAG_MSAA_4X_HINT);
 	InitWindow(SIZE.x, SIZE.y, "Invasion of the Shapes");
 	InitAudioDevice();
-	SetConfigFlags(FLAG_VSYNC_HINT);
 	SetTraceLogLevel(LOG_NONE);
 	SetTargetFPS(FPS);
 	SetExitKey(0);
-	//ToggleFullscreen();
+
+	ToggleFullscreen();
 	_running = true;
 
 	//Assets
@@ -57,6 +58,8 @@ void Game::Run()
 		PlayMusicStream(*_gameMusic);
 		_currentScene->Update(dt);
 		_currentScene->Render();
+
+		DrawText(TextFormat("FPS: %i", GetFPS()), 0, 850, 32, WHITE);
 		EndDrawing();
 	}
 	End();

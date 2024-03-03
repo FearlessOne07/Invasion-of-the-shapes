@@ -118,14 +118,16 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)dependencies/raylib/include;$(SolutionDir)dependencies/jsoncpp/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>
+        $(SolutionDir)dependencies/raylib/include;$(SolutionDir)dependencies/jsoncpp/include</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)dependencies/raylib/lib;$(SolutionDir)dependencies/jsoncpp/lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>
+        $(SolutionDir)dependencies/raylib/lib;$(SolutionDir)dependencies/jsoncpp/lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>raylib-d.lib;winmm.lib;jsoncpp-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -137,7 +139,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)dependencies/raylib/include;$(SolutionDir)dependencies/jsoncpp/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>
+        $(SolutionDir)dependencies/raylib/include;$(SolutionDir)dependencies/jsoncpp/include</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
@@ -146,7 +149,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)dependencies/raylib/lib;$(SolutionDir)dependencies/jsoncpp/lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>
+        $(SolutionDir)dependencies/raylib/lib;$(SolutionDir)dependencies/jsoncpp/lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>raylib.lib;winmm.lib;jsoncpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -161,6 +165,9 @@
     <ClInclude Include="dependencies\jsoncpp\include\json\value.h" />
     <ClInclude Include="dependencies\jsoncpp\include\json\version.h" />
     <ClInclude Include="dependencies\jsoncpp\include\json\writer.h" />
+    <ClInclude Include="src\spawners\runner\runner_spawner.h" />
+    <ClInclude Include="src\enemy_manager\enemy_manager.h" />
+    <ClInclude Include="src\enemy\runner\runner.h" />
     <ClInclude Include="src\config\config.h" />
     <ClInclude Include="dependencies\nlohmann\json.hpp" />
     <ClInclude Include="dependencies\nlohmann\json_fwd.hpp" />
@@ -170,13 +177,15 @@
     <ClInclude Include="dependencies\raylib\include\rlgl.h" />
     <ClInclude Include="src\bullet_manager\bullet.hpp" />
     <ClInclude Include="src\bullet_manager\bullet_manager.hpp" />
-    <ClInclude Include="src\enemy_manager\enemy.hpp" />
-    <ClInclude Include="src\enemy_manager\enemy_manager.hpp" />
+    <ClInclude Include="src\enemy\enemy.h" />
     <ClInclude Include="src\game\game.hpp" />
-    <ClInclude Include="src\particles\enemy_child.h" />
-    <ClInclude Include="src\particles\enemy_child_spawner.h" />
+    <ClInclude Include="src\particles\particles\enemy_child.h" />
+    <ClInclude Include="src\particles\particle_spawners\enemy_child_spawner.h" />
+    <ClInclude Include="src\particles\particle_spawner.h" />
+    <ClInclude Include="src\particles\particle_spawners\player_trail_spawner.h" />
     <ClInclude Include="src\scenes\game_over_scene.hpp" />
     <ClInclude Include="src\scenes\game_scene.hpp" />
+    <ClInclude Include="src\spawners\spawner.h" />
     <ClInclude Include="src\utils\obsever.hpp" />
     <ClInclude Include="src\player\player.hpp" />
     <ClInclude Include="src\scenes\puase_scene.hpp" />
@@ -193,13 +202,15 @@
     <Media Include="assets\player_shoot.wav" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\spawners\runner\runner_spawner.cpp" />
+    <ClCompile Include="src\enemy_manager\enemy_manager.cpp" />
+    <ClCompile Include="src\enemy\runner\runner.cpp" />
     <ClCompile Include="src\config\config.cpp" />
     <ClCompile Include="src\asset_manager\asset_manager.cpp" />
     <ClCompile Include="src\bullet_manager\bullet.cpp" />
     <ClCompile Include="src\bullet_manager\bullet_manager.cpp" />
-    <ClCompile Include="src\enemy_manager\enemy.cpp" />
-    <ClCompile Include="src\enemy_manager\enemy_manager.cpp" />
     <ClCompile Include="src\game\game.cpp" />
+    <ClCompile Include="src\particles\particle_spawners\player_trail_spawner.cpp" />
     <ClCompile Include="src\scenes\game_over_scene.cpp" />
     <ClCompile Include="src\scenes\game_scene.cpp" />
     <ClCompile Include="src\main.cpp" />
@@ -220,6 +231,9 @@
     <Font Include="assets\fonts\font1.otf" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="assets\textures\player\player.png" />
+    <Image Include="assets\textures\projectiles.png" />
+    <Image Include="assets\textures\projectiles\bullet\bullet.png" />
     <Image Include="assets\textures\SpaceShooterAssetPack_BackGrounds.png" />
     <Image Include="assets\textures\SpaceShooterAssetPack_Characters.png" />
     <Image Include="assets\textures\SpaceShooterAssetPack_IU.png" />

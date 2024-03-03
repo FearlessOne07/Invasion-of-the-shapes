@@ -19,7 +19,7 @@ void GameScene::Update(float &dt)
     GetInput();
     UpdateGameClock(dt);
     _player.Update(dt);
-    _enemMan.Update(dt, _player, _bulMan.GetBullets());
+    _enemMan.Update(_player);
     _bulMan.Update(dt);
     CheckPlayer();
 }
@@ -31,7 +31,7 @@ void GameScene::GetInput()
         Notify(Event::TO_PAUSE);
     }
 
-    if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+    if (IsMouseButtonDown(MOUSE_BUTTON_LEFT))
     {
         _bulMan.SpawnBullet(_player.GetPos(), GetMousePosition());
     }
@@ -49,18 +49,6 @@ void GameScene::Render()
 void GameScene::UpdateGameClock(float &dt)
 {
     _gameClock += dt;
-    if (_gameClock >= 20 && _gameClock < 35)
-    {
-        _enemMan.SetInterval(3);
-    }
-    else if (_gameClock >= 35 && _gameClock < 50)
-    {
-        _enemMan.SetInterval(2);
-    }
-    else if (_gameClock >= 50)
-    {
-        _enemMan.SetInterval(1);
-    }
 }
 
 void GameScene::Reset()
