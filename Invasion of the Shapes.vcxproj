@@ -165,7 +165,7 @@
     <ClInclude Include="dependencies\jsoncpp\include\json\value.h" />
     <ClInclude Include="dependencies\jsoncpp\include\json\version.h" />
     <ClInclude Include="dependencies\jsoncpp\include\json\writer.h" />
-    <ClInclude Include="src\spawners\runner\runner_spawner.h" />
+    <ClInclude Include="src\enemy\dasher\dasher.h" />
     <ClInclude Include="src\enemy_manager\enemy_manager.h" />
     <ClInclude Include="src\enemy\runner\runner.h" />
     <ClInclude Include="src\config\config.h" />
@@ -185,7 +185,7 @@
     <ClInclude Include="src\particles\particle_spawners\player_trail_spawner.h" />
     <ClInclude Include="src\scenes\game_over_scene.hpp" />
     <ClInclude Include="src\scenes\game_scene.hpp" />
-    <ClInclude Include="src\spawners\spawner.h" />
+    <ClInclude Include="src\spawner\spawner.h" />
     <ClInclude Include="src\utils\obsever.hpp" />
     <ClInclude Include="src\player\player.hpp" />
     <ClInclude Include="src\scenes\puase_scene.hpp" />
@@ -202,7 +202,7 @@
     <Media Include="assets\player_shoot.wav" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\spawners\runner\runner_spawner.cpp" />
+    <ClCompile Include="src\enemy\dasher\dasher.cpp" />
     <ClCompile Include="src\enemy_manager\enemy_manager.cpp" />
     <ClCompile Include="src\enemy\runner\runner.cpp" />
     <ClCompile Include="src\config\config.cpp" />
@@ -217,6 +217,7 @@
     <ClCompile Include="src\player\player.cpp" />
     <ClCompile Include="src\scenes\puase_scene.cpp" />
     <ClCompile Include="src\scenes\title_scene.cpp" />
+    <ClCompile Include="src\spawner\spawner.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />

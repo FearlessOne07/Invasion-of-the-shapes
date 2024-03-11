@@ -137,7 +137,7 @@ Vector2 const Player::GetPos() const
 	return _position;
 }
 
-const bool Player::GetDead() const
+const bool Player::isDead() const
 {
 	return _isDead;
 }

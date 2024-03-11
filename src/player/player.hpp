@@ -54,7 +54,7 @@ public:
     Vector2 const GetPos() const;
     void SetPos(const Vector2 &pos);
 
-    const bool GetDead() const;
+    const bool isDead() const;
     void SetDead(const bool &input);
     
     int GetScore() const;

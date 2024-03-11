@@ -12,7 +12,7 @@ Bullet::Bullet(Vector2 position, Vector2 direction, std::shared_ptr<Texture> tex
     _rotation = ((std::atan2(direction.y, direction.x)) * RAD2DEG) + 90.f;
     _opacity = 255;
     _opacityChange = 250;
-    _radius = 20;
+    _radius = 10;
     _speed = 800;
     _isActive = true;
 
@@ -37,7 +37,7 @@ void Bullet::Render()
         _rotation,
         { 255,255,255, static_cast<unsigned char>(_opacity) }
     );
-    //DrawRectanglePro({ _position.x, _position.y, 20,20 }, { 10,10 }, _rotation, WHITE);
+    DrawCircleLines(_position.x, _position.y, _radius, RED);
 
 }
 void Bullet::Update(float &dt) 

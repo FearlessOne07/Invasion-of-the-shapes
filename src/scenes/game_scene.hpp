@@ -9,6 +9,8 @@
 class GameScene : public Scene
 {
 private:
+    Camera2D _camera;
+
     Vector2 _playerStart{};
     Color _playerColor{};
     Player _player;

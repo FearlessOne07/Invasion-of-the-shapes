@@ -121,10 +121,10 @@
     <ClInclude Include="src\enemy_manager\enemy_manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\spawners\spawner.h">
+    <ClInclude Include="src\spawner\spawner.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\spawners\runner\runner_spawner.h">
+    <ClInclude Include="src\enemy\dasher\dasher.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -187,7 +187,10 @@
     <ClCompile Include="src\enemy\runner\runner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\spawners\runner\runner_spawner.cpp">
+    <ClCompile Include="src\enemy\dasher\dasher.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\spawner\spawner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

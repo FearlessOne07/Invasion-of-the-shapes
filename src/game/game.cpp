@@ -20,7 +20,7 @@ void Game::Init()
 	SetTargetFPS(FPS);
 	SetExitKey(0);
 
-	ToggleFullscreen();
+	//ToggleFullscreen();
 	_running = true;
 
 	//Assets
@@ -55,7 +55,7 @@ void Game::Run()
 		float dt = GetFrameTime();
 		BeginDrawing();
 		_assets->Update();
-		PlayMusicStream(*_gameMusic);
+		//PlayMusicStream(*_gameMusic);
 		_currentScene->Update(dt);
 		_currentScene->Render();
 
