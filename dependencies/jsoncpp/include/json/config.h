@@ -50,7 +50,7 @@
 #define JSON_API
 #endif
 
-#if defined(_MSC_VER) && _MSC_VER < 1800 
+#if defined(_MSC_VER) && _MSC_VER < 1800
 #error                                                                         \
     "ERROR:  Visual Studio 12 (2013) with _MSC_VER=1800 is the oldest supported compiler with sufficient C++11 capabilities"
 #endif
