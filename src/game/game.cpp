@@ -16,14 +16,13 @@ void Game::Init()
 	SetConfigFlags(FLAG_MSAA_4X_HINT);
 	InitWindow(SIZE.x, SIZE.y, "Invasion of the Shapes");
 	InitAudioDevice();
-	SetTraceLogLevel(LOG_NONE);
 	SetTargetFPS(FPS);
 	SetExitKey(0);
 
-	//ToggleFullscreen();
+	// ToggleFullscreen();
 	_running = true;
 
-	//Assets
+	// Assets
 	_assets = std::make_shared<AssetManager>();
 	_assets->Init();
 
@@ -44,7 +43,6 @@ void Game::Init()
 
 	// Game Music
 	_gameMusic = _assets->GetMusic("game_music");
-
 }
 
 void Game::Run()
@@ -70,10 +68,9 @@ void Game::End()
 	_assets->CleanUp();
 	CloseAudioDevice();
 	CloseWindow();
-
 }
 
-void Game::OnNofity(const Event& event)
+void Game::OnNofity(const Event &event)
 {
 	if (event == Event::TO_GAME)
 	{

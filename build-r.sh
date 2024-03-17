@@ -1,0 +1,1 @@
+g++ $(find src/ -type f -name "*.cpp") -o Invasion-of-the-shapes-r.exe -ljsoncpp -lraylib -Idependencies/raylib/include -Ldependencies/raylib/lib -Idependencies/jsoncpp/include -Ldependencies/jsoncpp/lib -std=c++17

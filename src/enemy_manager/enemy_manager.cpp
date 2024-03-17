@@ -16,7 +16,7 @@ void EnemyManager::CheckBulletColissions(std::vector<Bullet>& bullets, Player& p
 			{
 				b.SetIsActive(false);
 				e->SetIsAlive(false);
-				player.SetScore(e->GetScore());
+				player.SetScore(e->GetScore() + player.GetScore());
 			}
 		}
 	}
@@ -52,7 +52,7 @@ void EnemyManager::Update(Player& player, BulletManager& bulletManager)
 		e->Update(player);
 	}
 	//Spawn(RUNNER);
-	Spawn(DASHER);
+	Spawn(RUNNER);
 	CheckBulletColissions(bulletManager.GetBullets(), player);
 	CheckPlayerColission(player);
 	RemoveDeadEnemies();

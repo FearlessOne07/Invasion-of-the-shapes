@@ -4,7 +4,7 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/Invasion-of-the-shapes.exe",
+            "program": "${workspaceFolder}/out/bin/Invasion-of-the-shapes-d.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
@@ -23,7 +23,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "Build"
+            "preLaunchTask": "Build Debug"
         }
     ]
 }

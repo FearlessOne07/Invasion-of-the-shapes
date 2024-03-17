@@ -37,8 +37,6 @@ void Bullet::Render()
         _rotation,
         { 255,255,255, static_cast<unsigned char>(_opacity) }
     );
-    DrawCircleLines(_position.x, _position.y, _radius, RED);
-
 }
 void Bullet::Update(float &dt) 
 {

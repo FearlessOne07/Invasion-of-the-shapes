@@ -52,6 +52,11 @@ Json::Value Config::GetData(const char* name)
 	return _config[name];
 }
 
+void Config::SetData(Json::Value value, const char* key)
+{
+	_config[key] = value;
+}
+
 Config::~Config()
 {
 	std::ofstream file;
@@ -61,8 +66,4 @@ Config::~Config()
 
 }
 
-void Config::SetData(Json::Value value, const char* key)
-{
-	_config[key] = value;
-}
 
