@@ -3,7 +3,7 @@
 #include <memory>
 #include <unordered_map>
 #include "raylib.h"
-#include "spawner.hpp"
+#include "spawner/spawner.hpp"
 
 class Enemy;
 class Player;

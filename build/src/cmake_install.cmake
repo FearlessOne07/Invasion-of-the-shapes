@@ -42,18 +42,3 @@ if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for each subdirectory.
-  include("/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/asset_manager/cmake_install.cmake")
-  include("/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/bullet_manager/cmake_install.cmake")
-  include("/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/config/cmake_install.cmake")
-  include("/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/enemy/cmake_install.cmake")
-  include("/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/game/cmake_install.cmake")
-  include("/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/enemy_manager/cmake_install.cmake")
-  include("/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/player/cmake_install.cmake")
-  include("/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/scenes/cmake_install.cmake")
-  include("/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/spawner/cmake_install.cmake")
-  include("/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/utils/cmake_install.cmake")
-
-endif()
-

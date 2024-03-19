@@ -1,2 +1,0 @@
-/usr/bin/ar qc libenemy.a CMakeFiles/enemy.dir/shooter/shooter.cpp.o CMakeFiles/enemy.dir/runner/runner.cpp.o
-/usr/bin/ranlib libenemy.a

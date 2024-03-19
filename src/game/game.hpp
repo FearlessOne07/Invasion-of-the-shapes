@@ -2,8 +2,8 @@
 #include <string>
 #include <memory>
 #include "raylib.h"
-#include "obsever.hpp"
-#include "scene.hpp"
+#include "utils/obsever.hpp"
+#include "scenes/scene.hpp"
 
 class AssetManager;
 class Config;

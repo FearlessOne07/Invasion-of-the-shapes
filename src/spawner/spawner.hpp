@@ -1,8 +1,8 @@
 #pragma once
 #include <memory>
 #include <vector>
+#include "enemy/enemy.hpp"
 
-class Enemy;
 class Spawner
 {
 protected:

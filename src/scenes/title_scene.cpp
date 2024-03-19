@@ -1,5 +1,5 @@
 #include "title_scene.hpp"
-#include "asset_manager.hpp"
+#include "asset_manager/asset_manager.hpp"
 
 TitleScene::TitleScene(std::shared_ptr<AssetManager> assets) : Scene(assets)
 {

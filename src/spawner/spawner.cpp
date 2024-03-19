@@ -1,9 +1,8 @@
-#include "spawner.hpp"
 #include <random>
 #include "raylib.h"
-#include "enemy.hpp"
-#include "runner/runner.hpp"
-#include "enemy_manager.hpp"
+#include "spawner.hpp"
+#include "enemy/runner.hpp"
+#include "enemy_manager/enemy_manager.hpp"
 
 Spawner::Spawner()
 {

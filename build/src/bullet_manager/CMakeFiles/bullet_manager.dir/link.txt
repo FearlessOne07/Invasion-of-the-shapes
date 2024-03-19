@@ -1,2 +1,0 @@
-/usr/bin/ar qc libbullet_manager.a CMakeFiles/bullet_manager.dir/bullet_manager.cpp.o
-/usr/bin/ranlib libbullet_manager.a

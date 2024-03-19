@@ -1,8 +1,8 @@
-#include "player.hpp"
 #include <iostream>
 #include <cmath>
-#include "asset_manager.hpp"
-#include "config.hpp"
+#include "player.hpp"
+#include "asset_manager/asset_manager.hpp"
+#include "config/config.hpp"
 
 Player::Player(Vector2 position, Color color, std::shared_ptr<AssetManager> assets) :_assets(assets), _position(position)
 {

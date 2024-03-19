@@ -1,7 +1,7 @@
 #pragma once
+#include <memory>
 #include "raylib.h"
 #include "raymath.h"
-#include <memory>
 
 class Bullet
 {

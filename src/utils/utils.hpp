@@ -1,6 +1,6 @@
 #pragma once
-#include "raylib.h"
 #include <memory>
+#include "raylib.h"
 
 typedef enum Event : unsigned int
 {

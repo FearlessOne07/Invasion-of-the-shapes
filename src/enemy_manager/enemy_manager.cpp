@@ -1,9 +1,9 @@
-#include "enemy_manager.hpp"
-#include "enemy.hpp"
-#include "bullet/bullet.hpp"
-#include "bullet_manager.hpp"
-#include "player.hpp"
 #include <algorithm>
+#include "enemy/enemy.hpp"
+#include "enemy_manager/enemy_manager.hpp"
+#include "utils/bullet/bullet.hpp"
+#include "bullet_manager/bullet_manager.hpp"
+#include "player/player.hpp"
 
 void EnemyManager::CheckBulletColissions(std::vector<Bullet>& bullets, Player& player)
 {

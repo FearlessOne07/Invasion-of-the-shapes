@@ -69,6 +69,138 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/CMakeLists.txt
 # =============================================================================
 
+# =============================================================================
+# Object build statements for EXECUTABLE target Invasion-of-the-Shapes
+
+
+#############################################
+# Order-only phony target for Invasion-of-the-Shapes
+
+build cmake_object_order_depends_target_Invasion-of-the-Shapes: phony || src/CMakeFiles/Invasion-of-the-Shapes.dir
+
+build src/CMakeFiles/Invasion-of-the-Shapes.dir/main.cpp.o: CXX_COMPILER__Invasion-of-the-Shapes_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/main.cpp || cmake_object_order_depends_target_Invasion-of-the-Shapes
+  DEP_FILE = src/CMakeFiles/Invasion-of-the-Shapes.dir/main.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/../src
+  OBJECT_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir
+  OBJECT_FILE_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir
+
+build src/CMakeFiles/Invasion-of-the-Shapes.dir/asset_manager/asset_manager.cpp.o: CXX_COMPILER__Invasion-of-the-Shapes_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/asset_manager/asset_manager.cpp || cmake_object_order_depends_target_Invasion-of-the-Shapes
+  DEP_FILE = src/CMakeFiles/Invasion-of-the-Shapes.dir/asset_manager/asset_manager.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/../src
+  OBJECT_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir
+  OBJECT_FILE_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir/asset_manager
+
+build src/CMakeFiles/Invasion-of-the-Shapes.dir/bullet_manager/bullet_manager.cpp.o: CXX_COMPILER__Invasion-of-the-Shapes_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/bullet_manager/bullet_manager.cpp || cmake_object_order_depends_target_Invasion-of-the-Shapes
+  DEP_FILE = src/CMakeFiles/Invasion-of-the-Shapes.dir/bullet_manager/bullet_manager.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/../src
+  OBJECT_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir
+  OBJECT_FILE_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir/bullet_manager
+
+build src/CMakeFiles/Invasion-of-the-Shapes.dir/config/config.cpp.o: CXX_COMPILER__Invasion-of-the-Shapes_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/config/config.cpp || cmake_object_order_depends_target_Invasion-of-the-Shapes
+  DEP_FILE = src/CMakeFiles/Invasion-of-the-Shapes.dir/config/config.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/../src
+  OBJECT_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir
+  OBJECT_FILE_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir/config
+
+build src/CMakeFiles/Invasion-of-the-Shapes.dir/enemy/runner.cpp.o: CXX_COMPILER__Invasion-of-the-Shapes_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/runner.cpp || cmake_object_order_depends_target_Invasion-of-the-Shapes
+  DEP_FILE = src/CMakeFiles/Invasion-of-the-Shapes.dir/enemy/runner.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/../src
+  OBJECT_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir
+  OBJECT_FILE_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir/enemy
+
+build src/CMakeFiles/Invasion-of-the-Shapes.dir/enemy/shooter.cpp.o: CXX_COMPILER__Invasion-of-the-Shapes_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/shooter.cpp || cmake_object_order_depends_target_Invasion-of-the-Shapes
+  DEP_FILE = src/CMakeFiles/Invasion-of-the-Shapes.dir/enemy/shooter.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/../src
+  OBJECT_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir
+  OBJECT_FILE_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir/enemy
+
+build src/CMakeFiles/Invasion-of-the-Shapes.dir/enemy_manager/enemy_manager.cpp.o: CXX_COMPILER__Invasion-of-the-Shapes_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy_manager/enemy_manager.cpp || cmake_object_order_depends_target_Invasion-of-the-Shapes
+  DEP_FILE = src/CMakeFiles/Invasion-of-the-Shapes.dir/enemy_manager/enemy_manager.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/../src
+  OBJECT_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir
+  OBJECT_FILE_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir/enemy_manager
+
+build src/CMakeFiles/Invasion-of-the-Shapes.dir/game/game.cpp.o: CXX_COMPILER__Invasion-of-the-Shapes_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/game/game.cpp || cmake_object_order_depends_target_Invasion-of-the-Shapes
+  DEP_FILE = src/CMakeFiles/Invasion-of-the-Shapes.dir/game/game.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/../src
+  OBJECT_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir
+  OBJECT_FILE_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir/game
+
+build src/CMakeFiles/Invasion-of-the-Shapes.dir/player/player.cpp.o: CXX_COMPILER__Invasion-of-the-Shapes_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/player/player.cpp || cmake_object_order_depends_target_Invasion-of-the-Shapes
+  DEP_FILE = src/CMakeFiles/Invasion-of-the-Shapes.dir/player/player.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/../src
+  OBJECT_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir
+  OBJECT_FILE_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir/player
+
+build src/CMakeFiles/Invasion-of-the-Shapes.dir/scenes/game_over_scene.cpp.o: CXX_COMPILER__Invasion-of-the-Shapes_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/game_over_scene.cpp || cmake_object_order_depends_target_Invasion-of-the-Shapes
+  DEP_FILE = src/CMakeFiles/Invasion-of-the-Shapes.dir/scenes/game_over_scene.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/../src
+  OBJECT_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir
+  OBJECT_FILE_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir/scenes
+
+build src/CMakeFiles/Invasion-of-the-Shapes.dir/scenes/game_scene.cpp.o: CXX_COMPILER__Invasion-of-the-Shapes_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/game_scene.cpp || cmake_object_order_depends_target_Invasion-of-the-Shapes
+  DEP_FILE = src/CMakeFiles/Invasion-of-the-Shapes.dir/scenes/game_scene.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/../src
+  OBJECT_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir
+  OBJECT_FILE_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir/scenes
+
+build src/CMakeFiles/Invasion-of-the-Shapes.dir/scenes/puase_scene.cpp.o: CXX_COMPILER__Invasion-of-the-Shapes_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/puase_scene.cpp || cmake_object_order_depends_target_Invasion-of-the-Shapes
+  DEP_FILE = src/CMakeFiles/Invasion-of-the-Shapes.dir/scenes/puase_scene.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/../src
+  OBJECT_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir
+  OBJECT_FILE_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir/scenes
+
+build src/CMakeFiles/Invasion-of-the-Shapes.dir/scenes/title_scene.cpp.o: CXX_COMPILER__Invasion-of-the-Shapes_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/title_scene.cpp || cmake_object_order_depends_target_Invasion-of-the-Shapes
+  DEP_FILE = src/CMakeFiles/Invasion-of-the-Shapes.dir/scenes/title_scene.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/../src
+  OBJECT_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir
+  OBJECT_FILE_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir/scenes
+
+build src/CMakeFiles/Invasion-of-the-Shapes.dir/spawner/spawner.cpp.o: CXX_COMPILER__Invasion-of-the-Shapes_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/spawner/spawner.cpp || cmake_object_order_depends_target_Invasion-of-the-Shapes
+  DEP_FILE = src/CMakeFiles/Invasion-of-the-Shapes.dir/spawner/spawner.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/../src
+  OBJECT_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir
+  OBJECT_FILE_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir/spawner
+
+build src/CMakeFiles/Invasion-of-the-Shapes.dir/utils/bullet/bullet.cpp.o: CXX_COMPILER__Invasion-of-the-Shapes_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/utils/bullet/bullet.cpp || cmake_object_order_depends_target_Invasion-of-the-Shapes
+  DEP_FILE = src/CMakeFiles/Invasion-of-the-Shapes.dir/utils/bullet/bullet.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/../src
+  OBJECT_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir
+  OBJECT_FILE_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir/utils/bullet
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Invasion-of-the-Shapes
+
+
+#############################################
+# Link the executable /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/bin/Invasion-of-the-Shapes
+
+build /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/bin/Invasion-of-the-Shapes: CXX_EXECUTABLE_LINKER__Invasion-of-the-Shapes_Debug src/CMakeFiles/Invasion-of-the-Shapes.dir/main.cpp.o src/CMakeFiles/Invasion-of-the-Shapes.dir/asset_manager/asset_manager.cpp.o src/CMakeFiles/Invasion-of-the-Shapes.dir/bullet_manager/bullet_manager.cpp.o src/CMakeFiles/Invasion-of-the-Shapes.dir/config/config.cpp.o src/CMakeFiles/Invasion-of-the-Shapes.dir/enemy/runner.cpp.o src/CMakeFiles/Invasion-of-the-Shapes.dir/enemy/shooter.cpp.o src/CMakeFiles/Invasion-of-the-Shapes.dir/enemy_manager/enemy_manager.cpp.o src/CMakeFiles/Invasion-of-the-Shapes.dir/game/game.cpp.o src/CMakeFiles/Invasion-of-the-Shapes.dir/player/player.cpp.o src/CMakeFiles/Invasion-of-the-Shapes.dir/scenes/game_over_scene.cpp.o src/CMakeFiles/Invasion-of-the-Shapes.dir/scenes/game_scene.cpp.o src/CMakeFiles/Invasion-of-the-Shapes.dir/scenes/puase_scene.cpp.o src/CMakeFiles/Invasion-of-the-Shapes.dir/scenes/title_scene.cpp.o src/CMakeFiles/Invasion-of-the-Shapes.dir/spawner/spawner.cpp.o src/CMakeFiles/Invasion-of-the-Shapes.dir/utils/bullet/bullet.cpp.o
+  FLAGS = -g
+  LINK_LIBRARIES = -Wl,-rpath,/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/../vendor/raylib/lib:/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/../vendor/jsoncpp/lib  -lraylib  -ljsoncpp
+  LINK_PATH = -L/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/../vendor/raylib/lib   -L/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/../vendor/jsoncpp/lib
+  OBJECT_DIR = src/CMakeFiles/Invasion-of-the-Shapes.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/bin/Invasion-of-the-Shapes
+  TARGET_PDB = Invasion-of-the-Shapes.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -94,750 +226,9 @@ build src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 build src/rebuild_cache: phony src/CMakeFiles/rebuild_cache.util
 
 # =============================================================================
-# Write statements declared in CMakeLists.txt:
-# /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/CMakeLists.txt
-# =============================================================================
-
-# =============================================================================
-# Object build statements for STATIC_LIBRARY target asset_manager
-
-
-#############################################
-# Order-only phony target for asset_manager
-
-build cmake_object_order_depends_target_asset_manager: phony || src/asset_manager/CMakeFiles/asset_manager.dir
-
-build src/asset_manager/CMakeFiles/asset_manager.dir/asset_manager.cpp.o: CXX_COMPILER__asset_manager_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/asset_manager/asset_manager.cpp || cmake_object_order_depends_target_asset_manager
-  DEP_FILE = src/asset_manager/CMakeFiles/asset_manager.dir/asset_manager.cpp.o.d
-  FLAGS = -g
-  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes
-  OBJECT_DIR = src/asset_manager/CMakeFiles/asset_manager.dir
-  OBJECT_FILE_DIR = src/asset_manager/CMakeFiles/asset_manager.dir
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target asset_manager
-
-
-#############################################
-# Link the static library src/asset_manager/libasset_manager.a
-
-build src/asset_manager/libasset_manager.a: CXX_STATIC_LIBRARY_LINKER__asset_manager_Debug src/asset_manager/CMakeFiles/asset_manager.dir/asset_manager.cpp.o
-  LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = src/asset_manager/CMakeFiles/asset_manager.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = src/asset_manager/libasset_manager.a
-  TARGET_PDB = asset_manager.a.dbg
-
-
-#############################################
-# Utility command for edit_cache
-
-build src/asset_manager/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/asset_manager && /usr/bin/ccmake -S/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes -B/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build
-  DESC = Running CMake cache editor...
-  pool = console
-  restat = 1
-
-build src/asset_manager/edit_cache: phony src/asset_manager/CMakeFiles/edit_cache.util
-
-
-#############################################
-# Utility command for rebuild_cache
-
-build src/asset_manager/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/asset_manager && /usr/bin/cmake --regenerate-during-build -S/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes -B/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-
-build src/asset_manager/rebuild_cache: phony src/asset_manager/CMakeFiles/rebuild_cache.util
-
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/CMakeLists.txt
-# =============================================================================
-
-# =============================================================================
-# Object build statements for STATIC_LIBRARY target bullet_manager
-
-
-#############################################
-# Order-only phony target for bullet_manager
-
-build cmake_object_order_depends_target_bullet_manager: phony || src/bullet_manager/CMakeFiles/bullet_manager.dir
-
-build src/bullet_manager/CMakeFiles/bullet_manager.dir/bullet_manager.cpp.o: CXX_COMPILER__bullet_manager_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/bullet_manager/bullet_manager.cpp || cmake_object_order_depends_target_bullet_manager
-  DEP_FILE = src/bullet_manager/CMakeFiles/bullet_manager.dir/bullet_manager.cpp.o.d
-  FLAGS = -g
-  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/bullet_manager -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/bullet_manager/../utils -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/bullet_manager/../asset_manager
-  OBJECT_DIR = src/bullet_manager/CMakeFiles/bullet_manager.dir
-  OBJECT_FILE_DIR = src/bullet_manager/CMakeFiles/bullet_manager.dir
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target bullet_manager
-
-
-#############################################
-# Link the static library src/bullet_manager/libbullet_manager.a
-
-build src/bullet_manager/libbullet_manager.a: CXX_STATIC_LIBRARY_LINKER__bullet_manager_Debug src/bullet_manager/CMakeFiles/bullet_manager.dir/bullet_manager.cpp.o
-  LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = src/bullet_manager/CMakeFiles/bullet_manager.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = src/bullet_manager/libbullet_manager.a
-  TARGET_PDB = bullet_manager.a.dbg
-
-
-#############################################
-# Utility command for edit_cache
-
-build src/bullet_manager/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/bullet_manager && /usr/bin/ccmake -S/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes -B/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build
-  DESC = Running CMake cache editor...
-  pool = console
-  restat = 1
-
-build src/bullet_manager/edit_cache: phony src/bullet_manager/CMakeFiles/edit_cache.util
-
-
-#############################################
-# Utility command for rebuild_cache
-
-build src/bullet_manager/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/bullet_manager && /usr/bin/cmake --regenerate-during-build -S/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes -B/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-
-build src/bullet_manager/rebuild_cache: phony src/bullet_manager/CMakeFiles/rebuild_cache.util
-
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/CMakeLists.txt
-# =============================================================================
-
-# =============================================================================
-# Object build statements for STATIC_LIBRARY target config
-
-
-#############################################
-# Order-only phony target for config
-
-build cmake_object_order_depends_target_config: phony || src/config/CMakeFiles/config.dir
-
-build src/config/CMakeFiles/config.dir/config.cpp.o: CXX_COMPILER__config_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/config/config.cpp || cmake_object_order_depends_target_config
-  DEP_FILE = src/config/CMakeFiles/config.dir/config.cpp.o.d
-  FLAGS = -g
-  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/config
-  OBJECT_DIR = src/config/CMakeFiles/config.dir
-  OBJECT_FILE_DIR = src/config/CMakeFiles/config.dir
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target config
-
-
-#############################################
-# Link the static library src/config/libconfig.a
-
-build src/config/libconfig.a: CXX_STATIC_LIBRARY_LINKER__config_Debug src/config/CMakeFiles/config.dir/config.cpp.o
-  LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = src/config/CMakeFiles/config.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = src/config/libconfig.a
-  TARGET_PDB = config.a.dbg
-
-
-#############################################
-# Utility command for edit_cache
-
-build src/config/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/config && /usr/bin/ccmake -S/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes -B/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build
-  DESC = Running CMake cache editor...
-  pool = console
-  restat = 1
-
-build src/config/edit_cache: phony src/config/CMakeFiles/edit_cache.util
-
-
-#############################################
-# Utility command for rebuild_cache
-
-build src/config/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/config && /usr/bin/cmake --regenerate-during-build -S/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes -B/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-
-build src/config/rebuild_cache: phony src/config/CMakeFiles/rebuild_cache.util
-
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/CMakeLists.txt
-# =============================================================================
-
-# =============================================================================
-# Object build statements for STATIC_LIBRARY target enemy
-
-
-#############################################
-# Order-only phony target for enemy
-
-build cmake_object_order_depends_target_enemy: phony || src/enemy/CMakeFiles/enemy.dir
-
-build src/enemy/CMakeFiles/enemy.dir/shooter/shooter.cpp.o: CXX_COMPILER__enemy_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/shooter/shooter.cpp || cmake_object_order_depends_target_enemy
-  DEP_FILE = src/enemy/CMakeFiles/enemy.dir/shooter/shooter.cpp.o.d
-  FLAGS = -g
-  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/shooter -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/runner -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/../player -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/../utils
-  OBJECT_DIR = src/enemy/CMakeFiles/enemy.dir
-  OBJECT_FILE_DIR = src/enemy/CMakeFiles/enemy.dir/shooter
-
-build src/enemy/CMakeFiles/enemy.dir/runner/runner.cpp.o: CXX_COMPILER__enemy_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/runner/runner.cpp || cmake_object_order_depends_target_enemy
-  DEP_FILE = src/enemy/CMakeFiles/enemy.dir/runner/runner.cpp.o.d
-  FLAGS = -g
-  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/shooter -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/runner -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/../player -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/../utils
-  OBJECT_DIR = src/enemy/CMakeFiles/enemy.dir
-  OBJECT_FILE_DIR = src/enemy/CMakeFiles/enemy.dir/runner
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target enemy
-
-
-#############################################
-# Link the static library src/enemy/libenemy.a
-
-build src/enemy/libenemy.a: CXX_STATIC_LIBRARY_LINKER__enemy_Debug src/enemy/CMakeFiles/enemy.dir/shooter/shooter.cpp.o src/enemy/CMakeFiles/enemy.dir/runner/runner.cpp.o
-  LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = src/enemy/CMakeFiles/enemy.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = src/enemy/libenemy.a
-  TARGET_PDB = enemy.a.dbg
-
-
-#############################################
-# Utility command for edit_cache
-
-build src/enemy/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/enemy && /usr/bin/ccmake -S/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes -B/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build
-  DESC = Running CMake cache editor...
-  pool = console
-  restat = 1
-
-build src/enemy/edit_cache: phony src/enemy/CMakeFiles/edit_cache.util
-
-
-#############################################
-# Utility command for rebuild_cache
-
-build src/enemy/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/enemy && /usr/bin/cmake --regenerate-during-build -S/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes -B/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-
-build src/enemy/rebuild_cache: phony src/enemy/CMakeFiles/rebuild_cache.util
-
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/CMakeLists.txt
-# =============================================================================
-
-# =============================================================================
-# Object build statements for STATIC_LIBRARY target game
-
-
-#############################################
-# Order-only phony target for game
-
-build cmake_object_order_depends_target_game: phony || src/game/CMakeFiles/game.dir
-
-build src/game/CMakeFiles/game.dir/game.cpp.o: CXX_COMPILER__game_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/game/game.cpp || cmake_object_order_depends_target_game
-  DEP_FILE = src/game/CMakeFiles/game.dir/game.cpp.o.d
-  FLAGS = -g
-  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/game -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/game/../scenes -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/game/../config -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/game/../utils
-  OBJECT_DIR = src/game/CMakeFiles/game.dir
-  OBJECT_FILE_DIR = src/game/CMakeFiles/game.dir
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target game
-
-
-#############################################
-# Link the static library src/game/libgame.a
-
-build src/game/libgame.a: CXX_STATIC_LIBRARY_LINKER__game_Debug src/game/CMakeFiles/game.dir/game.cpp.o
-  LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = src/game/CMakeFiles/game.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = src/game/libgame.a
-  TARGET_PDB = game.a.dbg
-
-
-#############################################
-# Utility command for edit_cache
-
-build src/game/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/game && /usr/bin/ccmake -S/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes -B/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build
-  DESC = Running CMake cache editor...
-  pool = console
-  restat = 1
-
-build src/game/edit_cache: phony src/game/CMakeFiles/edit_cache.util
-
-
-#############################################
-# Utility command for rebuild_cache
-
-build src/game/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/game && /usr/bin/cmake --regenerate-during-build -S/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes -B/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-
-build src/game/rebuild_cache: phony src/game/CMakeFiles/rebuild_cache.util
-
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/CMakeLists.txt
-# =============================================================================
-
-# =============================================================================
-# Object build statements for STATIC_LIBRARY target enemy_manager
-
-
-#############################################
-# Order-only phony target for enemy_manager
-
-build cmake_object_order_depends_target_enemy_manager: phony || src/enemy_manager/CMakeFiles/enemy_manager.dir
-
-build src/enemy_manager/CMakeFiles/enemy_manager.dir/enemy_manager.cpp.o: CXX_COMPILER__enemy_manager_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy_manager/enemy_manager.cpp || cmake_object_order_depends_target_enemy_manager
-  DEP_FILE = src/enemy_manager/CMakeFiles/enemy_manager.dir/enemy_manager.cpp.o.d
-  FLAGS = -g
-  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy_manager -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy_manager/../spawner -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy_manager/../enemy -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy_manager/../utils -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy_manager/../player -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy_manager/../bullet_manager
-  OBJECT_DIR = src/enemy_manager/CMakeFiles/enemy_manager.dir
-  OBJECT_FILE_DIR = src/enemy_manager/CMakeFiles/enemy_manager.dir
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target enemy_manager
-
-
-#############################################
-# Link the static library src/enemy_manager/libenemy_manager.a
-
-build src/enemy_manager/libenemy_manager.a: CXX_STATIC_LIBRARY_LINKER__enemy_manager_Debug src/enemy_manager/CMakeFiles/enemy_manager.dir/enemy_manager.cpp.o
-  LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = src/enemy_manager/CMakeFiles/enemy_manager.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = src/enemy_manager/libenemy_manager.a
-  TARGET_PDB = enemy_manager.a.dbg
-
-
-#############################################
-# Utility command for edit_cache
-
-build src/enemy_manager/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/enemy_manager && /usr/bin/ccmake -S/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes -B/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build
-  DESC = Running CMake cache editor...
-  pool = console
-  restat = 1
-
-build src/enemy_manager/edit_cache: phony src/enemy_manager/CMakeFiles/edit_cache.util
-
-
-#############################################
-# Utility command for rebuild_cache
-
-build src/enemy_manager/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/enemy_manager && /usr/bin/cmake --regenerate-during-build -S/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes -B/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-
-build src/enemy_manager/rebuild_cache: phony src/enemy_manager/CMakeFiles/rebuild_cache.util
-
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/CMakeLists.txt
-# =============================================================================
-
-# =============================================================================
-# Object build statements for STATIC_LIBRARY target player
-
-
-#############################################
-# Order-only phony target for player
-
-build cmake_object_order_depends_target_player: phony || src/player/CMakeFiles/player.dir
-
-build src/player/CMakeFiles/player.dir/player.cpp.o: CXX_COMPILER__player_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/player/player.cpp || cmake_object_order_depends_target_player
-  DEP_FILE = src/player/CMakeFiles/player.dir/player.cpp.o.d
-  FLAGS = -g
-  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/player -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/player/../asset_manager -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/player/../config
-  OBJECT_DIR = src/player/CMakeFiles/player.dir
-  OBJECT_FILE_DIR = src/player/CMakeFiles/player.dir
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target player
-
-
-#############################################
-# Link the static library src/player/libplayer.a
-
-build src/player/libplayer.a: CXX_STATIC_LIBRARY_LINKER__player_Debug src/player/CMakeFiles/player.dir/player.cpp.o
-  LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = src/player/CMakeFiles/player.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = src/player/libplayer.a
-  TARGET_PDB = player.a.dbg
-
-
-#############################################
-# Utility command for edit_cache
-
-build src/player/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/player && /usr/bin/ccmake -S/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes -B/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build
-  DESC = Running CMake cache editor...
-  pool = console
-  restat = 1
-
-build src/player/edit_cache: phony src/player/CMakeFiles/edit_cache.util
-
-
-#############################################
-# Utility command for rebuild_cache
-
-build src/player/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/player && /usr/bin/cmake --regenerate-during-build -S/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes -B/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-
-build src/player/rebuild_cache: phony src/player/CMakeFiles/rebuild_cache.util
-
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/CMakeLists.txt
-# =============================================================================
-
-# =============================================================================
-# Object build statements for STATIC_LIBRARY target scenes
-
-
-#############################################
-# Order-only phony target for scenes
-
-build cmake_object_order_depends_target_scenes: phony || src/scenes/CMakeFiles/scenes.dir
-
-build src/scenes/CMakeFiles/scenes.dir/game_scene.cpp.o: CXX_COMPILER__scenes_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/game_scene.cpp || cmake_object_order_depends_target_scenes
-  DEP_FILE = src/scenes/CMakeFiles/scenes.dir/game_scene.cpp.o.d
-  FLAGS = -g
-  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/../player -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/../asset_manager -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/../utils
-  OBJECT_DIR = src/scenes/CMakeFiles/scenes.dir
-  OBJECT_FILE_DIR = src/scenes/CMakeFiles/scenes.dir
-
-build src/scenes/CMakeFiles/scenes.dir/game_over_scene.cpp.o: CXX_COMPILER__scenes_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/game_over_scene.cpp || cmake_object_order_depends_target_scenes
-  DEP_FILE = src/scenes/CMakeFiles/scenes.dir/game_over_scene.cpp.o.d
-  FLAGS = -g
-  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/../player -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/../asset_manager -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/../utils
-  OBJECT_DIR = src/scenes/CMakeFiles/scenes.dir
-  OBJECT_FILE_DIR = src/scenes/CMakeFiles/scenes.dir
-
-build src/scenes/CMakeFiles/scenes.dir/puase_scene.cpp.o: CXX_COMPILER__scenes_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/puase_scene.cpp || cmake_object_order_depends_target_scenes
-  DEP_FILE = src/scenes/CMakeFiles/scenes.dir/puase_scene.cpp.o.d
-  FLAGS = -g
-  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/../player -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/../asset_manager -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/../utils
-  OBJECT_DIR = src/scenes/CMakeFiles/scenes.dir
-  OBJECT_FILE_DIR = src/scenes/CMakeFiles/scenes.dir
-
-build src/scenes/CMakeFiles/scenes.dir/title_scene.cpp.o: CXX_COMPILER__scenes_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/title_scene.cpp || cmake_object_order_depends_target_scenes
-  DEP_FILE = src/scenes/CMakeFiles/scenes.dir/title_scene.cpp.o.d
-  FLAGS = -g
-  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/../player -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/../asset_manager -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/../utils
-  OBJECT_DIR = src/scenes/CMakeFiles/scenes.dir
-  OBJECT_FILE_DIR = src/scenes/CMakeFiles/scenes.dir
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target scenes
-
-
-#############################################
-# Link the static library src/scenes/libscenes.a
-
-build src/scenes/libscenes.a: CXX_STATIC_LIBRARY_LINKER__scenes_Debug src/scenes/CMakeFiles/scenes.dir/game_scene.cpp.o src/scenes/CMakeFiles/scenes.dir/game_over_scene.cpp.o src/scenes/CMakeFiles/scenes.dir/puase_scene.cpp.o src/scenes/CMakeFiles/scenes.dir/title_scene.cpp.o
-  LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = src/scenes/CMakeFiles/scenes.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = src/scenes/libscenes.a
-  TARGET_PDB = scenes.a.dbg
-
-
-#############################################
-# Utility command for edit_cache
-
-build src/scenes/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/scenes && /usr/bin/ccmake -S/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes -B/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build
-  DESC = Running CMake cache editor...
-  pool = console
-  restat = 1
-
-build src/scenes/edit_cache: phony src/scenes/CMakeFiles/edit_cache.util
-
-
-#############################################
-# Utility command for rebuild_cache
-
-build src/scenes/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/scenes && /usr/bin/cmake --regenerate-during-build -S/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes -B/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-
-build src/scenes/rebuild_cache: phony src/scenes/CMakeFiles/rebuild_cache.util
-
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/CMakeLists.txt
-# =============================================================================
-
-# =============================================================================
-# Object build statements for STATIC_LIBRARY target spawner
-
-
-#############################################
-# Order-only phony target for spawner
-
-build cmake_object_order_depends_target_spawner: phony || src/spawner/CMakeFiles/spawner.dir
-
-build src/spawner/CMakeFiles/spawner.dir/spawner.cpp.o: CXX_COMPILER__spawner_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/spawner/spawner.cpp || cmake_object_order_depends_target_spawner
-  DEP_FILE = src/spawner/CMakeFiles/spawner.dir/spawner.cpp.o.d
-  FLAGS = -g
-  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/spawner -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/spawner/../enemy_manager -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/spawner/../enemy
-  OBJECT_DIR = src/spawner/CMakeFiles/spawner.dir
-  OBJECT_FILE_DIR = src/spawner/CMakeFiles/spawner.dir
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target spawner
-
-
-#############################################
-# Link the static library src/spawner/libspawner.a
-
-build src/spawner/libspawner.a: CXX_STATIC_LIBRARY_LINKER__spawner_Debug src/spawner/CMakeFiles/spawner.dir/spawner.cpp.o
-  LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = src/spawner/CMakeFiles/spawner.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = src/spawner/libspawner.a
-  TARGET_PDB = spawner.a.dbg
-
-
-#############################################
-# Utility command for edit_cache
-
-build src/spawner/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/spawner && /usr/bin/ccmake -S/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes -B/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build
-  DESC = Running CMake cache editor...
-  pool = console
-  restat = 1
-
-build src/spawner/edit_cache: phony src/spawner/CMakeFiles/edit_cache.util
-
-
-#############################################
-# Utility command for rebuild_cache
-
-build src/spawner/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/spawner && /usr/bin/cmake --regenerate-during-build -S/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes -B/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-
-build src/spawner/rebuild_cache: phony src/spawner/CMakeFiles/rebuild_cache.util
-
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/CMakeLists.txt
-# =============================================================================
-
-# =============================================================================
-# Object build statements for STATIC_LIBRARY target utils
-
-
-#############################################
-# Order-only phony target for utils
-
-build cmake_object_order_depends_target_utils: phony || src/utils/CMakeFiles/utils.dir
-
-build src/utils/CMakeFiles/utils.dir/bullet/bullet.cpp.o: CXX_COMPILER__utils_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/utils/bullet/bullet.cpp || cmake_object_order_depends_target_utils
-  DEP_FILE = src/utils/CMakeFiles/utils.dir/bullet/bullet.cpp.o.d
-  FLAGS = -g
-  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/utils -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/utils/bullet
-  OBJECT_DIR = src/utils/CMakeFiles/utils.dir
-  OBJECT_FILE_DIR = src/utils/CMakeFiles/utils.dir/bullet
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target utils
-
-
-#############################################
-# Link the static library src/utils/libutils.a
-
-build src/utils/libutils.a: CXX_STATIC_LIBRARY_LINKER__utils_Debug src/utils/CMakeFiles/utils.dir/bullet/bullet.cpp.o
-  LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = src/utils/CMakeFiles/utils.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = src/utils/libutils.a
-  TARGET_PDB = utils.a.dbg
-
-
-#############################################
-# Utility command for edit_cache
-
-build src/utils/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/utils && /usr/bin/ccmake -S/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes -B/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build
-  DESC = Running CMake cache editor...
-  pool = console
-  restat = 1
-
-build src/utils/edit_cache: phony src/utils/CMakeFiles/edit_cache.util
-
-
-#############################################
-# Utility command for rebuild_cache
-
-build src/utils/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/utils && /usr/bin/cmake --regenerate-during-build -S/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes -B/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-
-build src/utils/rebuild_cache: phony src/utils/CMakeFiles/rebuild_cache.util
-
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/CMakeLists.txt
-# =============================================================================
-
-# =============================================================================
-# Object build statements for EXECUTABLE target Invasion-of-the-Shapes
-
-
-#############################################
-# Order-only phony target for Invasion-of-the-Shapes
-
-build cmake_object_order_depends_target_Invasion-of-the-Shapes: phony || out/CMakeFiles/Invasion-of-the-Shapes.dir
-
-build out/CMakeFiles/Invasion-of-the-Shapes.dir/main.cpp.o: CXX_COMPILER__Invasion-of-the-Shapes_unscanned_Debug /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/out/main.cpp || cmake_object_order_depends_target_Invasion-of-the-Shapes
-  DEP_FILE = out/CMakeFiles/Invasion-of-the-Shapes.dir/main.cpp.o.d
-  FLAGS = -g
-  INCLUDES = -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/out/../src
-  OBJECT_DIR = out/CMakeFiles/Invasion-of-the-Shapes.dir
-  OBJECT_FILE_DIR = out/CMakeFiles/Invasion-of-the-Shapes.dir
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target Invasion-of-the-Shapes
-
-
-#############################################
-# Link the executable out/Invasion-of-the-Shapes
-
-build out/Invasion-of-the-Shapes: CXX_EXECUTABLE_LINKER__Invasion-of-the-Shapes_Debug out/CMakeFiles/Invasion-of-the-Shapes.dir/main.cpp.o
-  FLAGS = -g
-  LINK_LIBRARIES = -Wl,-rpath,/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/out/../vendor/raylib/lib:/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/out/../vendor/jsoncpp/lib  -lraylib  -ljsoncpp
-  LINK_PATH = -L/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/out/../vendor/raylib/lib   -L/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/out/../vendor/jsoncpp/lib
-  OBJECT_DIR = out/CMakeFiles/Invasion-of-the-Shapes.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = out/Invasion-of-the-Shapes
-  TARGET_PDB = Invasion-of-the-Shapes.dbg
-
-
-#############################################
-# Utility command for edit_cache
-
-build out/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/out && /usr/bin/ccmake -S/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes -B/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build
-  DESC = Running CMake cache editor...
-  pool = console
-  restat = 1
-
-build out/edit_cache: phony out/CMakeFiles/edit_cache.util
-
-
-#############################################
-# Utility command for rebuild_cache
-
-build out/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/out && /usr/bin/cmake --regenerate-during-build -S/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes -B/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-
-build out/rebuild_cache: phony out/CMakeFiles/rebuild_cache.util
-
-# =============================================================================
 # Target aliases.
 
-build Invasion-of-the-Shapes: phony out/Invasion-of-the-Shapes
-
-build asset_manager: phony src/asset_manager/libasset_manager.a
-
-build bullet_manager: phony src/bullet_manager/libbullet_manager.a
-
-build config: phony src/config/libconfig.a
-
-build enemy: phony src/enemy/libenemy.a
-
-build enemy_manager: phony src/enemy_manager/libenemy_manager.a
-
-build game: phony src/game/libgame.a
-
-build libasset_manager.a: phony src/asset_manager/libasset_manager.a
-
-build libbullet_manager.a: phony src/bullet_manager/libbullet_manager.a
-
-build libconfig.a: phony src/config/libconfig.a
-
-build libenemy.a: phony src/enemy/libenemy.a
-
-build libenemy_manager.a: phony src/enemy_manager/libenemy_manager.a
-
-build libgame.a: phony src/game/libgame.a
-
-build libplayer.a: phony src/player/libplayer.a
-
-build libscenes.a: phony src/scenes/libscenes.a
-
-build libspawner.a: phony src/spawner/libspawner.a
-
-build libutils.a: phony src/utils/libutils.a
-
-build player: phony src/player/libplayer.a
-
-build scenes: phony src/scenes/libscenes.a
-
-build spawner: phony src/spawner/libspawner.a
-
-build utils: phony src/utils/libutils.a
+build Invasion-of-the-Shapes: phony /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/bin/Invasion-of-the-Shapes
 
 # =============================================================================
 # Folder targets.
@@ -847,91 +238,14 @@ build utils: phony src/utils/libutils.a
 #############################################
 # Folder: /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build
 
-build all: phony src/all out/all
-
-# =============================================================================
-
-#############################################
-# Folder: /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/out
-
-build out/all: phony out/Invasion-of-the-Shapes
+build all: phony src/all
 
 # =============================================================================
 
 #############################################
 # Folder: /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src
 
-build src/all: phony src/asset_manager/all src/bullet_manager/all src/config/all src/enemy/all src/game/all src/enemy_manager/all src/player/all src/scenes/all src/spawner/all src/utils/all
-
-# =============================================================================
-
-#############################################
-# Folder: /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/asset_manager
-
-build src/asset_manager/all: phony src/asset_manager/libasset_manager.a
-
-# =============================================================================
-
-#############################################
-# Folder: /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/bullet_manager
-
-build src/bullet_manager/all: phony src/bullet_manager/libbullet_manager.a
-
-# =============================================================================
-
-#############################################
-# Folder: /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/config
-
-build src/config/all: phony src/config/libconfig.a
-
-# =============================================================================
-
-#############################################
-# Folder: /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/enemy
-
-build src/enemy/all: phony src/enemy/libenemy.a
-
-# =============================================================================
-
-#############################################
-# Folder: /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/enemy_manager
-
-build src/enemy_manager/all: phony src/enemy_manager/libenemy_manager.a
-
-# =============================================================================
-
-#############################################
-# Folder: /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/game
-
-build src/game/all: phony src/game/libgame.a
-
-# =============================================================================
-
-#############################################
-# Folder: /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/player
-
-build src/player/all: phony src/player/libplayer.a
-
-# =============================================================================
-
-#############################################
-# Folder: /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/scenes
-
-build src/scenes/all: phony src/scenes/libscenes.a
-
-# =============================================================================
-
-#############################################
-# Folder: /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/spawner
-
-build src/spawner/all: phony src/spawner/libspawner.a
-
-# =============================================================================
-
-#############################################
-# Folder: /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/utils
-
-build src/utils/all: phony src/utils/libutils.a
+build src/all: phony /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/bin/Invasion-of-the-Shapes
 
 # =============================================================================
 # Built-in targets
@@ -940,14 +254,14 @@ build src/utils/all: phony src/utils/libutils.a
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/CMakeLists.txt /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/out/CMakeLists.txt /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/CMakeLists.txt /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/asset_manager/CMakeLists.txt /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/bullet_manager/CMakeLists.txt /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/config/CMakeLists.txt /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/CMakeLists.txt /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy_manager/CMakeLists.txt /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/game/CMakeLists.txt /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/player/CMakeLists.txt /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/CMakeLists.txt /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/spawner/CMakeLists.txt /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/utils/CMakeLists.txt /usr/share/cmake/Modules/CMakeCInformation.cmake /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/GNU-C.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.28.3/CMakeCCompiler.cmake CMakeFiles/3.28.3/CMakeCXXCompiler.cmake CMakeFiles/3.28.3/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/CMakeLists.txt /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/CMakeLists.txt /usr/share/cmake/Modules/CMakeCInformation.cmake /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/GNU-C.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.28.3/CMakeCCompiler.cmake CMakeFiles/3.28.3/CMakeCXXCompiler.cmake CMakeFiles/3.28.3/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/CMakeLists.txt /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/out/CMakeLists.txt /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/CMakeLists.txt /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/asset_manager/CMakeLists.txt /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/bullet_manager/CMakeLists.txt /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/config/CMakeLists.txt /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/CMakeLists.txt /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy_manager/CMakeLists.txt /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/game/CMakeLists.txt /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/player/CMakeLists.txt /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/CMakeLists.txt /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/spawner/CMakeLists.txt /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/utils/CMakeLists.txt /usr/share/cmake/Modules/CMakeCInformation.cmake /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/GNU-C.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.28.3/CMakeCCompiler.cmake CMakeFiles/3.28.3/CMakeCXXCompiler.cmake CMakeFiles/3.28.3/CMakeSystem.cmake: phony
+build /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/CMakeLists.txt /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/CMakeLists.txt /usr/share/cmake/Modules/CMakeCInformation.cmake /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/GNU-C.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.28.3/CMakeCCompiler.cmake CMakeFiles/3.28.3/CMakeCXXCompiler.cmake CMakeFiles/3.28.3/CMakeSystem.cmake: phony
 
 
 #############################################

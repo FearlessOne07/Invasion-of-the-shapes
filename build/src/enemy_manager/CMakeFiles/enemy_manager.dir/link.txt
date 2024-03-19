@@ -1,2 +1,0 @@
-/usr/bin/ar qc libenemy_manager.a CMakeFiles/enemy_manager.dir/enemy_manager.cpp.o
-/usr/bin/ranlib libenemy_manager.a

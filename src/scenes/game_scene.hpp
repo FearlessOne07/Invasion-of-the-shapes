@@ -1,9 +1,9 @@
 #pragma once
 #include "raylib.h"
-#include "player.hpp"
 #include "scene.hpp"
-#include "enemy_manager.hpp"
-#include "bullet_manager.hpp"
+#include "player/player.hpp"
+#include "enemy_manager/enemy_manager.hpp"
+#include "bullet_manager/bullet_manager.hpp"
 
 
 class Config;
@@ -15,8 +15,8 @@ private:
     Vector2 _playerStart{};
     Color _playerColor{};
     Player _player;
-    EnemyManager _enemMan;clear
-    
+    EnemyManager _enemMan;
+
     BulletManager _bulMan;
     float _gameClock{};
 

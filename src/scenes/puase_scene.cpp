@@ -1,5 +1,5 @@
 #include "puase_scene.hpp"
-#include "asset_manager.h"
+#include "asset_manager/asset_manager.hpp"
 
 PauseScene::PauseScene(std::shared_ptr<AssetManager> assets) : Scene(assets)
 {

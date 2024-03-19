@@ -1,6 +1,6 @@
 #include "game_scene.hpp"
-#include "asset_manager.h"
-#include "config.hpp"
+#include "asset_manager/asset_manager.hpp"
+#include "config/config.hpp"
 
 GameScene::GameScene(std::shared_ptr<AssetManager> assets)
     : Scene(assets),

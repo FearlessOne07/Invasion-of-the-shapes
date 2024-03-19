@@ -1,6 +1,6 @@
-#include "bullet.hpp"
 #include <algorithm>
 #include <cmath>
+#include "bullet.hpp"
 
 Bullet::Bullet(Vector2 position, Vector2 direction, std::shared_ptr<Texture> textures) :_texture(textures), _position(position), _direction(direction)
 {

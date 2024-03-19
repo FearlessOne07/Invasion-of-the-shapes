@@ -1,9 +1,9 @@
 #pragma once
 #include <vector>
-#include "raylib.h"
 #include <memory>
-#include "utils.hpp"
-#include "obsever.hpp"
+#include "raylib.h"
+#include "utils/utils.hpp"
+#include "utils/obsever.hpp"
 
 class AssetManager;
 class Scene
