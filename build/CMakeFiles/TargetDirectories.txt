@@ -1,5 +1,0 @@
-/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/CMakeFiles/edit_cache.dir
-/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/CMakeFiles/rebuild_cache.dir
-/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/CMakeFiles/Invasion-of-the-Shapes.dir
-/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/CMakeFiles/edit_cache.dir
-/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build/src/CMakeFiles/rebuild_cache.dir
