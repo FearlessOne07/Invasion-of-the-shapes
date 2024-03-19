@@ -1,1 +1,0 @@
-g++ -O0 -g -Wall $(find src/ -type f -name "*.cpp") -o out/bin/Invasion-of-the-shapes-d.exe -ljsoncpp -lraylib -Idependencies/raylib/include -Ldependencies/raylib/lib -Idependencies/jsoncpp/include -Ldependencies/jsoncpp/lib -std=c++17

@@ -1,6 +1,6 @@
 #pragma once
-#include "../scenes/scene.hpp"
-#include "../utils/utils.hpp"
+#include "scene.hpp"
+#include "utils.hpp"
 
 class PauseScene : public Scene
 {

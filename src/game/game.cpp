@@ -1,12 +1,12 @@
 #include "game.hpp"
 
-#include "../scenes/scene.hpp"
-#include "../scenes/title_scene.hpp"
-#include "../scenes/game_scene.hpp"
-#include "../scenes/puase_scene.hpp"
-#include "../scenes/game_over_scene.hpp"
-#include "../asset_manager/asset_manager.h"
-#include "../config/config.h"
+
+#include "title_scene.hpp"
+#include "game_scene.hpp"
+#include "puase_scene.hpp"
+#include "game_over_scene.hpp"
+#include "asset_manager.hpp"
+#include "config.hpp"
 #include <fstream>
 
 void Game::Init()

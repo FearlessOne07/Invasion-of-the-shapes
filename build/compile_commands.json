@@ -1,0 +1,92 @@
+[
+{
+  "directory": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build",
+  "command": "/usr/bin/g++ -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes -g -o src/asset_manager/CMakeFiles/asset_manager.dir/asset_manager.cpp.o -c /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/asset_manager/asset_manager.cpp",
+  "file": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/asset_manager/asset_manager.cpp",
+  "output": "src/asset_manager/CMakeFiles/asset_manager.dir/asset_manager.cpp.o"
+},
+{
+  "directory": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build",
+  "command": "/usr/bin/g++ -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/bullet_manager -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/bullet_manager/../utils -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/bullet_manager/../asset_manager -g -o src/bullet_manager/CMakeFiles/bullet_manager.dir/bullet_manager.cpp.o -c /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/bullet_manager/bullet_manager.cpp",
+  "file": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/bullet_manager/bullet_manager.cpp",
+  "output": "src/bullet_manager/CMakeFiles/bullet_manager.dir/bullet_manager.cpp.o"
+},
+{
+  "directory": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build",
+  "command": "/usr/bin/g++ -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/config -g -o src/config/CMakeFiles/config.dir/config.cpp.o -c /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/config/config.cpp",
+  "file": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/config/config.cpp",
+  "output": "src/config/CMakeFiles/config.dir/config.cpp.o"
+},
+{
+  "directory": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build",
+  "command": "/usr/bin/g++ -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/shooter -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/runner -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/../player -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/../utils -g -o src/enemy/CMakeFiles/enemy.dir/shooter/shooter.cpp.o -c /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/shooter/shooter.cpp",
+  "file": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/shooter/shooter.cpp",
+  "output": "src/enemy/CMakeFiles/enemy.dir/shooter/shooter.cpp.o"
+},
+{
+  "directory": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build",
+  "command": "/usr/bin/g++ -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/shooter -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/runner -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/../player -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/../utils -g -o src/enemy/CMakeFiles/enemy.dir/runner/runner.cpp.o -c /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/runner/runner.cpp",
+  "file": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/runner/runner.cpp",
+  "output": "src/enemy/CMakeFiles/enemy.dir/runner/runner.cpp.o"
+},
+{
+  "directory": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build",
+  "command": "/usr/bin/g++ -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/game -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/game/../scenes -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/game/../config -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/game/../utils -g -o src/game/CMakeFiles/game.dir/game.cpp.o -c /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/game/game.cpp",
+  "file": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/game/game.cpp",
+  "output": "src/game/CMakeFiles/game.dir/game.cpp.o"
+},
+{
+  "directory": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build",
+  "command": "/usr/bin/g++ -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy_manager -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy_manager/../spawner -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy_manager/../enemy -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy_manager/../utils -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy_manager/../player -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy_manager/../bullet_manager -g -o src/enemy_manager/CMakeFiles/enemy_manager.dir/enemy_manager.cpp.o -c /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy_manager/enemy_manager.cpp",
+  "file": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy_manager/enemy_manager.cpp",
+  "output": "src/enemy_manager/CMakeFiles/enemy_manager.dir/enemy_manager.cpp.o"
+},
+{
+  "directory": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build",
+  "command": "/usr/bin/g++ -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/player -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/player/../asset_manager -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/player/../config -g -o src/player/CMakeFiles/player.dir/player.cpp.o -c /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/player/player.cpp",
+  "file": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/player/player.cpp",
+  "output": "src/player/CMakeFiles/player.dir/player.cpp.o"
+},
+{
+  "directory": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build",
+  "command": "/usr/bin/g++ -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/../player -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/../asset_manager -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/../utils -g -o src/scenes/CMakeFiles/scenes.dir/game_scene.cpp.o -c /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/game_scene.cpp",
+  "file": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/game_scene.cpp",
+  "output": "src/scenes/CMakeFiles/scenes.dir/game_scene.cpp.o"
+},
+{
+  "directory": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build",
+  "command": "/usr/bin/g++ -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/../player -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/../asset_manager -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/../utils -g -o src/scenes/CMakeFiles/scenes.dir/game_over_scene.cpp.o -c /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/game_over_scene.cpp",
+  "file": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/game_over_scene.cpp",
+  "output": "src/scenes/CMakeFiles/scenes.dir/game_over_scene.cpp.o"
+},
+{
+  "directory": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build",
+  "command": "/usr/bin/g++ -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/../player -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/../asset_manager -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/../utils -g -o src/scenes/CMakeFiles/scenes.dir/puase_scene.cpp.o -c /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/puase_scene.cpp",
+  "file": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/puase_scene.cpp",
+  "output": "src/scenes/CMakeFiles/scenes.dir/puase_scene.cpp.o"
+},
+{
+  "directory": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build",
+  "command": "/usr/bin/g++ -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/../player -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/../asset_manager -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/../utils -g -o src/scenes/CMakeFiles/scenes.dir/title_scene.cpp.o -c /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/title_scene.cpp",
+  "file": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/scenes/title_scene.cpp",
+  "output": "src/scenes/CMakeFiles/scenes.dir/title_scene.cpp.o"
+},
+{
+  "directory": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build",
+  "command": "/usr/bin/g++ -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/spawner -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/spawner/../enemy_manager -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/spawner/../enemy -g -o src/spawner/CMakeFiles/spawner.dir/spawner.cpp.o -c /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/spawner/spawner.cpp",
+  "file": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/spawner/spawner.cpp",
+  "output": "src/spawner/CMakeFiles/spawner.dir/spawner.cpp.o"
+},
+{
+  "directory": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build",
+  "command": "/usr/bin/g++ -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/utils -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/utils/bullet -g -o src/utils/CMakeFiles/utils.dir/bullet/bullet.cpp.o -c /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/utils/bullet/bullet.cpp",
+  "file": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/utils/bullet/bullet.cpp",
+  "output": "src/utils/CMakeFiles/utils.dir/bullet/bullet.cpp.o"
+},
+{
+  "directory": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build",
+  "command": "/usr/bin/g++ -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/, -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include -I/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/out/../src -g -o out/CMakeFiles/Invasion-of-the-Shapes.dir/main.cpp.o -c /home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/out/main.cpp",
+  "file": "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/out/main.cpp",
+  "output": "out/CMakeFiles/Invasion-of-the-Shapes.dir/main.cpp.o"
+}
+]

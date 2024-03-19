@@ -1,0 +1,342 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						12
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "src",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11
+					],
+					"jsonFile" : "directory-src-Debug-b6cf2213fc5053b67c22.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src"
+				},
+				{
+					"build" : "src/asset_manager",
+					"jsonFile" : "directory-src.asset_manager-Debug-6736af8dd7b088652ae4.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/asset_manager",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "src/bullet_manager",
+					"jsonFile" : "directory-src.bullet_manager-Debug-a1ea756920c56e5f8497.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/bullet_manager",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "src/config",
+					"jsonFile" : "directory-src.config-Debug-eb0c43d13011ce5cd845.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/config",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "src/enemy",
+					"jsonFile" : "directory-src.enemy-Debug-610dd62739faacf88feb.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/enemy",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "src/game",
+					"jsonFile" : "directory-src.game-Debug-c373ccdb774a98098318.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/game",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "src/enemy_manager",
+					"jsonFile" : "directory-src.enemy_manager-Debug-3f01d6f7279eabeeeabd.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/enemy_manager",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "src/player",
+					"jsonFile" : "directory-src.player-Debug-79892b686111b5c313c1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/player",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "src/scenes",
+					"jsonFile" : "directory-src.scenes-Debug-581e4f3d0893bc029acf.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/scenes",
+					"targetIndexes" : 
+					[
+						8
+					]
+				},
+				{
+					"build" : "src/spawner",
+					"jsonFile" : "directory-src.spawner-Debug-233517598ffd006eede6.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/spawner",
+					"targetIndexes" : 
+					[
+						9
+					]
+				},
+				{
+					"build" : "src/utils",
+					"jsonFile" : "directory-src.utils-Debug-3e06762d87894fb62125.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/utils",
+					"targetIndexes" : 
+					[
+						10
+					]
+				},
+				{
+					"build" : "out",
+					"jsonFile" : "directory-out-Debug-3be2eaf122f22bb99213.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "out",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					],
+					"name" : "Invasion-of-the-Shapes",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 12,
+					"id" : "Invasion-of-the-Shapes::@ccee71f3f776d08d4a47",
+					"jsonFile" : "target-Invasion-of-the-Shapes-Debug-2abe67f8aaa8d3d298b7.json",
+					"name" : "Invasion-of-the-Shapes",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "asset_manager::@aebcc60bbb50f0412973",
+					"jsonFile" : "target-asset_manager-Debug-48d9246da14d1fe3a236.json",
+					"name" : "asset_manager",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "bullet_manager::@77831a9aa1bed4c8fc65",
+					"jsonFile" : "target-bullet_manager-Debug-74e3b22acae229df786a.json",
+					"name" : "bullet_manager",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "config::@f954cdf8d5380f57b616",
+					"jsonFile" : "target-config-Debug-9f5d20e0bcb2250ddb80.json",
+					"name" : "config",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "enemy::@6dbf2be5dd5154494a0b",
+					"jsonFile" : "target-enemy-Debug-9ac4a50fcb7ea02c32b8.json",
+					"name" : "enemy",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "enemy_manager::@93c8260c0b9fceb927e6",
+					"jsonFile" : "target-enemy_manager-Debug-3195b3342f27b7096e06.json",
+					"name" : "enemy_manager",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "game::@237b513620d2b2ecc71d",
+					"jsonFile" : "target-game-Debug-b6b1197d558778d60cba.json",
+					"name" : "game",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "player::@2d5ae9c105164480b127",
+					"jsonFile" : "target-player-Debug-56e36d7ed1be466e8679.json",
+					"name" : "player",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "scenes::@cb5a6653e438f5fd113b",
+					"jsonFile" : "target-scenes-Debug-3cb8fbf9114c87200f49.json",
+					"name" : "scenes",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "spawner::@70dd3d8352222de1aebc",
+					"jsonFile" : "target-spawner-Debug-3cbf191cc04ca375cd2d.json",
+					"name" : "spawner",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 11,
+					"id" : "utils::@f1b38b22aeb65474a6c5",
+					"jsonFile" : "target-utils-Debug-d8f53bfd0f7436f17150.json",
+					"name" : "utils",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/build",
+		"source" : "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

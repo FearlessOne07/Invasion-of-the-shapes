@@ -1,0 +1,162 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "src/enemy/libenemy.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"include_directories",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"src/enemy/CMakeLists.txt",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 1,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 4,
+				"parent" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 3,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 4,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 5,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 6,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 7,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 3,
+					"path" : "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/jsoncpp/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/,"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/vendor/raylib/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/shooter"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/runner"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/../player"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/home/baraka-joel/Dev/Repos/Invasion-of-the-shapes/src/enemy/../utils"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0,
+				1
+			]
+		}
+	],
+	"id" : "enemy::@6dbf2be5dd5154494a0b",
+	"name" : "enemy",
+	"nameOnDisk" : "libenemy.a",
+	"paths" : 
+	{
+		"build" : "src/enemy",
+		"source" : "src/enemy"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/enemy/shooter/shooter.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/enemy/runner/runner.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

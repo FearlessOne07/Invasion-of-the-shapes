@@ -1,5 +1,5 @@
-#include "runner.h"
-#include "../../player/player.hpp"
+#include "runner.hpp"
+#include "player.hpp"
 Runner::Runner(Vector2 position, float speed, int score) : Enemy(position,score)
 {
 	_radius = 30;

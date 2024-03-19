@@ -1,5 +1,5 @@
 #include "game_over_scene.hpp"
-#include "../asset_manager/asset_manager.h"
+#include "asset_manager.h"
 #include <algorithm>
 
 GameOverScene::GameOverScene(std::shared_ptr<AssetManager> assets) : Scene(assets)

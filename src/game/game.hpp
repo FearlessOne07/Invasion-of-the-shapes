@@ -1,11 +1,11 @@
 #pragma once
-#include "raylib.h"
 #include <string>
 #include <memory>
-#include "../utils/obsever.hpp"
+#include "raylib.h"
+#include "obsever.hpp"
+#include "scene.hpp"
 
 class AssetManager;
-class Scene;
 class Config;
 
 class Game : public Observer

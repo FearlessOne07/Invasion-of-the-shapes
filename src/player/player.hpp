@@ -3,10 +3,11 @@
 #include "raymath.h"
 #include <iostream>
 #include <memory>
-#include "../config/config.h"
 #include "json/json.h"
 
+
 class AssetManager;
+class Config;
 class Player
 {
 private:

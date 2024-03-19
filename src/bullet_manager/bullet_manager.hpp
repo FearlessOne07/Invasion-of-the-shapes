@@ -1,10 +1,10 @@
 #pragma once
 #include "raylib.h"
 #include <vector>
-#include "bullet.hpp"
 #include <algorithm>
-#include "../asset_manager/asset_manager.h"
 #include <memory>
+#include "bullet/bullet.hpp"
+#include "asset_manager.hpp"
 
 class BulletManager
 {

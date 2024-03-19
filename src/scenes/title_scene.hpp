@@ -1,6 +1,6 @@
 #pragma once
 #include "scene.hpp"
-#include "../config/config.h"
+#include "config.hpp"
 
 class TitleScene : public Scene
 {
