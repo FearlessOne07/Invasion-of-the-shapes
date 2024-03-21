@@ -4,6 +4,9 @@ Runner::Runner(Vector2 position, float speed, int score) : Enemy(position,score)
 {
 	_radius = 30;
 	_speed = speed;
+
+	_velocity = { 0 };
+	
 }
 
 void Runner::Update(Player& player)

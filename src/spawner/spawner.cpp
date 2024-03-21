@@ -2,9 +2,12 @@
 #include "raylib.h"
 #include "spawner.hpp"
 #include "enemy/runner.hpp"
+#include "enemy/shooter.hpp"
 #include "enemy_manager/enemy_manager.hpp"
+#include "asset_manager/asset_manager.hpp"
 
-Spawner::Spawner()
+Spawner::Spawner(std::shared_ptr<AssetManager> assets)
+	: _assets(assets)
 {
 	_enemyScore = 0;
 	_spawnTimer = 0;
@@ -55,6 +58,9 @@ void Spawner::Spawn(std::vector<std::shared_ptr<Enemy>> &enemies, short unsigned
 		{
 		case EnemyManager::SpawnerID::RUNNER:
 			enemy = std::make_shared<Runner>(position, 100, 100);
+			break;
+		case EnemyManager::SpawnerID::SHOOTER:
+			enemy = std::make_shared<Shooter>(position, _assets->GetTexture("bullet"));
 		default:
 			break;
 		}

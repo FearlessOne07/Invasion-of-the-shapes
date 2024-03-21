@@ -1,16 +1,17 @@
 #pragma once
+#include <memory>
 #include "raylib.h"
 
 class Player;
 class Enemy
 {
 protected:
-	Texture _texture{};
-	float _radius{};
+	std::shared_ptr<Texture> _texture;
+	float _radius;
 
-	Vector2 _position{};
-	Vector2 _velocity{};
-	float _speed{};
+	Vector2 _position;
+	Vector2 _velocity;
+	float _speed;
 
 	bool _isAlive;
 	int _score;
@@ -33,5 +34,4 @@ public:
 	// Memeber Mutation Functions
 	void SetIsAlive(const bool &isAlive) { _isAlive = isAlive; };
 	void SetPos(const Vector2 &pos) { _position = pos; };
-	
 };

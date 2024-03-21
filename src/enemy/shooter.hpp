@@ -17,6 +17,7 @@ private:
 
 private:
     void Shoot();
+    void ApproachPlayer(const Vector2& playerPos, float dt);
 public:
     Shooter(Vector2 position, std::shared_ptr<Texture> bulletTexture);
     void Update(Player& player) override;

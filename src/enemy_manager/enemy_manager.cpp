@@ -35,13 +35,18 @@ void EnemyManager::CheckPlayerColission(Player& player)
 
 void EnemyManager::RemoveDeadEnemies()
 {
-	auto it = std::remove_if(_enemies.begin(), _enemies.end(), [](std::shared_ptr<Enemy>& e) {return !e->isAlive(); });
+	auto it = std::remove_if(
+		_enemies.begin(), 
+		_enemies.end(), 
+		[](std::shared_ptr<Enemy>& e) {return !e->isAlive(); }
+	);
 	_enemies.erase(it, _enemies.end());
 }
 
 EnemyManager::EnemyManager(std::shared_ptr<AssetManager> assets) : _assets(assets)
-{
+{	
 	_enemies = {};
+	_enemySpawner = Spawner(_assets);
 }
 
 void EnemyManager::Update(Player& player, BulletManager& bulletManager)
@@ -51,7 +56,7 @@ void EnemyManager::Update(Player& player, BulletManager& bulletManager)
 		e->Update(player);
 	}
 	//Spawn(RUNNER);
-	Spawn(RUNNER);
+	Spawn(SHOOTER);
 	CheckBulletColissions(bulletManager.GetBullets(), player);
 	CheckPlayerColission(player);
 	RemoveDeadEnemies();

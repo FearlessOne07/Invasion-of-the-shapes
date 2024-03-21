@@ -24,7 +24,6 @@ void AssetManager::Init()
 
 	// Projectiles
 	_textures["bullet"] = std::make_shared<Texture>(LoadTexture("assets/textures/projectiles/bullet/bullet.png"));
-
 	_textures["entities"] = std::make_shared<Texture>(LoadTexture("assets/textures/entities.png"));
 	_textures["projectiles"] = std::make_shared<Texture>(LoadTexture("assets/textures/projectiles.png"));
 }
@@ -39,7 +38,6 @@ void AssetManager::Update()
 
 void AssetManager::CleanUp()
 {
-
 	// Cleanup Sounds
 	for (const std::pair<const std::string &, std::shared_ptr<Sound>> &p : _sounds)
 	{

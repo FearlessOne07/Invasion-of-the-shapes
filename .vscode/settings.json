@@ -1,7 +1,7 @@
 {
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
     "files.associations": {
-        "*.txt": "cpp",
+        "*.txt": "cmake",
         "random": "cpp",
         "vector": "cpp"
     }
