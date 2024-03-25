@@ -3,6 +3,11 @@
 #include "raylib.h"
 #include "raymath.h"
 
+enum BulletTag : short unsigned int
+{
+    PLAYER_BULLET = 0,
+    ENEMY_BULLET
+};
 class Bullet
 {
 private:
@@ -20,16 +25,23 @@ private:
     Vector2 _direction; 
     int _speed;
 
+    BulletTag _tag;
 private:
     void CheckActivty();
 
 public:
 public:
-    Bullet( Vector2 position, Vector2 direction, std::shared_ptr<Texture> _texture);
+    Bullet(
+        Vector2 position, 
+        Vector2 direction, 
+        std::shared_ptr<Texture> _texture, 
+        BulletTag tag
+    );
     void Render();
     void Update(float &dt);
     Vector2 GetPos() const;
     int GetRad() const;
     bool isActive() const;
     void SetIsActive(bool active);
+    BulletTag GetTag() const;
 };

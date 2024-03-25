@@ -2,9 +2,16 @@
 #include <cmath>
 #include "player.hpp"
 #include "asset_manager/asset_manager.hpp"
+#include "bullet_manager/bullet_manager.hpp"
 #include "config/config.hpp"
 
-Player::Player(Vector2 position, Color color, std::shared_ptr<AssetManager> assets) :_assets(assets), _position(position)
+Player::Player(
+	Vector2 position, 
+	Color color, 
+	std::shared_ptr<AssetManager> assets,
+	std::shared_ptr<BulletManager> bullMan
+) 
+	:_assets(assets), _position(position), _bullMan(bullMan)
 {
 	//--------Initialize Player--------
 
@@ -32,9 +39,12 @@ Player::Player(Vector2 position, Color color, std::shared_ptr<AssetManager> asse
 	_score = 0;
 	_highscore = _data["highscore"].asInt();
 
+	// Bullets
+	_bulletCooldown = .2f;
+	_bulletTimer = 0.f;
 }
 
-void Player::GetInput()
+void Player::GetInput(float& dt)
 {
 	// Get Player Input
 	if (IsKeyDown(KEY_D))
@@ -52,6 +62,13 @@ void Player::GetInput()
 	if (IsKeyDown(KEY_W))
 	{
 		_velocity.y -= 1;
+	}
+
+	// Bullets
+	_bulletTimer += dt;
+	if(IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+	{
+		Fire();
 	}
 }
 
@@ -100,7 +117,7 @@ void Player::CheckBounds()
 
 void Player::Update(float& dt)
 {
-	GetInput();
+	GetInput(dt);
 	UpdatePositions(dt);
 	CheckBounds();
 	UpdateRotaion(dt);
@@ -117,6 +134,15 @@ void Player::Render()
 		WHITE
 	);
 
+}
+
+void Player::Fire()
+{
+	if(_bulletTimer >= _bulletCooldown)
+	{
+		_bullMan->SpawnBullet(_position, GetMousePosition(), BulletTag::PLAYER_BULLET);
+		_bulletTimer = 0.f;
+	}
 }
 
 void Player::Reset()

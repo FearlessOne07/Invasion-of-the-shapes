@@ -10,9 +10,6 @@ class BulletManager
 {
 private:
     std::vector<Bullet> _bullets;
-    float _cooldown;
-    float _cooldownTimer;
-
     std::shared_ptr<AssetManager> _assets;
     std::shared_ptr<Sound> _bulletShoot;
 
@@ -21,7 +18,7 @@ private:
 
 public:
     BulletManager(std::shared_ptr<AssetManager> assets);
-    void SpawnBullet(const Vector2 &playerPos, const Vector2 &mousePos);
+    void SpawnBullet(const Vector2 &playerPos, const Vector2 &target, BulletTag tag);
     void Update(float &dt);
     void Reset();
     std::vector<Bullet> &GetBullets();

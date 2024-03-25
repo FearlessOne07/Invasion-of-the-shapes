@@ -3,11 +3,7 @@
 BulletManager::BulletManager(std::shared_ptr<AssetManager> assets): _assets(assets)
 {
     
-    // Initialize Bullet cooldown
-    _cooldownTimer = 0;
-    _cooldown = .5;
     _bulletShoot = _assets->GetSound("player_shoot");
-
 }
 void BulletManager::CheckBullets()
 {
@@ -22,27 +18,19 @@ void BulletManager::CheckBullets()
 }
 
 
-void BulletManager::SpawnBullet(const Vector2 &playerPos, const Vector2 &mousePos)
+void BulletManager::SpawnBullet(const Vector2 &playerPos, const Vector2 &target, BulletTag tag)
 {
     // Spawn a bullet if cooldown timer allows it
-    if (_cooldownTimer >= _cooldown)
-    {
-        _cooldownTimer = 0;
-        Vector2 direction = Vector2Subtract(mousePos, playerPos);
-        direction = Vector2Normalize(direction);
-        _bullets.emplace_back(Bullet(playerPos, direction, _assets->GetTexture("bullet")));
-        PlaySound(*_bulletShoot);
-    }
+
+    Vector2 direction = Vector2Subtract(target, playerPos);
+    direction = Vector2Normalize(direction);
+    _bullets.emplace_back(Bullet(playerPos, direction, _assets->GetTexture("bullet"), tag));
+    PlaySound(*_bulletShoot);
+  
 }
 
 void BulletManager::Update(float &dt)
 {
-    // Cooldown
-    if (_cooldownTimer < _cooldown)
-    {
-        _cooldownTimer += dt;
-    }
-
     // Bullets
     for (Bullet &b : _bullets)
     {

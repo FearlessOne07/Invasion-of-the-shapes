@@ -2,7 +2,8 @@
 #include <cmath>
 #include "bullet.hpp"
 
-Bullet::Bullet(Vector2 position, Vector2 direction, std::shared_ptr<Texture> textures) :_texture(textures), _position(position), _direction(direction)
+Bullet::Bullet(Vector2 position, Vector2 direction, std::shared_ptr<Texture> textures, BulletTag tag) 
+    :_texture(textures), _position(position), _direction(direction), _tag(tag)
 {
     // Texture
     //_texture = LoadTexture("")
@@ -65,4 +66,9 @@ bool Bullet::isActive() const
 void Bullet::SetIsActive(bool active)
 {
     _isActive = active;
+}
+
+BulletTag Bullet::GetTag() const
+{
+    return _tag;
 }

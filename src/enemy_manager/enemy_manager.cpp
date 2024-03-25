@@ -49,7 +49,7 @@ EnemyManager::EnemyManager(std::shared_ptr<AssetManager> assets) : _assets(asset
 	_enemySpawner = Spawner(_assets);
 }
 
-void EnemyManager::Update(Player& player, BulletManager& bulletManager)
+void EnemyManager::Update(Player& player,std::shared_ptr<BulletManager> bulletManager)
 {
 	for (std::shared_ptr<Enemy> e : _enemies)
 	{
@@ -57,7 +57,7 @@ void EnemyManager::Update(Player& player, BulletManager& bulletManager)
 	}
 	//Spawn(RUNNER);
 	Spawn(SHOOTER);
-	CheckBulletColissions(bulletManager.GetBullets(), player);
+	CheckBulletColissions(bulletManager->GetBullets(), player);
 	CheckPlayerColission(player);
 	RemoveDeadEnemies();
 }

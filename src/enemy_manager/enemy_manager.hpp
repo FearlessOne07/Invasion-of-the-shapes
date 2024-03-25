@@ -30,7 +30,7 @@ private:
 	void RemoveDeadEnemies();
 public:
 	EnemyManager(std::shared_ptr<AssetManager> assets);
-	void Update(Player& player, BulletManager& bulletManager);
+	void Update(Player& player, std::shared_ptr<BulletManager> bulletManager);
 	void Render();
 	void Reset();
 	void Spawn(SpawnerID);

@@ -1,14 +1,15 @@
 #include "game_scene.hpp"
 #include "asset_manager/asset_manager.hpp"
+#include "bullet_manager/bullet_manager.hpp"
 #include "config/config.hpp"
 
 GameScene::GameScene(std::shared_ptr<AssetManager> assets)
     : Scene(assets),
     _playerStart({ (float)(GetScreenWidth() / 2), (float)(GetScreenHeight() / 2) }),
     _playerColor(BEIGE),
-    _player(_playerStart, _playerColor, _assets),
-    _enemMan(_assets), 
-    _bulMan(_assets)
+    _bulMan(std::make_shared<BulletManager>(_assets)),
+    _enemMan(_assets) ,
+    _player(_playerStart, _playerColor, _assets, _bulMan)
 {
     _clearColor = {14, 15, 25, 255};
     _config = Config::GetInstance();
@@ -24,7 +25,7 @@ void GameScene::Update(float &dt)
     UpdateGameClock(dt);
     _player.Update(dt);
     _enemMan.Update(_player, _bulMan);
-    _bulMan.Update(dt);
+    _bulMan->Update(dt);
     CheckPlayer();
 
 }
@@ -34,11 +35,6 @@ void GameScene::GetInput()
     if (IsKeyPressed(KEY_ESCAPE))
     {
         Notify(Event::TO_PAUSE);
-    }
-
-    if (IsMouseButtonDown(MOUSE_BUTTON_LEFT))
-    {
-        _bulMan.SpawnBullet(_player.GetPos(), GetMousePosition());
     }
 }
 
@@ -61,7 +57,7 @@ void GameScene::Reset()
 {
     _gameClock = 0;
     _enemMan.Reset();
-    _bulMan.Reset();
+    _bulMan->Reset();
     _player.Reset();
 }
 

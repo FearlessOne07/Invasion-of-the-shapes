@@ -18,7 +18,7 @@ void Game::Init()
 	SetTargetFPS(FPS);
 	SetExitKey(0);
 
-	// ToggleFullscreen();
+	ToggleFullscreen();
 	_running = true;
 
 	// Assets
@@ -55,7 +55,6 @@ void Game::Run()
 		//PlayMusicStream(*_gameMusic);
 		_currentScene->Update(dt);
 		_currentScene->Render();
-
 		DrawText(TextFormat("FPS: %i", GetFPS()), 0, 850, 32, WHITE);
 		EndDrawing();
 	}
