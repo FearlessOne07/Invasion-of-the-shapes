@@ -19,12 +19,13 @@ private:
     // Bullet Manager
     std::shared_ptr<BulletManager> _bullMan;
     float _bulletTimer;
-    float _bulletCooldown;;
+    float _bulletCooldown;
+    float _bulletSpeed;
 
     // Movement
-    Vector2 _position{};
-    Vector2 _velocity{};
-    float _speed{};
+    Vector2 _position;
+    Vector2 _velocity;
+    float _speed;
 
     // Texture
     std::shared_ptr<Texture> _texture;
@@ -35,8 +36,8 @@ private:
     // Fizix
     float _radius;
 
-    float _rotationSpeed{};
-    float _rotation{};
+    float _rotationSpeed;
+    float _rotation;
     bool _isDead;
 
     std::shared_ptr<Config> _config;

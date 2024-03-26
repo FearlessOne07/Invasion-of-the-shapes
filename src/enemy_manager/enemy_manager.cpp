@@ -5,19 +5,30 @@
 #include "bullet_manager/bullet_manager.hpp"
 #include "player/player.hpp"
 
+EnemyManager::EnemyManager(std::shared_ptr<AssetManager> assets,std::shared_ptr<BulletManager> bulletManager) 
+	: _assets(assets), _bulMan(bulletManager)
+{	
+	_enemies = {};
+	_enemySpawner = Spawner(_assets);
+}
+
 void EnemyManager::CheckBulletColissions(std::vector<Bullet>& bullets, Player& player)
 {
 	for (Bullet& b : bullets)
 	{
-		for (std::shared_ptr<Enemy>& e : _enemies)
+		if(b.GetTag() == Bullet::PLAYER_BULLET)
 		{
-			if (CheckCollisionCircles(e->GetPos(), e->GetRadius(), b.GetPos(), b.GetRad()))
+			for (std::shared_ptr<Enemy>& e : _enemies)
 			{
-				b.SetIsActive(false);
-				e->SetIsAlive(false);
-				player.SetScore(e->GetScore() + player.GetScore());
+				if (CheckCollisionCircles(e->GetPos(), e->GetRadius(), b.GetPos(), b.GetRad()))
+				{
+					b.SetIsActive(false);
+					e->SetIsAlive(false);
+					player.SetScore(e->GetScore() + player.GetScore());
+				}
 			}
 		}
+		
 	}
 }
 
@@ -27,7 +38,6 @@ void EnemyManager::CheckPlayerColission(Player& player)
 	{
 		if (CheckCollisionCircles(e->GetPos(), e->GetRadius(), player.GetPos(), player.GetRaduis()))
 		{
-
 			player.SetDead(true);
 		}
 	}
@@ -43,13 +53,8 @@ void EnemyManager::RemoveDeadEnemies()
 	_enemies.erase(it, _enemies.end());
 }
 
-EnemyManager::EnemyManager(std::shared_ptr<AssetManager> assets) : _assets(assets)
-{	
-	_enemies = {};
-	_enemySpawner = Spawner(_assets);
-}
 
-void EnemyManager::Update(Player& player,std::shared_ptr<BulletManager> bulletManager)
+void EnemyManager::Update(Player& player)
 {
 	for (std::shared_ptr<Enemy> e : _enemies)
 	{
@@ -57,7 +62,7 @@ void EnemyManager::Update(Player& player,std::shared_ptr<BulletManager> bulletMa
 	}
 	//Spawn(RUNNER);
 	Spawn(SHOOTER);
-	CheckBulletColissions(bulletManager->GetBullets(), player);
+	CheckBulletColissions(_bulMan->GetBullets(), player);
 	CheckPlayerColission(player);
 	RemoveDeadEnemies();
 }
@@ -78,6 +83,6 @@ void EnemyManager::Reset()
 
 void EnemyManager::Spawn(SpawnerID spawner)
 {
-	_enemySpawner.Spawn(_enemies, spawner);
+	_enemySpawner.Spawn(_enemies, spawner, _bulMan);
 }
 

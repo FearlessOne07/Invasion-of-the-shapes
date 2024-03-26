@@ -3,6 +3,7 @@
 #include <vector>
 #include "enemy/enemy.hpp"
 class AssetManager;
+class BulletManager;
 class Spawner
 {
 protected:
@@ -14,6 +15,10 @@ protected:
 public:
 	Spawner(std::shared_ptr<AssetManager> assets);
 	Spawner() = default;
-	void Spawn(std::vector<std::shared_ptr<Enemy>>& enemies, short unsigned int type);
+	void Spawn(
+		std::vector<std::shared_ptr<Enemy>>& enemies, 
+		short unsigned int type, 
+		std::shared_ptr<BulletManager> bulMan
+	);
 	void Reset();
 };

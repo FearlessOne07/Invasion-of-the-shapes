@@ -3,21 +3,21 @@
 #include "raylib.h"
 #include "raymath.h"
 
-enum BulletTag : short unsigned int
-{
-    PLAYER_BULLET = 0,
-    ENEMY_BULLET
-};
+
 class Bullet
 {
+public:
+    enum BulletTag : short unsigned int
+    {
+        PLAYER_BULLET = 0,
+        ENEMY_BULLET
+    };
 private:
     float _textureSize;
     std::shared_ptr<Texture> _texture;
     Rectangle _srcRect;
     float _textureScale;
     float _rotation;
-    float _opacityChange;
-    float _opacity;
     int _radius;
 
     bool _isActive;
@@ -35,7 +35,8 @@ public:
         Vector2 position, 
         Vector2 direction, 
         std::shared_ptr<Texture> _texture, 
-        BulletTag tag
+        BulletTag tag,
+        float speed
     );
     void Render();
     void Update(float &dt);

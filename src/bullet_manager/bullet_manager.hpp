@@ -18,7 +18,12 @@ private:
 
 public:
     BulletManager(std::shared_ptr<AssetManager> assets);
-    void SpawnBullet(const Vector2 &playerPos, const Vector2 &target, BulletTag tag);
+    void SpawnBullet(
+        const Vector2 &playerPos, 
+        const Vector2 &target, 
+        Bullet::BulletTag tag, 
+        float speed
+    );
     void Update(float &dt);
     void Reset();
     std::vector<Bullet> &GetBullets();

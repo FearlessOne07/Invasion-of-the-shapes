@@ -1,9 +1,10 @@
 #include <algorithm>
 #include <cmath>
 #include "bullet.hpp"
+#include <iostream>
 
-Bullet::Bullet(Vector2 position, Vector2 direction, std::shared_ptr<Texture> textures, BulletTag tag) 
-    :_texture(textures), _position(position), _direction(direction), _tag(tag)
+Bullet::Bullet(Vector2 position, Vector2 direction, std::shared_ptr<Texture> textures, BulletTag tag, float speed) 
+    :_texture(textures), _position(position), _direction(direction), _tag(tag), _speed(speed)
 {
     // Texture
     //_texture = LoadTexture("")
@@ -11,10 +12,7 @@ Bullet::Bullet(Vector2 position, Vector2 direction, std::shared_ptr<Texture> tex
     _textureScale = 3;
     _srcRect = { 0 * _textureSize, 0 * _textureSize, _textureSize, _textureSize };
     _rotation = ((std::atan2(direction.y, direction.x)) * RAD2DEG) + 90.f;
-    _opacity = 255;
-    _opacityChange = 250;
     _radius = 10;
-    _speed = 800;
     _isActive = true;
 
 }
@@ -22,10 +20,17 @@ Bullet::Bullet(Vector2 position, Vector2 direction, std::shared_ptr<Texture> tex
 void Bullet::CheckActivty()
 { 
     // Check and set status of bullet
-    if (_opacity <= 0)
+   if
+   (
+        !(
+            ((_position.x <= GetScreenWidth() + _radius) && (_position.x >= -_radius)) &&
+            ((_position.y <= GetScreenHeight() + _radius) && (_position.y  >= -_radius))
+        )
+    )
     {
         SetIsActive(false);
     }
+    
 }
 
 void Bullet::Render()
@@ -36,14 +41,11 @@ void Bullet::Render()
         { _position.x, _position.y, _textureSize * _textureScale, _textureSize * _textureScale },
         { (_textureSize * _textureScale) / 2, (_textureSize * _textureScale) / 2 },
         _rotation,
-        { 255,255,255, static_cast<unsigned char>(_opacity) }
+        WHITE
     );
 }
 void Bullet::Update(float &dt) 
 {
-    _opacity -= _opacityChange * dt;
-    _opacity = std::max(_opacity, 0.f);
-
     CheckActivty();
     _position = Vector2Add(_position, Vector2Scale(_direction, _speed * dt));
 }
@@ -68,7 +70,7 @@ void Bullet::SetIsActive(bool active)
     _isActive = active;
 }
 
-BulletTag Bullet::GetTag() const
+Bullet::BulletTag Bullet::GetTag() const
 {
     return _tag;
 }

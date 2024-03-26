@@ -1,9 +1,14 @@
+#include <algorithm>
 #include "shooter.hpp"
 #include "player/player.hpp"
-#include <algorithm>
+#include "bullet_manager/bullet_manager.hpp"
 
-Shooter::Shooter(Vector2 position, std::shared_ptr<Texture> bulletTexture) 
-    : Enemy(position, 200),_bulletTexture(bulletTexture) 
+Shooter::Shooter(
+    Vector2 position, 
+    std::shared_ptr<Texture> bulletTexture, 
+    std::shared_ptr<BulletManager> bulMan
+) 
+    : Enemy(position, 200),_bulletTexture(bulletTexture), _bulMan(bulMan)
 {
     _radius = 50;
     _speed = 100;
@@ -12,12 +17,11 @@ Shooter::Shooter(Vector2 position, std::shared_ptr<Texture> bulletTexture)
     _shootTimer = 0.f;
     _attackDistance = 700.f;
 
-    _bullets = {};
-
     _rotationSpeed = 50.f;
     _rotation = 0;
 
     _isTracking = true;
+    _bulletSpeed = 300.f;
 }
 
 void Shooter::Update(Player & player)
@@ -26,11 +30,6 @@ void Shooter::Update(Player & player)
     _target = player.GetPos();
     float distance = Vector2Distance(_position, _target);
     
-    for (auto& bullet : _bullets)
-    {
-        bullet.Update(dt);
-    }
-
     if(
         (distance < _attackDistance) && 
         (
@@ -43,7 +42,6 @@ void Shooter::Update(Player & player)
     {
         _isTracking = false;
     } 
-    std::cout <<  _bullets.size() << "\n";
     if(_isTracking)
     {
         ApproachPlayer(player.GetPos(), dt);
@@ -56,18 +54,12 @@ void Shooter::Update(Player & player)
 
 void Shooter::Render()
 {
-    for (auto& bullet : _bullets)
-    {
-        bullet.Render();
-    }
     DrawPoly(_position, 5, _radius, _rotation, GREEN);
 }
 
 void Shooter::Shoot()
 {   
-    Vector2 direction = Vector2Subtract(_target, _position);
-    direction = Vector2Normalize(direction);
-    _bullets.emplace_back(Bullet(_position, _target, _bulletTexture, BulletTag::ENEMY_BULLET));
+    _bulMan->SpawnBullet(_position, _target, Bullet::ENEMY_BULLET, _bulletSpeed);
 }
 
 void Shooter::ApproachPlayer(const Vector2& playerPos,float dt)
@@ -77,6 +69,7 @@ void Shooter::ApproachPlayer(const Vector2& playerPos,float dt)
 	_velocity = Vector2Scale(_velocity, _speed * dt);
 	_position = Vector2Add(_position, _velocity);
 }
+
 
 void Shooter::Attack(const Vector2 & playerPos, float dt)
 {

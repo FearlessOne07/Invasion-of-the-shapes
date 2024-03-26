@@ -8,7 +8,7 @@ GameScene::GameScene(std::shared_ptr<AssetManager> assets)
     _playerStart({ (float)(GetScreenWidth() / 2), (float)(GetScreenHeight() / 2) }),
     _playerColor(BEIGE),
     _bulMan(std::make_shared<BulletManager>(_assets)),
-    _enemMan(_assets) ,
+    _enemMan(_assets, _bulMan) ,
     _player(_playerStart, _playerColor, _assets, _bulMan)
 {
     _clearColor = {14, 15, 25, 255};
@@ -24,7 +24,7 @@ void GameScene::Update(float &dt)
     GetInput();
     UpdateGameClock(dt);
     _player.Update(dt);
-    _enemMan.Update(_player, _bulMan);
+    _enemMan.Update(_player);
     _bulMan->Update(dt);
     CheckPlayer();
 

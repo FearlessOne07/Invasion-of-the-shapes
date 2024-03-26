@@ -10,7 +10,8 @@
                 "./build"
             ],
             "options": {
-                "cwd": "${workspaceFolder}"
+                "cwd": "${workspaceFolder}",
+                
             },
             "group": {
                 "kind": "build",

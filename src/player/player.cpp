@@ -20,11 +20,13 @@ Player::Player(
 	_texture = _assets->GetTexture("player");
 	_textureCords = { 1,0 };
 	_scale = 6;
+	_rotation = 0.f;
 
 	// Movement
 	_speed = 500;
 	_rotationSpeed = -200;
 	_isDead = false;
+	_velocity = { 0 };
 
 	// Fizix
 	_radius = (_textureSize / 2 * _scale);
@@ -42,6 +44,7 @@ Player::Player(
 	// Bullets
 	_bulletCooldown = .2f;
 	_bulletTimer = 0.f;
+	_bulletSpeed = 1000.f;
 }
 
 void Player::GetInput(float& dt)
@@ -140,7 +143,7 @@ void Player::Fire()
 {
 	if(_bulletTimer >= _bulletCooldown)
 	{
-		_bullMan->SpawnBullet(_position, GetMousePosition(), BulletTag::PLAYER_BULLET);
+		_bullMan->SpawnBullet(_position, GetMousePosition(), Bullet::BulletTag::PLAYER_BULLET, _bulletSpeed);
 		_bulletTimer = 0.f;
 	}
 }

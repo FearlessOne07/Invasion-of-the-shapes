@@ -14,7 +14,11 @@ Spawner::Spawner(std::shared_ptr<AssetManager> assets)
 	_spawnInterval = 3;
 }
 
-void Spawner::Spawn(std::vector<std::shared_ptr<Enemy>> &enemies, short unsigned int type)
+void Spawner::Spawn(
+	std::vector<std::shared_ptr<Enemy>> &enemies, 
+	short unsigned int type, 
+	std::shared_ptr<BulletManager> bulman
+)
 {
 	float dt = GetFrameTime();
 	_spawnTimer += dt;
@@ -60,7 +64,7 @@ void Spawner::Spawn(std::vector<std::shared_ptr<Enemy>> &enemies, short unsigned
 			enemy = std::make_shared<Runner>(position, 100, 100);
 			break;
 		case EnemyManager::SpawnerID::SHOOTER:
-			enemy = std::make_shared<Shooter>(position, _assets->GetTexture("bullet"));
+			enemy = std::make_shared<Shooter>(position, _assets->GetTexture("bullet"), bulman);
 		default:
 			break;
 		}

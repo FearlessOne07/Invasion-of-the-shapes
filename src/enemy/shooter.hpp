@@ -4,6 +4,7 @@
 #include "enemy.hpp"
 #include "utils/bullet/bullet.hpp"
 
+class BulletManager;
 class Shooter : public Enemy
 {
 private:
@@ -16,7 +17,7 @@ private:
     bool _isTracking;
 
     std::shared_ptr<Texture> _bulletTexture;
-    std::vector<Bullet> _bullets;
+    std::shared_ptr<BulletManager> _bulMan;
     float _bulletSpeed;
 
 
@@ -28,7 +29,11 @@ private:
     void ApproachPlayer(const Vector2& playerPos, float dt);
     void Attack(const Vector2& playerPos, float dt);
 public:
-    Shooter(Vector2 position, std::shared_ptr<Texture> bulletTexture);
+    Shooter(
+        Vector2 position, 
+        std::shared_ptr<Texture> bulletTexture,
+        std::shared_ptr<BulletManager> bulMan
+    );
     void Update(Player& player) override;
     void Render() override;
 };
