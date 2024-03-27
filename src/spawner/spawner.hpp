@@ -18,7 +18,8 @@ public:
 	void Spawn(
 		std::vector<std::shared_ptr<Enemy>>& enemies, 
 		short unsigned int type, 
-		std::shared_ptr<BulletManager> bulMan
+		std::shared_ptr<BulletManager> bulMan,
+		std::shared_ptr<Camera2D> camera
 	);
 	void Reset();
 };

@@ -10,8 +10,10 @@ class Config;
 class GameScene : public Scene
 {
 private:
-    Camera2D _camera;
+    std::shared_ptr<Camera2D> _camera;
+
     std::shared_ptr<BulletManager> _bulMan;
+    std::shared_ptr<Config> _config;
     EnemyManager _enemMan;
 
     Vector2 _playerStart{};
@@ -20,13 +22,11 @@ private:
 
     float _gameClock{};
 
-    std::shared_ptr<Config> _config;
-
 private:
     void GetInput() override;
     void CheckPlayer();
     void UpdateGameClock(float &dt);
-
+    void UpdateCamera(float dt);
 public:
     GameScene(std::shared_ptr<AssetManager> assets);
     void Update(float &dt) override;

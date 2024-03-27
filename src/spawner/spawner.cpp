@@ -17,7 +17,8 @@ Spawner::Spawner(std::shared_ptr<AssetManager> assets)
 void Spawner::Spawn(
 	std::vector<std::shared_ptr<Enemy>> &enemies, 
 	short unsigned int type, 
-	std::shared_ptr<BulletManager> bulman
+	std::shared_ptr<BulletManager> bulman,
+	std::shared_ptr<Camera2D> camera
 )
 {
 	float dt = GetFrameTime();
@@ -34,7 +35,8 @@ void Spawner::Spawn(
 		std::uniform_real_distribution<float> distX(_enemyRadius * -1.f, GetScreenWidth() + _enemyRadius);
 		std::uniform_real_distribution<float> distY(_enemyRadius * -1.f, GetScreenHeight() + _enemyRadius);
 
-		Vector2 position;
+
+		float spawnOffset = 2.f;		Vector2 position;
 		int side = sideDist(gen);
 
 		switch (side)
@@ -43,13 +45,13 @@ void Spawner::Spawn(
 			position = {distX(gen), _enemyRadius * -1.f};
 			break;
 		case 1: // DOWN
-			position = {distX(gen), static_cast<float>(GetScreenHeight()) + static_cast<float>(_enemyRadius)};
+			position = {distX(gen), static_cast<float>(GetScreenHeight()) + static_cast<float>(_enemyRadius * spawnOffset)};
 			break;
 		case 2: // LEFT
 			position = {-1.f * _enemyRadius, distY(gen)};
 			break;
 		case 3: // RIGHT
-			position = {static_cast<float>(GetScreenWidth()) + _enemyRadius, distY(gen)};
+			position = {static_cast<float>(GetScreenWidth()) + _enemyRadius * spawnOffset, distY(gen)};
 			break;
 		default:
 			position = {0, 0};
@@ -57,6 +59,7 @@ void Spawner::Spawn(
 		}
 
 		std::shared_ptr<Enemy> enemy;
+		position = GetScreenToWorld2D(position, *camera);
 
 		switch (type)
 		{

@@ -5,8 +5,12 @@
 #include "bullet_manager/bullet_manager.hpp"
 #include "player/player.hpp"
 
-EnemyManager::EnemyManager(std::shared_ptr<AssetManager> assets,std::shared_ptr<BulletManager> bulletManager) 
-	: _assets(assets), _bulMan(bulletManager)
+EnemyManager::EnemyManager(
+	std::shared_ptr<AssetManager> assets,
+	std::shared_ptr<BulletManager> bulletManager,
+	std::shared_ptr<Camera2D> camera
+) 
+	: _assets(assets), _bulMan(bulletManager), _camera(camera)
 {	
 	_enemies = {};
 	_enemySpawner = Spawner(_assets);
@@ -83,6 +87,6 @@ void EnemyManager::Reset()
 
 void EnemyManager::Spawn(SpawnerID spawner)
 {
-	_enemySpawner.Spawn(_enemies, spawner, _bulMan);
+	_enemySpawner.Spawn(_enemies, spawner, _bulMan, _camera);
 }
 

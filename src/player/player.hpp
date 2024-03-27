@@ -16,6 +16,9 @@ private:
     // Assets
     std::shared_ptr<AssetManager> _assets;
 
+    //Camera
+    std::shared_ptr<Camera2D> _camera;
+
     // Bullet Manager
     std::shared_ptr<BulletManager> _bullMan;
     float _bulletTimer;
@@ -35,7 +38,6 @@ private:
 
     // Fizix
     float _radius;
-
     float _rotationSpeed;
     float _rotation;
     bool _isDead;
@@ -58,7 +60,8 @@ public:
         Vector2 position, 
         Color color,
         std::shared_ptr<AssetManager> assets,
-        std::shared_ptr<BulletManager> bullMan
+        std::shared_ptr<BulletManager> bullMan,
+        std::shared_ptr<Camera2D> camera
     );
 
     void Update(float &dt);

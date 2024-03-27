@@ -27,7 +27,7 @@ private:
 
     BulletTag _tag;
 private:
-    void CheckActivty();
+    void CheckActivty(std::shared_ptr<Camera2D> camera);
 
 public:
 public:
@@ -39,7 +39,7 @@ public:
         float speed
     );
     void Render();
-    void Update(float &dt);
+    void Update(float &dt, std::shared_ptr<Camera2D> cmaera);
     Vector2 GetPos() const;
     int GetRad() const;
     bool isActive() const;

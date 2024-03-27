@@ -41,7 +41,11 @@ void Shooter::Update(Player & player)
     )
     {
         _isTracking = false;
-    } 
+    } else
+    {
+        _isTracking = true;
+    }
+
     if(_isTracking)
     {
         ApproachPlayer(player.GetPos(), dt);
@@ -64,6 +68,10 @@ void Shooter::Shoot()
 
 void Shooter::ApproachPlayer(const Vector2& playerPos,float dt)
 {   
+
+    _rotationSpeed -= 90.f * dt;
+    _rotationSpeed = std::max<float>(_rotationSpeed, 50.f);
+
     _velocity = Vector2Subtract(playerPos, _position);
 	_velocity = Vector2Normalize(_velocity);
 	_velocity = Vector2Scale(_velocity, _speed * dt);

@@ -9,12 +9,12 @@ Player::Player(
 	Vector2 position, 
 	Color color, 
 	std::shared_ptr<AssetManager> assets,
-	std::shared_ptr<BulletManager> bullMan
+	std::shared_ptr<BulletManager> bullMan,
+	std::shared_ptr<Camera2D> camera
 ) 
-	:_assets(assets), _position(position), _bullMan(bullMan)
+	:_assets(assets), _position(position), _bullMan(bullMan), _camera(camera)
 {
 	//--------Initialize Player--------
-
 	// Texture
 	_textureSize = 16.f;
 	_texture = _assets->GetTexture("player");
@@ -23,7 +23,7 @@ Player::Player(
 	_rotation = 0.f;
 
 	// Movement
-	_speed = 500;
+	_speed = 600.f;
 	_rotationSpeed = -200;
 	_isDead = false;
 	_velocity = { 0 };
@@ -89,10 +89,7 @@ void Player::UpdatePositions(float& dt)
 
 void Player::UpdateRotaion(float& dt)
 {
-	Vector2 mousePosition = GetMousePosition();
-	Vector2 direction = Vector2Subtract(mousePosition, _position);
-	direction = Vector2Normalize(direction);
-	_rotation = ((std::atan2(direction.y , direction.x)) * RAD2DEG) + 90.f;
+	_rotation += 200.f * dt;
 }
 
 void Player::CheckBounds()
@@ -143,7 +140,7 @@ void Player::Fire()
 {
 	if(_bulletTimer >= _bulletCooldown)
 	{
-		_bullMan->SpawnBullet(_position, GetMousePosition(), Bullet::BulletTag::PLAYER_BULLET, _bulletSpeed);
+		_bullMan->SpawnBullet(_position, GetScreenToWorld2D(GetMousePosition(), *_camera), Bullet::BulletTag::PLAYER_BULLET, _bulletSpeed);
 		_bulletTimer = 0.f;
 	}
 }

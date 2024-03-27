@@ -1,6 +1,9 @@
 #include "bullet_manager.hpp"
 
-BulletManager::BulletManager(std::shared_ptr<AssetManager> assets): _assets(assets)
+BulletManager::BulletManager(
+    std::shared_ptr<AssetManager> assets,
+    std::shared_ptr<Camera2D> camera
+): _assets(assets), _camera(camera)
 {
     _bulletShoot = _assets->GetSound("player_shoot");
 }
@@ -37,10 +40,17 @@ void BulletManager::Update(float &dt)
     // Bullets
     for (Bullet &b : _bullets)
     {
-        b.Update(dt);
-        b.Render();
+        b.Update(dt, _camera);
     }
     CheckBullets();
+}
+
+void BulletManager::Render()
+{
+    for(auto& b : _bullets)
+    {
+        b.Render();
+    }
 }
 
 void BulletManager::Reset()

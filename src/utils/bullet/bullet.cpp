@@ -17,14 +17,15 @@ Bullet::Bullet(Vector2 position, Vector2 direction, std::shared_ptr<Texture> tex
 
 }
 
-void Bullet::CheckActivty()
+void Bullet::CheckActivty(std::shared_ptr<Camera2D> camera)
 { 
     // Check and set status of bullet
+    Vector2 checkPosition = GetWorldToScreen2D(_position, *camera);
    if
    (
         !(
-            ((_position.x <= GetScreenWidth() + _radius) && (_position.x >= -_radius)) &&
-            ((_position.y <= GetScreenHeight() + _radius) && (_position.y  >= -_radius))
+            ((checkPosition.x <= GetScreenWidth() + _radius) && (checkPosition.x >= -_radius)) &&
+            ((checkPosition.y <= GetScreenHeight() + _radius) && (checkPosition.y  >= -_radius))
         )
     )
     {
@@ -43,10 +44,11 @@ void Bullet::Render()
         _rotation,
         WHITE
     );
+    
 }
-void Bullet::Update(float &dt) 
+void Bullet::Update(float &dt, std::shared_ptr<Camera2D> camera) 
 {
-    CheckActivty();
+    CheckActivty(camera);
     _position = Vector2Add(_position, Vector2Scale(_direction, _speed * dt));
 }
 
