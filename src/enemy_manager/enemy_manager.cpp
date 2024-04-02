@@ -62,13 +62,15 @@ void EnemyManager::Update(Player& player)
 {
 	for (std::shared_ptr<Enemy> e : _enemies)
 	{
-		e->Update(player);
+		e->Update(player, _camera);
 	}
 	//Spawn(RUNNER);
 	Spawn(SHOOTER);
 	CheckBulletColissions(_bulMan->GetBullets(), player);
 	CheckPlayerColission(player);
 	RemoveDeadEnemies();
+
+	
 }
 
 void EnemyManager::Render()

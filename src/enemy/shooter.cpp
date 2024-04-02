@@ -4,12 +4,15 @@
 #include "bullet_manager/bullet_manager.hpp"
 
 Shooter::Shooter(
-    Vector2 position, 
+    Vector2 position,
+    std::shared_ptr<Texture> texture, 
     std::shared_ptr<Texture> bulletTexture, 
     std::shared_ptr<BulletManager> bulMan
 ) 
-    : Enemy(position, 200),_bulletTexture(bulletTexture), _bulMan(bulMan)
+    : Enemy(position, 200, texture), _bulletTexture(bulletTexture), _bulMan(bulMan)
 {
+    _textureSize = _texture->width;
+    _textureScale = 6;
     _radius = 50;
     _speed = 100;
 
@@ -24,8 +27,10 @@ Shooter::Shooter(
     _bulletSpeed = 300.f;
 }
 
-void Shooter::Update(Player & player)
-{
+void Shooter::Update(Player & player, std::shared_ptr<Camera2D> camera)
+{   
+
+    Vector2 screenCords = GetWorldToScreen2D(_position, *camera);
     float dt = GetFrameTime();
     _target = player.GetPos();
     float distance = Vector2Distance(_position, _target);
@@ -33,10 +38,10 @@ void Shooter::Update(Player & player)
     if(
         (distance < _attackDistance) && 
         (
-            (_position.x >= (_radius + 50)) && 
-            (_position.y >= (_radius + 50)) && 
-            (_position.x <= GetScreenWidth() - (_radius + 50)) && 
-            (_position.y <= GetScreenHeight() - (_radius + 50))
+            (screenCords.x >= (_radius + 50)) && 
+            (screenCords.y >= (_radius + 50)) && 
+            (screenCords.x <= GetScreenWidth() - (_radius + 50)) && 
+            (screenCords.y <= GetScreenHeight() - (_radius + 50))
         )
     )
     {
@@ -58,7 +63,14 @@ void Shooter::Update(Player & player)
 
 void Shooter::Render()
 {
-    DrawPoly(_position, 5, _radius, _rotation, GREEN);
+    DrawTexturePro(
+        *_texture,
+        { 0, 0, _textureSize, _textureSize },
+        { _position.x, _position.y, _textureSize * _textureScale, _textureSize * _textureScale },
+        { (_textureSize * _textureScale) / 2, (_textureSize * _textureScale) / 2 },
+        _rotation,
+        WHITE
+    );
 }
 
 void Shooter::Shoot()

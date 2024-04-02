@@ -35,7 +35,14 @@ void Config::LoadConfig()
 	}
 	catch (const std::ios::failure& e)
 	{
-		std::string _baseData = R"({ "player_data" : { "color" : "beige", "highscore" : 0 }})";
+		std::string _baseData = R"(
+			{ 
+				"player_data" : { 
+					"highscore" : 0 
+				}
+			}
+		)";
+
 		file.clear();
 		file.open("config.json", std::ios::out | std::ios::app);
 		file << _baseData;

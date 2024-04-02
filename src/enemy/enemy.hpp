@@ -7,6 +7,8 @@ class Enemy
 {
 protected:
 	std::shared_ptr<Texture> _texture;
+	float _textureSize;
+	float _textureScale;
 	float _radius;
 
 	Vector2 _position;
@@ -18,11 +20,12 @@ protected:
 
 public:
 	virtual ~Enemy(){};
-	Enemy(Vector2 position, int score) : _position(position), _score(score)
+	Enemy(Vector2 position, int score, std::shared_ptr<Texture> texture) : 
+		_position(position), _score(score), _texture(texture)
 	{
 		_isAlive = true;
 	};
-	virtual void Update(Player &player) = 0;
+	virtual void Update(Player &player, std::shared_ptr<Camera2D> camera) = 0;
 	virtual void Render() = 0;
 
 	// Member Access Functions

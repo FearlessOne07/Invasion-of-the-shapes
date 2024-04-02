@@ -1,6 +1,7 @@
 #include "runner.hpp"
 #include "player/player.hpp"
-Runner::Runner(Vector2 position, float speed, int score) : Enemy(position,score)
+Runner::Runner(Vector2 position, std::shared_ptr<Texture> texture, float speed, int score) : 
+	Enemy(position,score, texture)
 {
 	_radius = 30;
 	_speed = speed;
@@ -9,7 +10,7 @@ Runner::Runner(Vector2 position, float speed, int score) : Enemy(position,score)
 	
 }
 
-void Runner::Update(Player& player)
+void Runner::Update(Player& player, std::shared_ptr<Camera2D> camera)
 {
 	FollowPlayer(player.GetPos());
 }

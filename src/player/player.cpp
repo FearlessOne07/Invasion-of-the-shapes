@@ -16,20 +16,19 @@ Player::Player(
 {
 	//--------Initialize Player--------
 	// Texture
-	_textureSize = 16.f;
 	_texture = _assets->GetTexture("player");
-	_textureCords = { 1,0 };
-	_scale = 6;
+	_textureSize = _texture->width;
+	_scale = 4;
 	_rotation = 0.f;
 
 	// Movement
-	_speed = 600.f;
+	_speed = 300.f;
 	_rotationSpeed = -200;
 	_isDead = false;
 	_velocity = { 0 };
 
 	// Fizix
-	_radius = (_textureSize / 2 * _scale);
+	_radius = ((_textureSize / 2) * _scale);
 
 	// Config
 	_config = Config::GetInstance();
@@ -69,7 +68,7 @@ void Player::GetInput(float& dt)
 
 	// Bullets
 	_bulletTimer += dt;
-	if(IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+	if(IsMouseButtonDown(MOUSE_LEFT_BUTTON))
 	{
 		Fire();
 	}
@@ -89,28 +88,28 @@ void Player::UpdatePositions(float& dt)
 
 void Player::UpdateRotaion(float& dt)
 {
-	_rotation += 200.f * dt;
+	_rotation += 300.f * dt;
 }
 
 void Player::CheckBounds()
 {
 	// Check Player Collisions With Window
-	if (_position.x <= _radius)
+	if (_position.x <= -GetScreenWidth() + _radius)
 	{
-		_position.x = _radius;
+		_position.x = -GetScreenWidth() +  _radius;
+	}
+	else if (_position.x >= GetScreenWidth() - _radius)
+	{
+		_position.x = GetScreenWidth() -  _radius;
+	}
 
-	}
-	if (_position.y <= _radius)
+	if (_position.y <= -GetScreenHeight() + _radius)
 	{
-		_position.y = _radius;
+		_position.y = -GetScreenHeight() +  _radius;
 	}
-	if (_position.y >= GetScreenHeight() - _radius)
+	else if (_position.y >= GetScreenHeight() - _radius)
 	{
-		_position.y = GetScreenHeight() - _radius;
-	}
-	if (_position.x >= GetScreenWidth() - _radius)
-	{
-		_position.x = GetScreenWidth() - _radius;
+		_position.y = GetScreenHeight() -  _radius;
 	}
 
 }
@@ -147,7 +146,7 @@ void Player::Fire()
 
 void Player::Reset()
 {
-	SetPos({ (float)(GetScreenWidth() / 2), (float)(GetScreenHeight() / 2) });
+	SetPos({0, 0});
 
 	SetDead(false);
 	if (_score > _highscore)

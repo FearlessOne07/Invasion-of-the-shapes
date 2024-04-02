@@ -21,10 +21,10 @@ void AssetManager::Init()
 
 	// Entites
 	_textures["player"] = std::make_shared<Texture>(LoadTexture("assets/textures/player/player.png"));
+	_textures["shooter"] = std::make_shared<Texture>(LoadTexture("assets/textures/enemies/shooter/shooter.png"));
 
 	// Projectiles
 	_textures["bullet"] = std::make_shared<Texture>(LoadTexture("assets/textures/projectiles/bullet/bullet.png"));
-	_textures["entities"] = std::make_shared<Texture>(LoadTexture("assets/textures/entities.png"));
 	_textures["projectiles"] = std::make_shared<Texture>(LoadTexture("assets/textures/projectiles.png"));
 }
 
@@ -39,21 +39,21 @@ void AssetManager::Update()
 void AssetManager::CleanUp()
 {
 	// Cleanup Sounds
-	for (const std::pair<const std::string &, std::shared_ptr<Sound>> &p : _sounds)
+	for(auto it = _sounds.begin(); it != _sounds.end(); it++)
 	{
-		UnloadSound(*(p.second));
+		UnloadSound(*(it->second));
 	}
 
 	// Cleanup Music
-	for (const std::pair<const std::string &, std::shared_ptr<Music>> &p : _music)
+	for(auto it = _music.begin(); it != _music.end(); it++)
 	{
-		UnloadMusicStream(*(p.second));
+		UnloadMusicStream(*(it->second));
 	}
 
 	// Cleanup Textures
-	for (const std::pair<const std::string &, std::shared_ptr<Texture>> &p : _textures)
+	for(auto it = _textures.begin(); it != _textures.end(); it++)
 	{
-		UnloadTexture(*p.second);
+		UnloadTexture(*(it->second));
 	}
 
 	UnloadFont(*_gameFont);

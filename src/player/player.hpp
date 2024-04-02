@@ -32,7 +32,6 @@ private:
 
     // Texture
     std::shared_ptr<Texture> _texture;
-    Vector2 _textureCords;
     float _textureSize;
     float _scale;
 

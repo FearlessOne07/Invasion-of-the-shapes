@@ -35,7 +35,6 @@ void Spawner::Spawn(
 		std::uniform_real_distribution<float> distX(_enemyRadius * -1.f, GetScreenWidth() + _enemyRadius);
 		std::uniform_real_distribution<float> distY(_enemyRadius * -1.f, GetScreenHeight() + _enemyRadius);
 
-
 		float spawnOffset = 2.f;		Vector2 position;
 		int side = sideDist(gen);
 
@@ -64,15 +63,16 @@ void Spawner::Spawn(
 		switch (type)
 		{
 		case EnemyManager::SpawnerID::RUNNER:
-			enemy = std::make_shared<Runner>(position, 100, 100);
+			enemy = std::make_shared<Runner>(position, _assets->GetTexture("shooter"), 100, 100);
 			break;
 		case EnemyManager::SpawnerID::SHOOTER:
-			enemy = std::make_shared<Shooter>(position, _assets->GetTexture("bullet"), bulman);
+			enemy = std::make_shared<Shooter>(position, _assets->GetTexture("shooter"), _assets->GetTexture("bullet"), bulman);
 		default:
 			break;
 		}
 
 		enemies.emplace_back(enemy);
+
 	}
 }
 

@@ -20,7 +20,6 @@ private:
     std::shared_ptr<BulletManager> _bulMan;
     float _bulletSpeed;
 
-
     float _rotation;
     float _rotationSpeed;
 
@@ -30,10 +29,11 @@ private:
     void Attack(const Vector2& playerPos, float dt);
 public:
     Shooter(
-        Vector2 position, 
+        Vector2 position,
+        std::shared_ptr<Texture> texture,
         std::shared_ptr<Texture> bulletTexture,
         std::shared_ptr<BulletManager> bulMan
     );
-    void Update(Player& player) override;
+    void Update(Player& player, std::shared_ptr<Camera2D> camera) override;
     void Render() override;
 };
