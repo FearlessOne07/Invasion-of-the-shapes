@@ -62,10 +62,10 @@ void Spawner::Spawn(
 
 		switch (type)
 		{
-		case EnemyManager::SpawnerID::RUNNER:
+		case EnemyManager::EnemyType::RUNNER:
 			enemy = std::make_shared<Runner>(position, _assets->GetTexture("shooter"), 100, 100);
 			break;
-		case EnemyManager::SpawnerID::SHOOTER:
+		case EnemyManager::EnemyType::SHOOTER:
 			enemy = std::make_shared<Shooter>(position, _assets->GetTexture("shooter"), _assets->GetTexture("bullet"), bulman);
 		default:
 			break;

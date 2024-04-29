@@ -41,9 +41,10 @@ Player::Player(
 	_highscore = _data["highscore"].asInt();
 
 	// Bullets
-	_bulletCooldown = .2f;
+	_bulletCooldown = .5f;
 	_bulletTimer = 0.f;
 	_bulletSpeed = 1000.f;
+  _bulletDamage = 5;
 }
 
 void Player::GetInput(float& dt)
@@ -201,4 +202,14 @@ float Player::GetRaduis() const
 void Player::SetPos(const Vector2& pos)
 {
 	_position = pos;
+}
+
+int Player::GetDamage() const
+{
+  return _bulletDamage;
+}
+
+void Player::SetDamage(int value)
+{
+  _bulletDamage = value;
 }

@@ -1,9 +1,8 @@
 #pragma once
-#include <string>
-#include <memory>
 #include "raylib.h"
-#include "utils/obsever.hpp"
 #include "scenes/scene.hpp"
+#include "utils/obsever.hpp"
+#include <memory>
 
 class AssetManager;
 class Config;
@@ -20,7 +19,7 @@ private:
     std::shared_ptr<Scene> _currentScene{};
 
     bool _running{};
-    
+
     // Config
     std::shared_ptr<Config> _config;
 

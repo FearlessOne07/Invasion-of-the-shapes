@@ -18,6 +18,7 @@ protected:
 	bool _isAlive;
 	int _score;
 
+	int _hp;
 public:
 	virtual ~Enemy(){};
 	Enemy(Vector2 position, int score, std::shared_ptr<Texture> texture) : 
@@ -29,12 +30,14 @@ public:
 	virtual void Render() = 0;
 
 	// Member Access Functions
-	float GetRadius() const { return _radius; };
-	Vector2 GetPos() const { return _position; }
-	bool isAlive() const { return _isAlive; };
-	int GetScore() const { return _score; }
-
+	inline float GetRadius() const { return _radius; };
+	inline Vector2 GetPos() const { return _position; }
+	inline bool isAlive() const { return _isAlive; };
+	inline int GetScore() const { return _score; }
+  inline int GetHp() const { return _hp; }
 	// Memeber Mutation Functions
-	void SetIsAlive(const bool &isAlive) { _isAlive = isAlive; };
-	void SetPos(const Vector2 &pos) { _position = pos; };
+	inline void SetIsAlive(const bool &isAlive) { _isAlive = isAlive; };
+	inline void SetPos(const Vector2 &pos) { _position = pos; };
+  inline void ReduceHp(int value) { _hp -= value; };
+
 };

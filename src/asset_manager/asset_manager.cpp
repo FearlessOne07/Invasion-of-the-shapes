@@ -6,7 +6,7 @@ void AssetManager::Init()
 	Wave playerShoot = LoadWave("assets/audio/player_shoot.wav");
 	_sounds["player_shoot"] = std::make_shared<Sound>(LoadSoundFromWave(playerShoot));
 	UnloadWave(playerShoot);
-
+  
 	Wave enemyDie = LoadWave("assets/audio/enemy_die.wav");
 	_sounds["enemy_die"] = std::make_shared<Sound>(LoadSoundFromWave(enemyDie));
 	UnloadWave(enemyDie);

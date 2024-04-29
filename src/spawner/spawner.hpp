@@ -10,7 +10,7 @@ protected:
 	int _enemyScore;
 	float _spawnInterval;
 	float _spawnTimer;
-
+  std::vector<short unsigned int> _spawnPool;
 	std::shared_ptr<AssetManager> _assets;
 public:
 	Spawner(std::shared_ptr<AssetManager> assets);
@@ -21,5 +21,6 @@ public:
 		std::shared_ptr<BulletManager> bulMan,
 		std::shared_ptr<Camera2D> camera
 	);
+  void SetSpawnPool(std::vector<short unsigned int> newPool);
 	void Reset();
 };

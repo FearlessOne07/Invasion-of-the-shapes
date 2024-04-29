@@ -1,7 +1,6 @@
 #pragma once
 #include <vector>
 #include <memory>
-#include <unordered_map>
 #include "raylib.h"
 #include "spawner/spawner.hpp"
 
@@ -13,12 +12,12 @@ class BulletManager;
 class EnemyManager
 {
 public:
-	typedef enum SpawnerID : short unsigned int
+	typedef enum EnemyType : short unsigned int
 	{
 		RUNNER = 0,
 		DASHER,
 		SHOOTER
-	} SpawnerID;
+	} EnemyType;
 	
 private:
 	std::shared_ptr<Camera2D> _camera;
@@ -44,6 +43,6 @@ public:
 	void Update(Player& player);
 	void Render();
 	void Reset();
-	void Spawn(SpawnerID);
+	void Spawn(EnemyType type);
 };
 

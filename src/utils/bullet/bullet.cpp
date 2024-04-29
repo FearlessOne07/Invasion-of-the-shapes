@@ -19,19 +19,19 @@ Bullet::Bullet(Vector2 position, Vector2 direction, std::shared_ptr<Texture> tex
 
 void Bullet::CheckActivty(std::shared_ptr<Camera2D> camera)
 { 
-    // Check and set status of bullet
-    Vector2 checkPosition = GetWorldToScreen2D(_position, *camera);
-   if
-   (
-        !(
-            ((checkPosition.x <= GetScreenWidth() + _radius) && (checkPosition.x >= -_radius)) &&
-            ((checkPosition.y <= GetScreenHeight() + _radius) && (checkPosition.y  >= -_radius))
-        )
-    )
-    {
-        SetIsActive(false);
-    }
-    
+  // Check and set status of bullet
+  Vector2 checkPosition = GetWorldToScreen2D(_position, *camera);
+  if
+  (
+    !(
+    ((checkPosition.x <= GetScreenWidth() + _radius) && (checkPosition.x >= -_radius)) &&
+    ((checkPosition.y <= GetScreenHeight() + _radius) && (checkPosition.y  >= -_radius))
+  )
+  )
+  {
+    SetIsActive(false);
+  }
+
 }
 
 void Bullet::Render()

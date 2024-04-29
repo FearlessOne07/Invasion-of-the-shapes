@@ -7,7 +7,7 @@ Runner::Runner(Vector2 position, std::shared_ptr<Texture> texture, float speed, 
 	_speed = speed;
 
 	_velocity = { 0 };
-	
+	_hp = 30;
 }
 
 void Runner::Update(Player& player, std::shared_ptr<Camera2D> camera)
