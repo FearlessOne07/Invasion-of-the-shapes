@@ -1,4 +1,5 @@
 #include "raylib.h"
+
 #include "Scenes/Scene.hpp"
 
 class GameOverScene : public Scene
@@ -22,7 +23,7 @@ private:
 	std::shared_ptr<Font> _font;
 
 public:
-	GameOverScene(std::shared_ptr<AssetManager> assets);
+	GameOverScene(std::shared_ptr<Game> game, std::shared_ptr<AssetManager> assets);
 	void Update(float& dt) override;
 	void Render() override;
 	void GetInput() override;

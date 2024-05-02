@@ -4,6 +4,7 @@
 #include "Scenes/Scene.hpp"
 #include "Player/Player.hpp"
 #include "Core/EnemyManager/EnemyManager.hpp"
+#include <memory>
 
 
 
@@ -29,7 +30,7 @@ private:
     void UpdateGameClock(float &dt);
     void UpdateCamera(float dt);
 public:
-    GameScene(std::shared_ptr<AssetManager> assets);
+    GameScene(std::shared_ptr<Game> game, std::shared_ptr<AssetManager> assets);
     void Update(float &dt) override;
     void Render() override;
     void Reset() override;

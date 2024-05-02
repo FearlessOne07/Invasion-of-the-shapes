@@ -1,9 +1,17 @@
 #include <algorithm>
+#include <memory>
+
+#include "raylib.h"
 
 #include "GameOverScene.hpp"
+#include "Core/Game/Game.hpp"
 #include "Core/AssetManager/AssetManager.hpp"
 
-GameOverScene::GameOverScene(std::shared_ptr<AssetManager> assets) : Scene(assets)
+GameOverScene::GameOverScene(
+  std::shared_ptr<Game> game, 
+  std::shared_ptr<AssetManager> assets
+) 
+  : Scene(game, assets)
 {
 
 	_font = _assets->GameFont();
@@ -49,18 +57,15 @@ void GameOverScene::Update(float& dt)
 
 }
 
-void GameOverScene::GetInput()
-{
+void GameOverScene::GetInput() {
 	// Check for input and notify the Game class if neccessary
 	if (IsKeyPressed(KEY_SPACE))
 	{
-		Notify(TO_GAME_NEW);
-		Reset();
+    _game->ChangeScene(Game::GAME_SCENE, true);
 	}
 	if (IsKeyPressed(KEY_ESCAPE))
 	{
-		Notify(TO_TITLE);
-		Reset();
+    _game->ChangeScene(Game::TITLE_SCENE, false);
 	}
 }
 

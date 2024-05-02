@@ -1,6 +1,6 @@
+#include "Game.hpp"
 #include "Core/AssetManager/AssetManager.hpp"
 #include "Core/Config/Config.hpp"
-#include "Game.hpp"
 #include "Scenes/GameOverScene/GameOverScene.hpp"
 #include "Scenes/GameScene/GameScene.hpp"
 #include "Scenes/PauseScene/PauseScene.hpp"
@@ -27,15 +27,16 @@ void Game::Init() {
   _config->LoadConfig();
 
   // Initialize Scenes
-  _titleScene = std::make_shared<TitleScene>(_assets);
-  _gameScene = std::make_shared<GameScene>(_assets);
-  _pauseScene = std::make_shared<PauseScene>(_assets);
-  _gameOverScene = std::make_shared<GameOverScene>(_assets);
-  _titleScene->AddObserver(this);
-  _gameScene->AddObserver(this);
-  _pauseScene->AddObserver(this);
-  _gameOverScene->AddObserver(this);
-  SetScene(_titleScene);
+  _scenes[TITLE_SCENE] =
+      std::make_shared<TitleScene>(shared_from_this(), _assets);
+  _scenes[GAME_SCENE] =
+      std::make_shared<GameScene>(shared_from_this(), _assets);
+  _scenes[PAUSE_SCENE] =
+      std::make_shared<PauseScene>(shared_from_this(), _assets);
+  _scenes[GAME_OVER_SCENE] =
+      std::make_shared<GameOverScene>(shared_from_this(), _assets);
+
+  _currentScene = _scenes[TITLE_SCENE];
 
   // Game Music
   _gameMusic = _assets->GetMusic("game_music");
@@ -47,7 +48,7 @@ void Game::Run() {
     float dt = GetFrameTime();
     BeginDrawing();
     _assets->Update();
-    //PlayMusicStream(*_gameMusic);
+    // PlayMusicStream(*_gameMusic);
     _currentScene->Update(dt);
     _currentScene->Render();
     DrawText(TextFormat("FPS: %i", GetFPS()), 0, 850, 32, WHITE);
@@ -62,24 +63,13 @@ void Game::End() {
   CloseWindow();
 }
 
-void Game::OnNofity(const Event &event) {
-  if (event == Event::TO_GAME) {
-    SetScene(_gameScene);
-  } else if (event == Event::TO_TITLE) {
-    _gameScene->Reset();
-    SetScene(_titleScene);
-  } else if (event == Event::TO_PAUSE) {
-    SetScene(_pauseScene);
-  } else if (event == Event::TO_GAME_NEW) {
-    _gameScene->Reset();
-    SetScene(_gameScene);
-  } else if (event == TO_GAME_OVER) {
-    SetScene(_gameOverScene);
-  } else if (event == TO_EXIT) {
-    _running = false;
+void Game::ChangeScene(SceneName scene, bool reset) {
+  _currentScene = _scenes[scene];
+  if (reset) {
+    _currentScene->Reset();
   }
 }
 
-void Game::SetScene(std::shared_ptr<Scene> newScene) {
-  _currentScene = newScene;
+void Game::SetRunningState(bool state) {
+  _running = false;
 }
