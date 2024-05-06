@@ -7,3 +7,4 @@ int main(void) {
   game->Run();
   return 0;
 }
+

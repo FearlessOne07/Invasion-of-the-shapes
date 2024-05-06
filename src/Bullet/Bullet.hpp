@@ -13,6 +13,9 @@ public:
     ENEMY_BULLET
   };
 private:
+
+  std::shared_ptr<Camera2D> _camera;
+
   float _textureSize;
   std::shared_ptr<Texture> _texture;
   Rectangle _srcRect;
@@ -27,19 +30,20 @@ private:
 
   BulletTag _tag;
 private:
-  void CheckActivty(std::shared_ptr<Camera2D> camera);
+  void CheckActivty();
 
 public:
 public:
   Bullet(
     Vector2 position, 
     Vector2 direction, 
-    std::shared_ptr<Texture> _texture, 
+    std::shared_ptr<Texture> _texture,
+    std::shared_ptr<Camera2D> camera,
     BulletTag tag,
     float speed
   );
   void Render();
-  void Update(float &dt, std::shared_ptr<Camera2D> cmaera);
+  void Update(float &dt);
   Vector2 GetPos() const;
   int GetRad() const;
   bool isActive() const;

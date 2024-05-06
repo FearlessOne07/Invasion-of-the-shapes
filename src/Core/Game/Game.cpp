@@ -70,6 +70,4 @@ void Game::ChangeScene(SceneName scene, bool reset) {
   }
 }
 
-void Game::SetRunningState(bool state) {
-  _running = false;
-}
+void Game::SetRunningState(bool state) { _running = false; }

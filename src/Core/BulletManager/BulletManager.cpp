@@ -34,7 +34,7 @@ void BulletManager::SpawnBullet(
 {
   Vector2 direction = Vector2Subtract(target, playerPos);
   direction = Vector2Normalize(direction);
-  _bullets.emplace_back(Bullet(playerPos, direction, _assets->GetTexture("bullet"), tag, speed));
+  _bullets.emplace_back(Bullet(playerPos, direction, _assets->GetTexture("bullet"), _camera, tag, speed));
   PlaySound(*_bulletShoot);
 }
 
@@ -43,7 +43,7 @@ void BulletManager::Update(float &dt)
   // Bullets
   for (Bullet &b : _bullets)
   {
-    b.Update(dt, _camera);
+    b.Update(dt);
   }
   CheckBullets();
 }
