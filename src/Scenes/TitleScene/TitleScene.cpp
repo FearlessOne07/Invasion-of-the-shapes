@@ -4,10 +4,8 @@
 #include "Core/Config/Config.hpp"
 #include "Core/Game/Game.hpp"
 
-TitleScene::TitleScene(std::shared_ptr<Game> game,
-                       std::shared_ptr<AssetManager> assets)
+TitleScene::TitleScene(std::shared_ptr<Game> game, std::shared_ptr<AssetManager> assets)
     : Scene(game, assets) {
-
   _config = Config::GetInstance();
   _clearColor = BLACK;
   _playButton.size = {300, 100};
@@ -18,7 +16,7 @@ TitleScene::TitleScene(std::shared_ptr<Game> game,
   _playButton.font = _assets->GameFont();
   _playButton.rect = {
       _playButton.pos.x, _playButton.pos.y, _playButton.size.x,
-      _playButton.size.y //
+      _playButton.size.y  //
   };
   _playButton.SetText("PLAY");
 }
@@ -26,7 +24,6 @@ TitleScene::TitleScene(std::shared_ptr<Game> game,
 void TitleScene::Update(float &dt) { GetInput(); }
 
 void TitleScene::GetInput() {
-
   if (CheckCollisionPointRec(GetMousePosition(), _playButton.rect)) {
     _playButton.color = RED;
     if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
@@ -45,12 +42,11 @@ void TitleScene::GetInput() {
 void TitleScene::Render() {
   ClearBackground(_clearColor);
   DrawButtons();
-  DrawText(TextFormat("HIGHSCORE:%i",
-                      _config->GetData("player_data")["highscore"].asInt()),
-           10, 10, 30, WHITE);
+  DrawText(TextFormat("HIGHSCORE:%i", _config->GetData("player_data")["highscore"].asInt()), 10, 10,
+           30, WHITE);
 }
 
 void TitleScene::DrawButtons() {
   _playButton.Draw();
-  DrawRectangleRoundedLines(_playButton.rect, .2, 1, 4, _playButton.color);
+  DrawRectangleRoundedLines(_playButton.rect, .2, 4, _playButton.color);
 }

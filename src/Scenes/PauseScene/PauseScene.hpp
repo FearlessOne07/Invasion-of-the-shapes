@@ -5,7 +5,7 @@
 #include "Utils/utils.hpp"
 
 class PauseScene : public Scene {
-private:
+ private:
   // Button Colors
   Color _hoverColor{};
   Color _offColor{};
@@ -19,7 +19,7 @@ private:
   void DrawButtons();
   void GetInput() override;
 
-public:
+ public:
   PauseScene(std::shared_ptr<Game> game, std::shared_ptr<AssetManager> assets);
   void Update(float &dt) override;
   void Render() override;

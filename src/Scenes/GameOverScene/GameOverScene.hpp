@@ -1,31 +1,28 @@
+#include "Scenes/Scene.hpp"
 #include "raylib.h"
 
-#include "Scenes/Scene.hpp"
+class GameOverScene : public Scene {
+ private:
+  int _textSize;
 
-class GameOverScene : public Scene
-{
-private:
-	int _textSize;
+  float _deathTextX;
+  const char* _deathText;
 
-	float _deathTextX;
-	const char* _deathText;
+  float _playTextX;
+  const char* _playText;
 
+  float _inputTimer;
+  int _inputLimit;
 
-	float _playTextX;
-	const char* _playText;
+  int _opacity;
+  int _opacityPulse;
 
-	float _inputTimer;
-	int _inputLimit;
+  std::shared_ptr<Font> _font;
 
-	int _opacity;
-	int _opacityPulse;
-
-	std::shared_ptr<Font> _font;
-
-public:
-	GameOverScene(std::shared_ptr<Game> game, std::shared_ptr<AssetManager> assets);
-	void Update(float& dt) override;
-	void Render() override;
-	void GetInput() override;
-	void Reset() override;
+ public:
+  GameOverScene(std::shared_ptr<Game> game, std::shared_ptr<AssetManager> assets);
+  void Update(float& dt) override;
+  void Render() override;
+  void GetInput() override;
+  void Reset() override;
 };

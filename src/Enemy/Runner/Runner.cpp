@@ -1,10 +1,11 @@
 #include "Runner.hpp"
+
 #include "Player/Player.hpp"
 #include "raylib.h"
 
-Runner::Runner(Vector2 position, std::shared_ptr<Texture> texture, std::shared_ptr<Camera2D> camera, float speed,
-               int score)
-    : Enemy(position, score, texture, camera){
+Runner::Runner(Vector2 position, std::shared_ptr<Texture> texture, std::shared_ptr<Camera2D> camera,
+               float speed, int score)
+    : Enemy(position, score, texture, camera) {
   _radius = 30;
   _speed = speed;
 
@@ -12,8 +13,7 @@ Runner::Runner(Vector2 position, std::shared_ptr<Texture> texture, std::shared_p
   _hp = 30;
 }
 
-void Runner::Update(std::shared_ptr<Player> player ) {
-
+void Runner::Update(std::shared_ptr<Player> player) {
   float dt = GetFrameTime();
 
   if (!_hasSpawned) {
@@ -24,7 +24,6 @@ void Runner::Update(std::shared_ptr<Player> player ) {
 }
 
 void Runner::Render() {
-
   if (!_hasSpawned) {
     DrawCircleV(_position, _radius, YELLOW);
     return;
@@ -43,7 +42,6 @@ void Runner::FollowPlayer(const Vector2 &playerPos) {
 }
 
 void Runner::Spawn(float dt) {
-
   _spawnTimer += dt;
   if (_spawnTimer >= _spawnDuration) {
     _hasSpawned = true;

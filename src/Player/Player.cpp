@@ -1,16 +1,15 @@
+#include "Player.hpp"
+
 #include <cmath>
 #include <iostream>
 
 #include "Core/AssetManager/AssetManager.hpp"
 #include "Core/BulletManager/BulletManager.hpp"
 #include "Core/Config/Config.hpp"
-#include "Player.hpp"
 #include "raylib.h"
 
-Player::Player(Vector2 position, Color color,
-               std::shared_ptr<AssetManager> assets,
-               std::shared_ptr<BulletManager> bullMan,
-               std::shared_ptr<Camera2D> camera)
+Player::Player(Vector2 position, Color color, std::shared_ptr<AssetManager> assets,
+               std::shared_ptr<BulletManager> bullMan, std::shared_ptr<Camera2D> camera)
     : _assets(assets), _position(position), _bullMan(bullMan), _camera(camera) {
   //--------Initialize Player--------
   // Texture
@@ -101,17 +100,14 @@ void Player::Update(float &dt) {
 }
 
 void Player::Render() {
-  DrawTexturePro(
-      *_texture, {0, 0, _textureSize, _textureSize},
-      {_position.x, _position.y, _textureSize * _scale, _textureSize * _scale},
-      {(_textureSize * _scale) / 2, (_textureSize * _scale) / 2}, _rotation,
-      WHITE);
+  DrawTexturePro(*_texture, {0, 0, _textureSize, _textureSize},
+                 {_position.x, _position.y, _textureSize * _scale, _textureSize * _scale},
+                 {(_textureSize * _scale) / 2, (_textureSize * _scale) / 2}, _rotation, WHITE);
 }
 
 void Player::Fire() {
   if (_bulletTimer >= _bulletCooldown) {
-    _bullMan->SpawnBullet(_position,
-                          GetScreenToWorld2D(GetMousePosition(), *_camera),
+    _bullMan->SpawnBullet(_position, GetScreenToWorld2D(GetMousePosition(), *_camera),
                           Bullet::BulletTag::PLAYER_BULLET, _bulletSpeed);
     _bulletTimer = 0.f;
   }

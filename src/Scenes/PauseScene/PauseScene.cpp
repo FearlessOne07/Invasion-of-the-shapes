@@ -1,10 +1,10 @@
 
 #include "PauseScene.hpp"
+
 #include "Core/AssetManager/AssetManager.hpp"
 #include "Core/Game/Game.hpp"
 
-PauseScene::PauseScene(std::shared_ptr<Game> game,
-                       std::shared_ptr<AssetManager> assets)
+PauseScene::PauseScene(std::shared_ptr<Game> game, std::shared_ptr<AssetManager> assets)
     : Scene(game, assets) {
   // Assets
   std::shared_ptr<Font> font = _assets->GameFont();
@@ -19,7 +19,7 @@ PauseScene::PauseScene(std::shared_ptr<Game> game,
   _continueButton.font = font;
   _continueButton.rect = {
       _continueButton.pos.x, _continueButton.pos.y, _continueButton.size.x,
-      _continueButton.size.y //
+      _continueButton.size.y  //
   };
 
   _titleButton.size = {300, 100};
@@ -30,7 +30,7 @@ PauseScene::PauseScene(std::shared_ptr<Game> game,
   _titleButton.font = font;
   _titleButton.rect = {
       _titleButton.pos.x, _titleButton.pos.y, _titleButton.size.x,
-      _titleButton.size.y //
+      _titleButton.size.y  //
   };
 
   _titleButton.SetText("TITLE SCREEN");

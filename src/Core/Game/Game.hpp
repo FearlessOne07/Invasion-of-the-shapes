@@ -2,21 +2,20 @@
 #include <memory>
 #include <unordered_map>
 
+#include "Scenes/Scene.hpp"
 #include "Scenes/TitleScene/TitleScene.hpp"
 #include "raylib.h"
-
-#include "Scenes/Scene.hpp"
 
 class AssetManager;
 class Config;
 
 class Game : public std::enable_shared_from_this<Game> {
-public:
+ public:
   enum SceneName { TITLE_SCENE = 0, GAME_SCENE, PAUSE_SCENE, GAME_OVER_SCENE };
 
-private:
+ private:
   const Vector2 SIZE{1920, 1080};
-  const int FPS{60}; 
+  const int FPS{60};
   bool _running{};
 
   // Config
@@ -27,10 +26,10 @@ private:
   std::shared_ptr<Music> _gameMusic;
 
   // Scenes
-  std::unordered_map<SceneName, std::shared_ptr<Scene>> _scenes; 
+  std::unordered_map<SceneName, std::shared_ptr<Scene>> _scenes;
   std::shared_ptr<Scene> _currentScene;
-  
-public:
+
+ public:
   Game() = default;
   void ChangeScene(SceneName scene, bool reset);
   void Init();

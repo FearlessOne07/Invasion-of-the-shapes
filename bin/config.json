@@ -1,7 +1,5 @@
-
-      { 
-      "player_data" : { 
-      "highscore" : 0 
-      }
-      }
-    
+{
+  "player_data": {
+    "highscore": 0
+  }
+}

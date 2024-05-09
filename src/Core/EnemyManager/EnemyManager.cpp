@@ -17,8 +17,10 @@
 
 EnemyManager::EnemyManager(std::shared_ptr<AssetManager> assets,
                            std::shared_ptr<BulletManager> bulletManager,
-                           std::shared_ptr<Camera2D> camera, std::shared_ptr<Player> player)
-    : _assets(assets), _bulMan(bulletManager), _camera(camera), _player(player) {
+                           std::shared_ptr<Camera2D> camera,
+                           std::shared_ptr<Player> player)
+    : _assets(assets), _bulMan(bulletManager), _camera(camera),
+      _player(player) {
   _enemies = {};
   _spawnPool = {RUNNER, SHOOTER};
 }
@@ -27,11 +29,13 @@ void EnemyManager::CheckBulletColissions(std::vector<Bullet> &bullets) {
   for (Bullet &b : bullets) {
     if (b.GetTag() == Bullet::PLAYER_BULLET) {
       for (std::shared_ptr<Enemy> &e : _enemies) {
-        if ((CheckCollisionCircles(e->GetPos(), e->GetRadius(), b.GetPos(), b.GetRad())) &&
+        if ((CheckCollisionCircles(e->GetPos(), e->GetRadius(), b.GetPos(),
+                                   b.GetRad())) &&
             e->GetHp() > 0) {
           b.SetIsActive(false);
           e->ReduceHp(_player->GetDamage());
-        } else if (CheckCollisionCircles(e->GetPos(), e->GetRadius(), b.GetPos(), b.GetRad())) {
+        } else if (CheckCollisionCircles(e->GetPos(), e->GetRadius(),
+                                         b.GetPos(), b.GetRad())) {
           e->SetIsAlive(false);
           _player->SetScore(e->GetScore() + _player->GetScore());
         }
@@ -50,8 +54,9 @@ void EnemyManager::CheckPlayerColission() {
 }
 
 void EnemyManager::RemoveDeadEnemies() {
-  auto it = std::remove_if(_enemies.begin(), _enemies.end(),
-                           [](std::shared_ptr<Enemy> &e) { return !e->isAlive(); });
+  auto it =
+      std::remove_if(_enemies.begin(), _enemies.end(),
+                     [](std::shared_ptr<Enemy> &e) { return !e->isAlive(); });
   _enemies.erase(it, _enemies.end());
 }
 
@@ -92,17 +97,22 @@ void EnemyManager::SpawnWave(int count) {
     EnemyType type = _spawnPool[poolDist(gen)];
 
     do {
-      position.x = _player->GetPos().x + (std::cos(angleDist(gen)) * radiusDist(gen));
-      position.y = _player->GetPos().y + (std::sin(angleDist(gen)) * radiusDist(gen));
+      position.x =
+          _player->GetPos().x + (std::cos(angleDist(gen)) * radiusDist(gen));
+      position.y =
+          _player->GetPos().y + (std::sin(angleDist(gen)) * radiusDist(gen));
     } while (!ValidatePosition(position));
 
     switch (type) {
-      case RUNNER:
-        enemy = std::make_shared<Runner>(position, nullptr, _camera, speedDist(gen), 300);
-        break;
-      case SHOOTER:
-        enemy = std::make_shared<Shooter>(position, _assets->GetTexture("shooter"),
-                                          _assets->GetTexture("bullet"), _camera, _bulMan);
+    case RUNNER:
+      enemy = std::make_shared<Runner>(position, nullptr, _camera,
+                                       speedDist(gen), 300);
+      break;
+    case SHOOTER:
+      enemy = std::make_shared<Shooter>(
+          position, _assets->GetTexture("shooter"),
+          _assets->GetTexture("bullet"), _camera, _bulMan);
+      break;
     }
     _enemies.push_back(enemy);
   }

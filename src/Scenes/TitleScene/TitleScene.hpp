@@ -5,7 +5,7 @@
 
 class Config;
 class TitleScene : public Scene {
-private:
+ private:
   // Buttons
   Color _hoverColor{};
   Color _offColor{};
@@ -13,11 +13,11 @@ private:
 
   std::shared_ptr<Config> _config;
 
-private:
+ private:
   void GetInput() override;
   void DrawButtons();
 
-public:
+ public:
   TitleScene(std::shared_ptr<Game> game, std::shared_ptr<AssetManager> assets);
   void Update(float &dt) override;
   void Render() override;

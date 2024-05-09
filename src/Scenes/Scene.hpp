@@ -6,20 +6,20 @@
 class Game;
 class AssetManager;
 class Scene {
-protected:
+ protected:
   std::shared_ptr<Game> _game;
   std::shared_ptr<AssetManager> _assets;
 
   Color _clearColor{};
 
-protected:
+ protected:
   virtual void GetInput() = 0;
 
-public:
+ public:
   Scene(std::shared_ptr<Game> game, std::shared_ptr<AssetManager> assets)
       : _game(game), _assets(assets) {}
 
-  virtual ~Scene(){};
+  virtual ~Scene() {};
   virtual void Update(float &dt) = 0;
   virtual void Render() = 0;
   virtual void Reset() {};

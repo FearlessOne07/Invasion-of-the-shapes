@@ -2,15 +2,15 @@
 
 #include <memory>
 
+#include "json/json.h"
 #include "raylib.h"
 #include "raymath.h"
-#include "json/json.h"
 
 class AssetManager;
 class Config;
 class BulletManager;
 class Player {
-private:
+ private:
   // Assets
   std::shared_ptr<AssetManager> _assets;
 
@@ -47,16 +47,15 @@ private:
 
   Json::Value _data;
 
-private:
+ private:
   void GetInput(float &dt);
   void UpdatePositions(float &dt);
   void UpdateRotaion(float &dt);
   void CheckBounds();
 
-public:
+ public:
   Player(Vector2 position, Color color, std::shared_ptr<AssetManager> assets,
-         std::shared_ptr<BulletManager> bullMan,
-         std::shared_ptr<Camera2D> camera);
+         std::shared_ptr<BulletManager> bullMan, std::shared_ptr<Camera2D> camera);
 
   void Update(float &dt);
   void Render();

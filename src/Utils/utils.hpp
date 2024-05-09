@@ -1,6 +1,7 @@
 #pragma once
-#include "raylib.h"
 #include <memory>
+
+#include "raylib.h"
 
 typedef struct Button {
   Vector2 size{};
@@ -20,10 +21,10 @@ typedef struct Button {
   }
 
   void Draw() const {
-    DrawRectangleRoundedLines(rect, 0.2f, 1, 4, color);
-    DrawTextEx(*font, text,
-               {(pos.x + (size.x / 2) - (textWidth / 2.f)),
-                (pos.y + ((size.y / 2) - (fontSize / 2.f)))},
-               fontSize, 1, color);
+    DrawRectangleRoundedLines(rect, 0.2f, 4, color);
+    DrawTextEx(
+        *font, text,
+        {(pos.x + (size.x / 2) - (textWidth / 2.f)), (pos.y + ((size.y / 2) - (fontSize / 2.f)))},
+        fontSize, 1, color);
   }
 } Button;

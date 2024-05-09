@@ -3,3 +3,4 @@ core.*
 .cache/
 .clang-format
 compile_commands.json
+[Bb]in/

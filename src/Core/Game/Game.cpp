@@ -1,4 +1,5 @@
 #include "Game.hpp"
+
 #include "Core/AssetManager/AssetManager.hpp"
 #include "Core/Config/Config.hpp"
 #include "Scenes/GameOverScene/GameOverScene.hpp"
@@ -7,7 +8,6 @@
 #include "Scenes/TitleScene/TitleScene.hpp"
 
 void Game::Init() {
-
   // Initialize Window
   SetConfigFlags(FLAG_MSAA_4X_HINT);
   InitWindow(SIZE.x, SIZE.y, "Invasion of the Shapes");
@@ -27,14 +27,10 @@ void Game::Init() {
   _config->LoadConfig();
 
   // Initialize Scenes
-  _scenes[TITLE_SCENE] =
-      std::make_shared<TitleScene>(shared_from_this(), _assets);
-  _scenes[GAME_SCENE] =
-      std::make_shared<GameScene>(shared_from_this(), _assets);
-  _scenes[PAUSE_SCENE] =
-      std::make_shared<PauseScene>(shared_from_this(), _assets);
-  _scenes[GAME_OVER_SCENE] =
-      std::make_shared<GameOverScene>(shared_from_this(), _assets);
+  _scenes[TITLE_SCENE] = std::make_shared<TitleScene>(shared_from_this(), _assets);
+  _scenes[GAME_SCENE] = std::make_shared<GameScene>(shared_from_this(), _assets);
+  _scenes[PAUSE_SCENE] = std::make_shared<PauseScene>(shared_from_this(), _assets);
+  _scenes[GAME_OVER_SCENE] = std::make_shared<GameOverScene>(shared_from_this(), _assets);
 
   _currentScene = _scenes[TITLE_SCENE];
 
