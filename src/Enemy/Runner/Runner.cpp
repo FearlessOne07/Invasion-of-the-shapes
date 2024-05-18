@@ -3,8 +3,8 @@
 #include "Player/Player.hpp"
 #include "raylib.h"
 
-Runner::Runner(Vector2 position, std::shared_ptr<Texture> texture, std::shared_ptr<Camera2D> camera,
-               float speed, int score)
+Runner::Runner(Vector2 position, std::shared_ptr<Texture> texture,
+               std::shared_ptr<Camera2D> camera, float speed, int score)
     : Enemy(position, score, texture, camera) {
   _radius = 30;
   _speed = speed;

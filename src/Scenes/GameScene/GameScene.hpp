@@ -8,7 +8,7 @@
 
 class Config;
 class GameScene : public Scene {
- private:
+private:
   std::shared_ptr<Camera2D> _camera;
 
   std::shared_ptr<BulletManager> _bulMan;
@@ -19,16 +19,19 @@ class GameScene : public Scene {
   Color _playerColor{};
 
   EnemyManager _enemMan;
+  int _waveCount;
+  float _waveTimer;
 
   float _gameClock{};
 
- private:
+private:
   void GetInput() override;
   void CheckPlayer();
   void UpdateGameClock(float &dt);
   void UpdateCamera(float dt);
+  void SpawnEnemies(float dt);
 
- public:
+public:
   GameScene(std::shared_ptr<Game> game, std::shared_ptr<AssetManager> assets);
   void Update(float &dt) override;
   void Render() override;

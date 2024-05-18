@@ -16,7 +16,8 @@ std::shared_ptr<Config> Config::GetInstance() {
 
 void Config::LoadConfig() {
   if (!_instance) {
-    std::cerr << "Config instance not valid, CONFIG FILE HASN'T BEEN LOADED!! First call "
+    std::cerr << "Config instance not valid, CONFIG FILE HASN'T BEEN LOADED!! "
+                 "First call "
                  "Config::GetInstance()\n";
     return;
   }
@@ -25,7 +26,7 @@ void Config::LoadConfig() {
   file.exceptions(std::ios::badbit | std::ios::failbit);
   try {
     file.open("config.json", std::ios::in);
-  } catch (const std::ios::failure& e) {
+  } catch (const std::ios::failure &e) {
     std::string _baseData = R"(
       { 
       "player_data" : { 
@@ -45,9 +46,11 @@ void Config::LoadConfig() {
   file.close();
 }
 
-Json::Value Config::GetData(const char* name) { return _config[name]; }
+Json::Value Config::GetData(const char *name) { return _config[name]; }
 
-void Config::SetData(Json::Value value, const char* key) { _config[key] = value; }
+void Config::SetData(Json::Value value, const char *key) {
+  _config[key] = value;
+}
 
 Config::~Config() {
   std::ofstream file;

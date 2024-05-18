@@ -10,7 +10,7 @@
 void Game::Init() {
   // Initialize Window
   SetConfigFlags(FLAG_MSAA_4X_HINT);
-  InitWindow(SIZE.x, SIZE.y, "Invasion of the Shapes");
+  InitWindow(SIZE.x, SIZE.y, "Invasion of the Shapes - Raylib");
   InitAudioDevice();
   SetTargetFPS(FPS);
   SetExitKey(0);

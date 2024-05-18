@@ -29,15 +29,17 @@ void EnemyManager::CheckBulletColissions(std::vector<Bullet> &bullets) {
   for (Bullet &b : bullets) {
     if (b.GetTag() == Bullet::PLAYER_BULLET) {
       for (std::shared_ptr<Enemy> &e : _enemies) {
-        if ((CheckCollisionCircles(e->GetPos(), e->GetRadius(), b.GetPos(),
-                                   b.GetRad())) &&
-            e->GetHp() > 0) {
-          b.SetIsActive(false);
-          e->ReduceHp(_player->GetDamage());
-        } else if (CheckCollisionCircles(e->GetPos(), e->GetRadius(),
-                                         b.GetPos(), b.GetRad())) {
-          e->SetIsAlive(false);
-          _player->SetScore(e->GetScore() + _player->GetScore());
+        if (e->HasSpawned()) {
+          if ((CheckCollisionCircles(e->GetPos(), e->GetRadius(), b.GetPos(),
+                                     b.GetRad())) &&
+              e->GetHp() > 0) {
+            b.SetIsActive(false);
+            e->ReduceHp(_player->GetDamage());
+          } else if (CheckCollisionCircles(e->GetPos(), e->GetRadius(),
+                                           b.GetPos(), b.GetRad())) {
+            e->SetIsAlive(false);
+            _player->SetScore(e->GetScore() + _player->GetScore());
+          }
         }
       }
     }
@@ -46,9 +48,11 @@ void EnemyManager::CheckBulletColissions(std::vector<Bullet> &bullets) {
 
 void EnemyManager::CheckPlayerColission() {
   for (std::shared_ptr<Enemy> &e : _enemies) {
-    if (CheckCollisionCircles(e->GetPos(), e->GetRadius(), _player->GetPos(),
-                              _player->GetRaduis())) {
-      _player->SetDead(true);
+    if (e->HasSpawned()) {
+      if (CheckCollisionCircles(e->GetPos(), e->GetRadius(), _player->GetPos(),
+                                _player->GetRaduis())) {
+        _player->SetDead(true);
+      }
     }
   }
 }
@@ -75,8 +79,6 @@ void EnemyManager::Render() {
   }
 }
 
-void EnemyManager::Reset() { _enemies.clear(); }
-
 void EnemyManager::SpawnWave(int count) {
   std::random_device rd;
   std::mt19937_64 gen(rd());
@@ -86,7 +88,7 @@ void EnemyManager::SpawnWave(int count) {
 
   // Location
   std::uniform_real_distribution<float> angleDist(0, 360);
-  std::uniform_real_distribution<float> radiusDist(300.f, 500.f);
+  std::uniform_real_distribution<float> radiusDist(600.f, 900.f);
 
   Vector2 position;
 
@@ -110,7 +112,7 @@ void EnemyManager::SpawnWave(int count) {
       break;
     case SHOOTER:
       enemy = std::make_shared<Shooter>(
-          position, _assets->GetTexture("shooter"),
+          position, speedDist(gen), _assets->GetTexture("shooter"),
           _assets->GetTexture("bullet"), _camera, _bulMan);
       break;
     }
@@ -120,12 +122,18 @@ void EnemyManager::SpawnWave(int count) {
 
 bool EnemyManager::ValidatePosition(Vector2 position) {
   for (auto &e : _enemies) {
-    float distance = Vector2Distance(e->GetPos(), _player->GetPos());
+    float distance = Vector2Distance(e->GetPos(), position);
 
     if (distance < e->GetRadius() * 2) {
       return false;
     }
   }
-
   return true;
 }
+
+int EnemyManager::GetAliveCount() {
+  _enemies.shrink_to_fit();
+  return _enemies.size();
+}
+
+void EnemyManager::Reset() { _enemies.clear(); }

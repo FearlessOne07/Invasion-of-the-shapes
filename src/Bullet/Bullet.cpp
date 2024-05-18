@@ -4,7 +4,8 @@
 
 #include "raylib.h"
 
-Bullet::Bullet(Vector2 position, Vector2 direction, std::shared_ptr<Texture> textures,
+Bullet::Bullet(Vector2 position, Vector2 direction,
+               std::shared_ptr<Texture> textures,
                std::shared_ptr<Camera2D> camera, BulletTag tag, float speed)
     : _camera(camera),
       _texture(textures),
@@ -23,8 +24,10 @@ Bullet::Bullet(Vector2 position, Vector2 direction, std::shared_ptr<Texture> tex
 void Bullet::CheckActivty() {
   // Check and set status of bullet
   Vector2 checkPosition = GetWorldToScreen2D(_position, *_camera);
-  if (!(((checkPosition.x <= GetScreenWidth() + _radius) && (checkPosition.x >= -_radius)) &&
-        ((checkPosition.y <= GetScreenHeight() + _radius) && (checkPosition.y >= -_radius)))) {
+  if (!(((checkPosition.x <= GetScreenWidth() + _radius) &&
+         (checkPosition.x >= -_radius)) &&
+        ((checkPosition.y <= GetScreenHeight() + _radius) &&
+         (checkPosition.y >= -_radius)))) {
     SetIsActive(false);
   }
 }
@@ -32,8 +35,10 @@ void Bullet::CheckActivty() {
 void Bullet::Render() {
   DrawTexturePro(
       *_texture, _srcRect,
-      {_position.x, _position.y, _textureSize * _textureScale, _textureSize * _textureScale},
-      {(_textureSize * _textureScale) / 2, (_textureSize * _textureScale) / 2}, _rotation, WHITE);
+      {_position.x, _position.y, _textureSize * _textureScale,
+       _textureSize * _textureScale},
+      {(_textureSize * _textureScale) / 2, (_textureSize * _textureScale) / 2},
+      _rotation, WHITE);
 }
 void Bullet::Update(float &dt) {
   CheckActivty();

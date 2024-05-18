@@ -29,7 +29,7 @@ class Shooter : public Enemy {
   void Attack(const Vector2 &playerPos, float dt);
 
  public:
-  Shooter(Vector2 position, std::shared_ptr<Texture> texture,
+  Shooter(Vector2 position, float speed, std::shared_ptr<Texture> texture,
           std::shared_ptr<Texture> bulletTexture, std::shared_ptr<Camera2D> camera,
           std::shared_ptr<BulletManager> bulMan);
 
