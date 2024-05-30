@@ -4,7 +4,6 @@
 
 #include "json/json.h"
 #include "raylib.h"
-#include "raymath.h"
 
 class AssetManager;
 class Config;
@@ -27,6 +26,7 @@ class Player {
   // Movement
   Vector2 _position;
   Vector2 _velocity;
+  Vector2 _velocityTarget;
   float _speed;
 
   // Texture

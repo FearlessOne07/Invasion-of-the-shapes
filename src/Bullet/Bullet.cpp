@@ -7,12 +7,8 @@
 Bullet::Bullet(Vector2 position, Vector2 direction,
                std::shared_ptr<Texture> textures,
                std::shared_ptr<Camera2D> camera, BulletTag tag, float speed)
-    : _camera(camera),
-      _texture(textures),
-      _position(position),
-      _direction(direction),
-      _tag(tag),
-      _speed(speed) {
+    : _camera(camera), _texture(textures), _position(position),
+      _direction(direction), _tag(tag), _speed(speed) {
   _textureSize = 16;
   _textureScale = 3;
   _srcRect = {0 * _textureSize, 0 * _textureSize, _textureSize, _textureSize};

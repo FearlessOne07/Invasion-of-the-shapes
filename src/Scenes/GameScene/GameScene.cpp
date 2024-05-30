@@ -1,5 +1,6 @@
 #include "GameScene.hpp"
 
+#include <iostream>
 #include <memory>
 
 #include "Core/AssetManager/AssetManager.hpp"
@@ -32,9 +33,8 @@ void GameScene::Update(float &dt) {
   _player->Update(dt);
   _enemMan.Update();
   _bulMan->Update(dt);
-  UpdateCamera(dt);
   CheckPlayer();
-  SpawnEnemies(dt);
+  // SpawnEnemies(dt);
 }
 
 void GameScene::GetInput() {
@@ -101,6 +101,8 @@ void GameScene::SpawnEnemies(float dt) {
   if (_enemMan.GetAliveCount() == 0) {
     _gameClock += dt;
   }
+
+  std::cout << _enemMan.GetAliveCount() << "\n";
 
   if (_gameClock > 5) {
     _enemMan.SpawnWave(5);

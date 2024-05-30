@@ -27,10 +27,14 @@ void Game::Init() {
   _config->LoadConfig();
 
   // Initialize Scenes
-  _scenes[TITLE_SCENE] = std::make_shared<TitleScene>(shared_from_this(), _assets);
-  _scenes[GAME_SCENE] = std::make_shared<GameScene>(shared_from_this(), _assets);
-  _scenes[PAUSE_SCENE] = std::make_shared<PauseScene>(shared_from_this(), _assets);
-  _scenes[GAME_OVER_SCENE] = std::make_shared<GameOverScene>(shared_from_this(), _assets);
+  _scenes[TITLE_SCENE] =
+      std::make_shared<TitleScene>(shared_from_this(), _assets);
+  _scenes[GAME_SCENE] =
+      std::make_shared<GameScene>(shared_from_this(), _assets);
+  _scenes[PAUSE_SCENE] =
+      std::make_shared<PauseScene>(shared_from_this(), _assets);
+  _scenes[GAME_OVER_SCENE] =
+      std::make_shared<GameOverScene>(shared_from_this(), _assets);
 
   _currentScene = _scenes[TITLE_SCENE];
 

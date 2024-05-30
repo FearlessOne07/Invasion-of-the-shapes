@@ -9,7 +9,7 @@ class TitleScene : public Scene {
   // Buttons
   Color _hoverColor{};
   Color _offColor{};
-  Button _playButton{};
+  Utils::Button _playButton{};
 
   std::shared_ptr<Config> _config;
 

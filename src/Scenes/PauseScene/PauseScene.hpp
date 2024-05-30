@@ -11,8 +11,8 @@ class PauseScene : public Scene {
   Color _offColor{};
 
   // Buttons
-  Button _continueButton{};
-  Button _titleButton{};
+  Utils::Button _continueButton{};
+  Utils::Button _titleButton{};
 
   Color _clearColor{};
   Texture2D _fillTexture{};

@@ -3,13 +3,18 @@
 #include <cmath>
 #include <iostream>
 
+#include "raylib.h"
+#include "raymath.h"
+
 #include "Core/AssetManager/AssetManager.hpp"
 #include "Core/BulletManager/BulletManager.hpp"
 #include "Core/Config/Config.hpp"
-#include "raylib.h"
+#include "Utils/utils.hpp"
 
-Player::Player(Vector2 position, Color color, std::shared_ptr<AssetManager> assets,
-               std::shared_ptr<BulletManager> bullMan, std::shared_ptr<Camera2D> camera)
+Player::Player(Vector2 position, Color color,
+               std::shared_ptr<AssetManager> assets,
+               std::shared_ptr<BulletManager> bullMan,
+               std::shared_ptr<Camera2D> camera)
     : _assets(assets), _position(position), _bullMan(bullMan), _camera(camera) {
   //--------Initialize Player--------
   // Texture
@@ -19,10 +24,11 @@ Player::Player(Vector2 position, Color color, std::shared_ptr<AssetManager> asse
   _rotation = 0.f;
 
   // Movement
-  _speed = 300.f;
+  _speed = 1000.f;
   _rotationSpeed = -200;
   _isDead = false;
   _velocity = {0};
+  _velocityTarget = {0};
 
   // Fizix
   _radius = ((_textureSize / 2) * _scale);
@@ -44,18 +50,26 @@ Player::Player(Vector2 position, Color color, std::shared_ptr<AssetManager> asse
 }
 
 void Player::GetInput(float &dt) {
-  // Get Player Input
-  if (IsKeyDown(KEY_D)) {
-    _velocity.x += 1;
+  // Get Player Input X
+  if (IsKeyDown(KEY_A) && IsKeyDown(KEY_D)) {
+    _velocityTarget.x = 0;
+  } else if (IsKeyDown(KEY_D)) {
+    _velocityTarget.x = 1;
+  } else if (IsKeyDown(KEY_A)) {
+    _velocityTarget.x = -1;
+  } else {
+    _velocityTarget.x = {0};
   }
-  if (IsKeyDown(KEY_A)) {
-    _velocity.x -= 1;
-  }
-  if (IsKeyDown(KEY_S)) {
-    _velocity.y += 1;
-  }
-  if (IsKeyDown(KEY_W)) {
-    _velocity.y -= 1;
+
+  // Get Player Input Y
+  if (IsKeyDown(KEY_S) && IsKeyDown(KEY_W)) {
+    _velocityTarget.y = 0;
+  } else if (IsKeyDown(KEY_S)) {
+    _velocityTarget.y = 1;
+  } else if (IsKeyDown(KEY_W)) {
+    _velocityTarget.y = -1;
+  } else {
+    _velocityTarget.y = {0};
   }
 
   // Bullets
@@ -66,13 +80,19 @@ void Player::GetInput(float &dt) {
 }
 
 void Player::UpdatePositions(float &dt) {
-  // Update Player Positions
-  if (_velocity.x || _velocity.y) {
-    _velocity = Vector2Normalize(_velocity);
-    _velocity = Vector2Scale(_velocity, _speed * dt);
-    _position = Vector2Add(_position, _velocity);
-    _velocity = {0};
+
+  if (Vector2Length(_velocityTarget) > 0) {
+    _velocityTarget = Vector2Normalize(_velocityTarget);
   }
+  // Update Player Positions
+  _velocity.x = Utils::Approach(_velocity.x, _velocityTarget.x, dt * 2);
+  _velocity.y = Utils::Approach(_velocity.y, _velocityTarget.y, dt * 2);
+
+  // _velocity = Vector2Normalize(_velocity);
+  _position = Vector2Add(_position, Vector2Scale(_velocity, _speed * dt));
+
+  printf("Target: (%f, %f)\n", _velocityTarget.x, _velocityTarget.y);
+  printf("Vel: (%f, %f)\n", _velocity.x, _velocity.y);
 }
 
 void Player::UpdateRotaion(float &dt) { _rotation += 300.f * dt; }
@@ -100,14 +120,17 @@ void Player::Update(float &dt) {
 }
 
 void Player::Render() {
-  DrawTexturePro(*_texture, {0, 0, _textureSize, _textureSize},
-                 {_position.x, _position.y, _textureSize * _scale, _textureSize * _scale},
-                 {(_textureSize * _scale) / 2, (_textureSize * _scale) / 2}, _rotation, WHITE);
+  DrawTexturePro(
+      *_texture, {0, 0, _textureSize, _textureSize},
+      {_position.x, _position.y, _textureSize * _scale, _textureSize * _scale},
+      {(_textureSize * _scale) / 2, (_textureSize * _scale) / 2}, _rotation,
+      WHITE);
 }
 
 void Player::Fire() {
   if (_bulletTimer >= _bulletCooldown) {
-    _bullMan->SpawnBullet(_position, GetScreenToWorld2D(GetMousePosition(), *_camera),
+    _bullMan->SpawnBullet(_position,
+                          GetScreenToWorld2D(GetMousePosition(), *_camera),
                           Bullet::BulletTag::PLAYER_BULLET, _bulletSpeed);
     _bulletTimer = 0.f;
   }
