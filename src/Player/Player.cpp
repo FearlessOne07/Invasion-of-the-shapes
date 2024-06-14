@@ -1,8 +1,5 @@
 #include "Player.hpp"
 
-#include <cmath>
-#include <iostream>
-
 #include "raylib.h"
 #include "raymath.h"
 
@@ -24,7 +21,7 @@ Player::Player(Vector2 position, Color color,
   _rotation = 0.f;
 
   // Movement
-  _speed = 1000.f;
+  _speed = 600.f;
   _rotationSpeed = -200;
   _isDead = false;
   _velocity = {0};
@@ -84,15 +81,14 @@ void Player::UpdatePositions(float &dt) {
   if (Vector2Length(_velocityTarget) > 0) {
     _velocityTarget = Vector2Normalize(_velocityTarget);
   }
+
   // Update Player Positions
-  _velocity.x = Utils::Approach(_velocity.x, _velocityTarget.x, dt * 2);
-  _velocity.y = Utils::Approach(_velocity.y, _velocityTarget.y, dt * 2);
+  _velocity.x = Utils::Approach(_velocity.x, _velocityTarget.x,
+                                (1.f / (_speed * .1f)) * 2.f);
+  _velocity.y = Utils::Approach(_velocity.y, _velocityTarget.y,
+                                (1.f / (_speed * .1f)) * 2.f);
 
-  // _velocity = Vector2Normalize(_velocity);
   _position = Vector2Add(_position, Vector2Scale(_velocity, _speed * dt));
-
-  printf("Target: (%f, %f)\n", _velocityTarget.x, _velocityTarget.y);
-  printf("Vel: (%f, %f)\n", _velocity.x, _velocity.y);
 }
 
 void Player::UpdateRotaion(float &dt) { _rotation += 300.f * dt; }
@@ -101,14 +97,22 @@ void Player::CheckBounds() {
   // Check Player Collisions With Window
   if (_position.x <= -GetScreenWidth() + _radius) {
     _position.x = -GetScreenWidth() + _radius;
+    _velocity.x = 0;
+    _velocityTarget.x = 0;
   } else if (_position.x >= GetScreenWidth() - _radius) {
     _position.x = GetScreenWidth() - _radius;
+    _velocity.x = 0;
+    _velocityTarget.x = 0;
   }
 
   if (_position.y <= -GetScreenHeight() + _radius) {
     _position.y = -GetScreenHeight() + _radius;
+    _velocity.y = 0;
+    _velocityTarget.y = 0;
   } else if (_position.y >= GetScreenHeight() - _radius) {
     _position.y = GetScreenHeight() - _radius;
+    _velocity.y = 0;
+    _velocityTarget.y = 0;
   }
 }
 
@@ -125,6 +129,7 @@ void Player::Render() {
       {_position.x, _position.y, _textureSize * _scale, _textureSize * _scale},
       {(_textureSize * _scale) / 2, (_textureSize * _scale) / 2}, _rotation,
       WHITE);
+  DrawCircleLinesV(_position, _radius, RED);
 }
 
 void Player::Fire() {

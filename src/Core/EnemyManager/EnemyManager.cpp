@@ -6,14 +6,15 @@
 #include <memory>
 #include <random>
 
+#include "raylib.h"
+#include "raymath.h"
+
 #include "Bullet/Bullet.hpp"
 #include "Core/BulletManager/BulletManager.hpp"
 #include "Enemy/Enemy.hpp"
 #include "Enemy/Runner/Runner.hpp"
 #include "Enemy/Shooter/Shooter.hpp"
 #include "Player/Player.hpp"
-#include "raylib.h"
-#include "raymath.h"
 
 EnemyManager::EnemyManager(std::shared_ptr<AssetManager> assets,
                            std::shared_ptr<BulletManager> bulletManager,
@@ -88,21 +89,23 @@ void EnemyManager::SpawnWave(int count) {
 
   // Location
   std::uniform_real_distribution<float> angleDist(0, 360);
-  std::uniform_real_distribution<float> radiusDist(600.f, 900.f);
-
-  Vector2 position;
-
+  std::uniform_real_distribution<float> radiusDist(500.f, 1500.f);
   std::uniform_real_distribution<float> speedDist(100.f, 200.f);
 
+  float angle;
+  float radius;
+  Vector2 position;
+
   for (int i = 0; i < count; ++i) {
+
     std::shared_ptr<Enemy> enemy;
     EnemyType type = _spawnPool[poolDist(gen)];
 
     do {
-      position.x =
-          _player->GetPos().x + (std::cos(angleDist(gen)) * radiusDist(gen));
-      position.y =
-          _player->GetPos().y + (std::sin(angleDist(gen)) * radiusDist(gen));
+      angle = angleDist(gen);
+      radius = radiusDist(gen);
+      position.x = _player->GetPos().x + (std::cos(angle) * radius);
+      position.y = _player->GetPos().y + (std::sin(angle) * radius);
     } while (!ValidatePosition(position));
 
     switch (type) {
@@ -115,12 +118,20 @@ void EnemyManager::SpawnWave(int count) {
           position, speedDist(gen), _assets->GetTexture("shooter"),
           _assets->GetTexture("bullet"), _camera, _bulMan);
       break;
+    case DASHER:
+      break;
     }
     _enemies.push_back(enemy);
   }
 }
 
 bool EnemyManager::ValidatePosition(Vector2 position) {
+  if (position.x > GetScreenWidth() - _enemyRadius * 2 ||
+      position.x < -GetScreenWidth() + _enemyRadius * 2 ||
+      position.y > GetScreenHeight() - _enemyRadius * 2 ||
+      position.y < -GetScreenHeight() + _enemyRadius * 2) {
+    return false;
+  }
   for (auto &e : _enemies) {
     float distance = Vector2Distance(e->GetPos(), position);
 
@@ -131,9 +142,6 @@ bool EnemyManager::ValidatePosition(Vector2 position) {
   return true;
 }
 
-int EnemyManager::GetAliveCount() {
-  _enemies.shrink_to_fit();
-  return _enemies.size();
-}
+int EnemyManager::GetAliveCount() { return _enemies.size(); }
 
 void EnemyManager::Reset() { _enemies.clear(); }

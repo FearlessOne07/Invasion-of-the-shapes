@@ -2,11 +2,12 @@
 #include <memory>
 
 #include "Core/EnemyManager/EnemyManager.hpp"
-#include "Player/Player.hpp"
 #include "Scenes/Scene.hpp"
 #include "raylib.h"
 
 class Config;
+class Player;
+class BulletManager;
 class GameScene : public Scene {
 private:
   std::shared_ptr<Camera2D> _camera;
@@ -22,12 +23,9 @@ private:
   int _waveCount;
   float _waveTimer;
 
-  float _gameClock{};
-
 private:
   void GetInput() override;
   void CheckPlayer();
-  void UpdateGameClock(float &dt);
   void UpdateCamera(float dt);
   void SpawnEnemies(float dt);
 

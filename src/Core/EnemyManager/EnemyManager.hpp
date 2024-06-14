@@ -27,11 +27,14 @@ private:
 
   std::vector<EnemyType> _spawnPool;
 
+  float _enemyRadius = 50;
+
 private:
   void CheckBulletColissions(std::vector<Bullet> &bullets);
   void CheckPlayerColission();
   void RemoveDeadEnemies();
   bool ValidatePosition(Vector2 position);
+  void CheckEnemySeparation();
 
 public:
   EnemyManager(std::shared_ptr<AssetManager> assets,

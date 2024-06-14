@@ -6,7 +6,7 @@
 
 class Player;
 class Enemy {
- protected:
+protected:
   std::shared_ptr<Camera2D> _camera;
 
   std::shared_ptr<Texture> _texture;
@@ -27,11 +27,11 @@ class Enemy {
 
   int _hp;
 
- protected:
+protected:
   virtual void Spawn(float dt) = 0;
 
- public:
-  virtual ~Enemy() {};
+public:
+  virtual ~Enemy(){};
   Enemy(Vector2 position, int score, std::shared_ptr<Texture> texture,
         std::shared_ptr<Camera2D> camera)
       : _camera(camera), _position(position), _score(score), _texture(texture) {
@@ -53,9 +53,11 @@ class Enemy {
   inline int GetScore() const { return _score; }
   inline int GetHp() const { return _hp; }
   inline bool HasSpawned() const { return _hasSpawned; }
+  inline Vector2 GetVelocity() const { return _velocity; }
 
   // Memeber Mutation Functions
   inline void SetIsAlive(const bool &isAlive) { _isAlive = isAlive; };
   inline void SetPos(const Vector2 &pos) { _position = pos; };
+  inline void SetVelocity(const Vector2 &velocity) { _velocity = velocity; }
   inline void ReduceHp(int value) { _hp -= value; };
 };

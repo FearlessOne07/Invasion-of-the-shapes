@@ -6,11 +6,12 @@
 #include "Player/Player.hpp"
 #include "raylib.h"
 
-Shooter::Shooter(Vector2 position, float speed, std::shared_ptr<Texture> texture,
-                 std::shared_ptr<Texture> bulletTexture, std::shared_ptr<Camera2D> camera,
+Shooter::Shooter(Vector2 position, float speed,
+                 std::shared_ptr<Texture> texture,
+                 std::shared_ptr<Texture> bulletTexture,
+                 std::shared_ptr<Camera2D> camera,
                  std::shared_ptr<BulletManager> bulMan)
-    : Enemy(position, 200, texture, camera),
-      _bulletTexture(bulletTexture),
+    : Enemy(position, 200, texture, camera), _bulletTexture(bulletTexture),
       _bulMan(bulMan) {
   _textureSize = _texture->width;
   _textureScale = 6;
@@ -66,11 +67,12 @@ void Shooter::Render() {
     return;
   }
 
-  DrawTexturePro(*_texture, {0, 0, _textureSize, _textureSize},
-                 {_position.x, _position.y, _textureSize * _textureScale,
-                  _textureSize * _textureScale},
-                 {(_textureSize * _textureScale) / 2, (_textureSize * _textureScale) / 2},
-                 _rotation, WHITE);
+  DrawTexturePro(
+      *_texture, {0, 0, _textureSize, _textureSize},
+      {_position.x, _position.y, _textureSize * _textureScale,
+       _textureSize * _textureScale},
+      {(_textureSize * _textureScale) / 2, (_textureSize * _textureScale) / 2},
+      _rotation, WHITE);
 }
 
 void Shooter::Shoot() {

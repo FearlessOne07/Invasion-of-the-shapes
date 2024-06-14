@@ -3,3 +3,4 @@ core.*
 .cache/
 compile_commands.json
 [Bb]in/
+.vscode/

@@ -27,7 +27,7 @@ void Config::LoadConfig() {
   try {
     file.open("config.json", std::ios::in);
   } catch (const std::ios::failure &e) {
-    std::string _baseData = R"(
+    std::string baseData = R"(
       { 
       "player_data" : { 
       "highscore" : 0 
@@ -37,7 +37,7 @@ void Config::LoadConfig() {
 
     file.clear();
     file.open("config.json", std::ios::out | std::ios::app);
-    file << _baseData;
+    file << baseData;
     file.close();
     file.open("config.json", std::ios::in);
   }

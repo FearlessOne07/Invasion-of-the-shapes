@@ -6,7 +6,7 @@
 Runner::Runner(Vector2 position, std::shared_ptr<Texture> texture,
                std::shared_ptr<Camera2D> camera, float speed, int score)
     : Enemy(position, score, texture, camera) {
-  _radius = 30;
+  _radius = 50;
   _speed = speed;
 
   _velocity = {0};

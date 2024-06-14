@@ -7,7 +7,7 @@
 
 class BulletManager;
 class Shooter : public Enemy {
- private:
+private:
   Vector2 _target;
   float _attackDistance;
 
@@ -22,15 +22,16 @@ class Shooter : public Enemy {
   float _rotation;
   float _rotationSpeed;
 
- private:
+private:
   void Spawn(float dt) override;
   void Shoot();
   void ApproachPlayer(const Vector2 &playerPos, float dt);
   void Attack(const Vector2 &playerPos, float dt);
 
- public:
+public:
   Shooter(Vector2 position, float speed, std::shared_ptr<Texture> texture,
-          std::shared_ptr<Texture> bulletTexture, std::shared_ptr<Camera2D> camera,
+          std::shared_ptr<Texture> bulletTexture,
+          std::shared_ptr<Camera2D> camera,
           std::shared_ptr<BulletManager> bulMan);
 
   void Update(std::shared_ptr<Player> player) override;

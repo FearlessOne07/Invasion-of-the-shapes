@@ -7,6 +7,8 @@
 #include "Core/BulletManager/BulletManager.hpp"
 #include "Core/Config/Config.hpp"
 #include "Core/Game/Game.hpp"
+#include "Player/Player.hpp"
+#include "raylib.h"
 
 GameScene::GameScene(std::shared_ptr<Game> game,
                      std::shared_ptr<AssetManager> assets)
@@ -23,18 +25,22 @@ GameScene::GameScene(std::shared_ptr<Game> game,
   _camera->target = _player->GetPos();
   _camera->offset = {static_cast<float>(GetScreenWidth() / 2.f),
                      static_cast<float>(GetScreenHeight() / 2.f)};
-  _camera->zoom = 0.8f;
+  _camera->zoom = 0.5xf;
+
+  // Waves
+  _waveTimer = 0;
+  _waveCount = 0;
 }
 
 void GameScene::Update(float &dt) {
   // Update
   GetInput();
-  UpdateGameClock(dt);
   _player->Update(dt);
   _enemMan.Update();
   _bulMan->Update(dt);
   CheckPlayer();
-  // SpawnEnemies(dt);
+  SpawnEnemies(dt);
+  UpdateCamera(dt);
 }
 
 void GameScene::GetInput() {
@@ -55,11 +61,12 @@ void GameScene::Render() {
   _enemMan.Render();
   _player->Render();
   _bulMan->Render();
+  DrawRectangleLines(-GetScreenWidth(), -GetScreenHeight(),
+                     GetScreenWidth() * 2, GetScreenHeight() * 2, RED);
   EndMode2D();
 }
 
 void GameScene::Reset() {
-  _gameClock = 0;
   _enemMan.Reset();
   _bulMan->Reset();
   _player->Reset();
@@ -73,41 +80,58 @@ void GameScene::CheckPlayer() {
 }
 
 void GameScene::UpdateCamera(float dt) {
-  // Update the camera Position
-  float distanceFromPlayer =
-      Vector2Distance(_player->GetPos(), _camera->target);
+  Vector2 playerPos = _player->GetPos();
+  Vector2 cameraTarget = _camera->target;
 
+  // Calculate individual axis distances
+  float distanceX = playerPos.x - cameraTarget.x;
+  float distanceY = playerPos.y - cameraTarget.y;
+
+  // Define maximum distance and threshold
   float maxDistance = 200.f;
-  float speedFactor = std::min<float>(distanceFromPlayer / maxDistance, 1.f);
-  float maxMove = 30.f + (speedFactor * 500.f);
+  float threshold = 1.f; // Small threshold to prevent shaking
 
-  _camera->target = Vector2MoveTowards(_camera->target, _player->GetPos(),
-                                       static_cast<int>(maxMove * dt));
+  // Calculate speed factors for each axis
+  float speedFactorX = std::min<float>(std::abs(distanceX) / maxDistance, 1.f);
+  float speedFactorY = std::min<float>(std::abs(distanceY) / maxDistance, 1.f);
 
-  if (_camera->target.x <= -GetScreenWidth() + _camera->offset.x) {
-    _camera->target.x = -GetScreenWidth() + _camera->offset.x;
-  } else if (_camera->target.x >= GetScreenWidth() - _camera->offset.x) {
-    _camera->target.x = GetScreenWidth() - _camera->offset.x;
+  // Calculate maximum move speeds for each axis
+  float maxMoveX = (90.f + speedFactorX * 500.f) * dt;
+  float maxMoveY = (90.f + speedFactorY * 500.f) * dt;
+
+  // Move camera target position towards player position on each axis if beyond
+  // threshold
+  if (std::abs(distanceX) > threshold) {
+    cameraTarget.x += maxMoveX * (distanceX > 0 ? 1 : -1);
+  }
+  if (std::abs(distanceY) > threshold) {
+    cameraTarget.y += maxMoveY * (distanceY > 0 ? 1 : -1);
   }
 
-  if (_camera->target.y <= -GetScreenHeight() + _camera->offset.y) {
-    _camera->target.y = -GetScreenHeight() + _camera->offset.y;
-  } else if (_camera->target.y >= GetScreenHeight() - _camera->offset.y) {
-    _camera->target.y = GetScreenHeight() - _camera->offset.y;
-  }
+  // Clamp the camera target to screen bounds
+  float screenWidth = static_cast<float>(GetScreenWidth());
+  float screenHeight = static_cast<float>(GetScreenHeight());
+
+  Vector2 minCameraBound = {-screenWidth + _camera->offset.x,
+                            -screenHeight + _camera->offset.y};
+  Vector2 maxCameraBound = {screenWidth - _camera->offset.x,
+                            screenHeight - _camera->offset.y};
+
+  cameraTarget.x = Clamp(cameraTarget.x, minCameraBound.x, maxCameraBound.x);
+  cameraTarget.y = Clamp(cameraTarget.y, minCameraBound.y, maxCameraBound.y);
+
+  // Update camera target position
+  _camera->target = cameraTarget;
 }
 
 void GameScene::SpawnEnemies(float dt) {
   if (_enemMan.GetAliveCount() == 0) {
-    _gameClock += dt;
+    _waveTimer += dt;
   }
 
-  std::cout << _enemMan.GetAliveCount() << "\n";
-
-  if (_gameClock > 5) {
+  if (_waveTimer > 5) {
     _enemMan.SpawnWave(5);
     _waveCount++;
-    _gameClock = 0;
+    _waveTimer = 0.f;
   }
 }
-void GameScene::UpdateGameClock(float &dt) { _gameClock += dt; }
