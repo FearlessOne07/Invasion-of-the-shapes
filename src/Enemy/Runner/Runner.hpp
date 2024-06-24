@@ -1,19 +1,21 @@
 #pragma once
 
 #include <memory>
+#include <vector>
 
 #include "Enemy/Enemy.hpp"
-#include "raymath.h"
 
 class Runner : public Enemy {
- private:
+private:
   void Spawn(float dt) override;
 
- public:
+public:
   // Core
-  Runner(Vector2 position, std::shared_ptr<Texture> texture, std::shared_ptr<Camera2D> camera,
+  Runner(unsigned long id, EnemyType type, Vector2 position,
+         std::shared_ptr<Texture> texture, std::shared_ptr<Camera2D> camera,
          float speed, int score);
-  void Update(std::shared_ptr<Player> player) override;
+  void Update(std::shared_ptr<Player> player,
+              const std::vector<std::shared_ptr<Enemy>> &enemies) override;
   void Render() override;
-  void FollowPlayer(const Vector2& playerPos);
+  void FollowPlayer(const Vector2 &playerPos);
 };

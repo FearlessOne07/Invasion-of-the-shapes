@@ -2,21 +2,15 @@
 #include <memory>
 #include <vector>
 
+#include "Enemy/Enemy.hpp"
 #include "raylib.h"
 
-class Enemy;
 class Player;
 class AssetManager;
 class Bullet;
 class BulletManager;
 class EnemyManager {
 public:
-  typedef enum EnemyType : short unsigned int {
-    RUNNER = 0,
-    DASHER,
-    SHOOTER
-  } EnemyType;
-
 private:
   std::shared_ptr<Camera2D> _camera;
   std::shared_ptr<AssetManager> _assets;
@@ -24,8 +18,9 @@ private:
   std::shared_ptr<Player> _player;
 
   std::vector<std::shared_ptr<Enemy>> _enemies;
+  unsigned long _currentID;
 
-  std::vector<EnemyType> _spawnPool;
+  std::vector<Enemy::EnemyType> _spawnPool;
 
   float _enemyRadius = 50;
 

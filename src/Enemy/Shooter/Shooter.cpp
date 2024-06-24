@@ -1,18 +1,21 @@
 #include "Shooter.hpp"
 
 #include <algorithm>
+#include <memory>
+#include <vector>
 
 #include "Core/BulletManager/BulletManager.hpp"
+#include "Enemy/Enemy.hpp"
 #include "Player/Player.hpp"
 #include "raylib.h"
 
-Shooter::Shooter(Vector2 position, float speed,
-                 std::shared_ptr<Texture> texture,
+Shooter::Shooter(unsigned long id, EnemyType type, Vector2 position,
+                 float speed, std::shared_ptr<Texture> texture,
                  std::shared_ptr<Texture> bulletTexture,
                  std::shared_ptr<Camera2D> camera,
                  std::shared_ptr<BulletManager> bulMan)
-    : Enemy(position, 200, texture, camera), _bulletTexture(bulletTexture),
-      _bulMan(bulMan) {
+    : Enemy(id, type, position, 200, texture, camera),
+      _bulletTexture(bulletTexture), _bulMan(bulMan) {
   _textureSize = _texture->width;
   _textureScale = 6;
   _radius = 50;
@@ -32,7 +35,8 @@ Shooter::Shooter(Vector2 position, float speed,
   _hp = 50;
 }
 
-void Shooter::Update(std::shared_ptr<Player> player) {
+void Shooter::Update(std::shared_ptr<Player> player,
+                     const std::vector<std::shared_ptr<Enemy>> &enemies) {
   float dt = GetFrameTime();
 
   if (!_hasSpawned) {
@@ -105,3 +109,4 @@ void Shooter::Spawn(float dt) {
     _hasSpawned = true;
   }
 }
+

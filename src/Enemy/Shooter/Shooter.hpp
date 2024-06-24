@@ -1,5 +1,6 @@
 #pragma once
 #include <memory>
+#include <vector>
 
 #include "Enemy/Enemy.hpp"
 #include "Player/Player.hpp"
@@ -29,11 +30,13 @@ private:
   void Attack(const Vector2 &playerPos, float dt);
 
 public:
-  Shooter(Vector2 position, float speed, std::shared_ptr<Texture> texture,
+  Shooter(unsigned long id, EnemyType type, Vector2 position, float speed,
+          std::shared_ptr<Texture> texture,
           std::shared_ptr<Texture> bulletTexture,
           std::shared_ptr<Camera2D> camera,
           std::shared_ptr<BulletManager> bulMan);
 
-  void Update(std::shared_ptr<Player> player) override;
+  void Update(std::shared_ptr<Player> player,
+              const std::vector<std::shared_ptr<Enemy>> &enemies) override;
   void Render() override;
 };

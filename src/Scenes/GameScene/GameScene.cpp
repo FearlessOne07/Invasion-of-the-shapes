@@ -1,5 +1,4 @@
 #include "GameScene.hpp"
-
 #include <iostream>
 #include <memory>
 
@@ -25,7 +24,7 @@ GameScene::GameScene(std::shared_ptr<Game> game,
   _camera->target = _player->GetPos();
   _camera->offset = {static_cast<float>(GetScreenWidth() / 2.f),
                      static_cast<float>(GetScreenHeight() / 2.f)};
-  _camera->zoom = 0.5xf;
+  _camera->zoom = 1.f;
 
   // Waves
   _waveTimer = 0;
@@ -96,8 +95,8 @@ void GameScene::UpdateCamera(float dt) {
   float speedFactorY = std::min<float>(std::abs(distanceY) / maxDistance, 1.f);
 
   // Calculate maximum move speeds for each axis
-  float maxMoveX = (90.f + speedFactorX * 500.f) * dt;
-  float maxMoveY = (90.f + speedFactorY * 500.f) * dt;
+  float maxMoveX = (30.f + speedFactorX * 400.f) * dt;
+  float maxMoveY = (30.f + speedFactorY * 400.f) * dt;
 
   // Move camera target position towards player position on each axis if beyond
   // threshold

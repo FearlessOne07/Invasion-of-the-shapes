@@ -23,7 +23,8 @@ EnemyManager::EnemyManager(std::shared_ptr<AssetManager> assets,
     : _assets(assets), _bulMan(bulletManager), _camera(camera),
       _player(player) {
   _enemies = {};
-  _spawnPool = {RUNNER, SHOOTER};
+  _spawnPool = {Enemy::RUNNER};
+  _currentID = 0;
 }
 
 void EnemyManager::CheckBulletColissions(std::vector<Bullet> &bullets) {
@@ -67,7 +68,7 @@ void EnemyManager::RemoveDeadEnemies() {
 
 void EnemyManager::Update() {
   for (std::shared_ptr<Enemy> &e : _enemies) {
-    e->Update(_player);
+    e->Update(_player, _enemies);
   }
   CheckBulletColissions(_bulMan->GetBullets());
   CheckPlayerColission();
@@ -99,7 +100,7 @@ void EnemyManager::SpawnWave(int count) {
   for (int i = 0; i < count; ++i) {
 
     std::shared_ptr<Enemy> enemy;
-    EnemyType type = _spawnPool[poolDist(gen)];
+    Enemy::EnemyType type = _spawnPool[poolDist(gen)];
 
     do {
       angle = angleDist(gen);
@@ -109,16 +110,19 @@ void EnemyManager::SpawnWave(int count) {
     } while (!ValidatePosition(position));
 
     switch (type) {
-    case RUNNER:
-      enemy = std::make_shared<Runner>(position, nullptr, _camera,
-                                       speedDist(gen), 300);
+    case Enemy::RUNNER:
+      enemy = std::make_shared<Runner>(_currentID, type, position, nullptr,
+                                       _camera, speedDist(gen), 300);
+      _currentID++;
       break;
-    case SHOOTER:
+    case Enemy::SHOOTER:
       enemy = std::make_shared<Shooter>(
-          position, speedDist(gen), _assets->GetTexture("shooter"),
-          _assets->GetTexture("bullet"), _camera, _bulMan);
+          _currentID, type, position, speedDist(gen),
+          _assets->GetTexture("shooter"), _assets->GetTexture("bullet"),
+          _camera, _bulMan);
+      _currentID++;
       break;
-    case DASHER:
+    case Enemy::DASHER:
       break;
     }
     _enemies.push_back(enemy);
